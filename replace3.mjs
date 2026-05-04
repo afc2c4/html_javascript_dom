@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import fs from "fs";
+
+const replacement = `import React, { useState, useEffect } from 'react';
 import {
   Network, Settings2, Search, FileEdit, Palette, ShieldCheck, PlaySquare, Globe, Fingerprint, CheckCircle2,
-  ChevronLeft, ChevronRight, Zap, MousePointer2, Keyboard, Loader2, Clock, Ear, ArrowUpCircle, Sun, Moon,
-  ZoomIn, ZoomOut
+  ChevronLeft, ChevronRight, Zap, MousePointer2, Keyboard, Loader2, Clock, Ear, ArrowUpCircle
 } from 'lucide-react';
 
 const detailedTopics = [
@@ -15,7 +16,7 @@ const detailedTopics = [
       "A espinha dorsal dita: o HTML como objetos, propriedades e eventos globais."
     ],
     details: ["Document (Raiz)", "Element Node (Tags)", "Attribute Node", "Text Node"],
-    code: "/* Com o DOM, o JavaScript realiza magias: */\n\n- Alterar todos os elemento da página\n- Mudar todos os atributos das tags\n- Modificar estilos CSS instantaneamente\n- Reagir a Eventos de forma veloz"
+    code: "/* Com o DOM, o JavaScript realiza magias: */\\n\\n- Alterar todos os elemento da página\\n- Mudar todos os atributos das tags\\n- Modificar estilos CSS instantaneamente\\n- Reagir a Eventos de forma veloz"
   },
   {
     id: "02", label: "INTERFACE", title: "HTML DOM API", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Settings2,
@@ -26,7 +27,7 @@ const detailedTopics = [
       "Interface de Eventos como clássicos 'onclick'."
     ],
     details: ["Métodos (Ações)", "Propriedades (Valores)", "Lidar com Eventos", "Navegação Estrutural"],
-    code: "// .getElementById é um MÉTODO\n// .innerHTML é uma PROPRIEDADE\n\ndocument.getElementById(\"demo\").innerHTML = \"Hello\";\n\nlet nodeName = meuElemento.nodeName;"
+    code: "// .getElementById é um MÉTODO\\n// .innerHTML é uma PROPRIEDADE\\n\\ndocument.getElementById(\\"demo\\").innerHTML = \\"Hello\\";\\n\\nlet nodeName = meuElemento.nodeName;"
   },
   {
     id: "03", label: "QUERIES VIVAS", title: "Selecting Elements", colorText: "text-cyan-500", colorDot: "bg-cyan-500", icon: Search,
@@ -37,7 +38,7 @@ const detailedTopics = [
       "Iterando por Coleções: document.forms e links"
     ],
     details: ["getElementById()", "getElementsByClassName()", "querySelectorAll()"],
-    code: "// Seleciona único por ID (Rápido)\nconst mainSection = document.getElementById(\"intro\");\n\n// Seleciona um grupo de Tags 'p' via CSS Class\nconst pl = document.querySelectorAll(\"p.descricao\");"
+    code: "// Seleciona único por ID (Rápido)\\nconst mainSection = document.getElementById(\\"intro\\");\\n\\n// Seleciona um grupo de Tags 'p' via CSS Class\\nconst pl = document.querySelectorAll(\\"p.descricao\\");"
   },
   {
     id: "04", label: "CONTEÚDO", title: "Changing HTML", colorText: "text-green-500", colorDot: "bg-green-500", icon: FileEdit,
@@ -48,7 +49,7 @@ const detailedTopics = [
       "Entenda 'document.createElement' para montagens robustas."
     ],
     details: [".innerHTML", "element.attribute", "document.write()", "setAttribute()"],
-    code: "// Injetando e clonando texto via DOM API\nconst b = document.getElementById(\"msg\");\nb.innerHTML = \"Olá <b>Usuário</b>!\";\n\n// Mudando os atributos (Src de imagem)\ndocument.getElementById(\"avatar\").src = \"a.jpg\";"
+    code: "// Injetando e clonando texto via DOM API\\nconst b = document.getElementById(\\"msg\\");\\nb.innerHTML = \\"Olá <b>Usuário</b>!\\";\\n\\n// Mudando os atributos (Src de imagem)\\ndocument.getElementById(\\"avatar\\").src = \\"a.jpg\\";"
   },
   {
     id: "05", label: "ESTILO & CSSOM", title: "Changing CSS", colorText: "text-pink-500", colorDot: "bg-pink-500", icon: Palette,
@@ -59,7 +60,7 @@ const detailedTopics = [
       "Uso de 'classList' para gerenciar toggles profissionais."
     ],
     details: [".style.property", "backgroundColor", ".classList.toggle()", "fontFamily"],
-    code: "const painel = document.getElementById(\"aviso\");\npainel.style.backgroundColor = \"tomato\";\n\n// Padrão Ouro: Desligar/Ligar via classe do CSS\nbotao.onclick = function() {\n  container.classList.toggle(\"dark-mode\");\n}"
+    code: "const painel = document.getElementById(\\"aviso\\");\\npainel.style.backgroundColor = \\"tomato\\";\\n\\n// Padrão Ouro: Desligar/Ligar via classe do CSS\\nbotao.onclick = function() {\\n  container.classList.toggle(\\"dark-mode\\");\\n}"
   },
   {
     id: "06", label: "SEGURANÇA", title: "Form Validation", colorText: "text-yellow-500", colorDot: "bg-yellow-500", icon: ShieldCheck,
@@ -70,7 +71,7 @@ const detailedTopics = [
       "Use 'e.preventDefault()' se a validação falhar."
     ],
     details: ["checkValidity()", ".value", "validationMessage", "Range Constraints"],
-    code: "function validarCadastro() {\n  let x = document.forms[\"frm\"][\"nome\"].value;\n  if (x == \"\") {\n    alert(\"Atenção!\");\n    return false;\n  }\n}"
+    code: "function validarCadastro() {\\n  let x = document.forms[\\"frm\\"][\\"nome\\"].value;\\n  if (x == \\"\\") {\\n    alert(\\"Atenção!\\");\\n    return false;\\n  }\\n}"
   },
   {
     id: "07", label: "FPS E MOTION", title: "DOM Animations", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: PlaySquare,
@@ -81,7 +82,7 @@ const detailedTopics = [
       "Aceleração eficiente por GPU usando TransformX."
     ],
     details: ["requestAnimationFrame()", "setInterval()", "position absoluto"],
-    code: "function animar() {\n  let c = document.getElementById(\"caixa\");\n  let e = 0;\n  setInterval(() => {\n    if(e == 200) return;\n    e++;\n    c.style.left = e + \"px\";\n  }, 10);\n}"
+    code: "function animar() {\\n  let c = document.getElementById(\\"caixa\\");\\n  let e = 0;\\n  setInterval(() => {\\n    if(e == 200) return;\\n    e++;\\n    c.style.left = e + \\"px\\";\\n  }, 10);\\n}"
   },
   {
     id: "08", label: "NAVEGADOR", title: "Document Reference", colorText: "text-red-400", colorDot: "bg-red-400", icon: Globe,
@@ -92,7 +93,7 @@ const detailedTopics = [
       "Atalhos práticos do W3C como document.body."
     ],
     details: ["document.anchors", "document.cookie", "document.domain", "document.documentURI"],
-    code: "// Modificar Aba Instantaneamente\ndocument.title = \"(3) Mensagens!\";\n\n// Leitura dos cookies\nlet cookiesString = document.cookie;"
+    code: "// Modificar Aba Instantaneamente\\ndocument.title = \\"(3) Mensagens!\\";\\n\\n// Leitura dos cookies\\nlet cookiesString = document.cookie;"
   },
   {
     id: "09", label: "PERFIL DO NÓ", title: "Element Reference", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Fingerprint,
@@ -103,7 +104,7 @@ const detailedTopics = [
       "Extração ágil de NodeTypes da biblioteca visual."
     ],
     details: ["getBoundingClientRect()", "parentNode", "children", "nodeName"],
-    code: "const divMaior = itemLista.parentNode;\n\n// Lendo espaço físico no Browser (bounding-box)\nconst w_px = itemLista.getBoundingClientRect().width;\n\n// Que Node É Este?\nlet r = mainTag.nodeName;"
+    code: "const divMaior = itemLista.parentNode;\\n\\n// Lendo espaço físico no Browser (bounding-box)\\nconst w_px = itemLista.getBoundingClientRect().width;\\n\\n// Que Node É Este?\\nlet r = mainTag.nodeName;"
   },
   {
     id: "10", label: "INTRO EVENTS", title: "JS Events", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Zap,
@@ -114,7 +115,7 @@ const detailedTopics = [
       "O JS registra 'Escutadores' para reagir via Funções."
     ],
     details: ["HTML Events", "DOM Event Object", "Event Handlers"],
-    code: "// Invocação na raiz HTML (Legado)\n<button onclick=\"func()\">Click</button>\n\n// Moderno / DOM Nível 0\nuserBtn.onclick = function() {\n  exibirMenu();\n};"
+    code: "// Invocação na raiz HTML (Legado)\\n<button onclick=\\"func()\\">Click</button>\\n\\n// Moderno / DOM Nível 0\\nuserBtn.onclick = function() {\\n  exibirMenu();\\n};"
   },
   {
     id: "11", label: "MOUSE", title: "Mouse Events", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: MousePointer2,
@@ -125,7 +126,7 @@ const detailedTopics = [
       "Mousemove captura ClientX e ClientY no grid visual."
     ],
     details: ["click", "mouseenter", "mouseleave", "mousemove"],
-    code: "caixa.onmouseenter = function() {\\n  caixa.style.opacity = '1';\\n}\\n\\ndocument.onmousemove = function(e){\\n  console.log('X:', e.clientX, 'Y:', e.clientY);\\n};"
+    code: "caixa.onmouseenter = function() {\\n  caixa.style.opacity = '1';\\n}\\n\\ndocument.onmousemove = function(e){\n  console.log('X:', e.clientX, 'Y:', e.clientY);\\n};"
   },
   {
     id: "12", label: "TECLADO", title: "Keyboard Events", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Keyboard,
@@ -136,7 +137,7 @@ const detailedTopics = [
       "Impede envios duplos forçando preventDefault."
     ],
     details: ["keydown", "keyup", "Event Property", "e.key"],
-    code: "searchBox.addEventListener('keydown', (ev) => {\n  if (ev.key === 'Enter') {\n    fetchQuery(this.value);\n  }\n  if (/\\d/.test(ev.key)) {\n    ev.preventDefault(); // Nega nros\n  }\n});"
+    code: "searchBox.addEventListener('keydown', (ev) => {\\n  if (ev.key === 'Enter') {\\n    fetchQuery(this.value);\\n  }\\n  if (/\\\\d/.test(ev.key)) {\\n    ev.preventDefault(); // Nega nros\\n  }\\n});"
   },
   {
     id: "13", label: "CRONOMETRIA", title: "Timing Events", colorText: "text-violet-500", colorDot: "bg-violet-500", icon: Clock,
@@ -147,7 +148,7 @@ const detailedTopics = [
       "Fundamental expurgar com clearTimeout na UI virtual."
     ],
     details: ["setTimeout", "setInterval", "clearTimeout"],
-    code: "let t = setTimeout(() => {\n  modalAlert('Você inativo 5min!');\n}, 30000);\n\n// Caso o usuário confirme presença antes:\nclearTimeout(t);"
+    code: "let t = setTimeout(() => {\\n  modalAlert('Você inativo 5min!');\\n}, 30000);\\n\\n// Caso o usuário confirme presença antes:\\nclearTimeout(t);"
   },
   {
     id: "14", label: "LOAD EVENT", title: "Load Events", colorText: "text-sky-500", colorDot: "bg-sky-500", icon: Loader2,
@@ -158,7 +159,7 @@ const detailedTopics = [
       "Eventos cruciais na desmontagem unload e beforeunload."
     ],
     details: ["onload", "DOMContentLoaded", "onbeforeunload"],
-    code: "// Disparando rápido sem imagens\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log('DOM Montado!');\n});\n\n// Disparando lento com imagens\nwindow.onload = () => console.log('Pronto');"
+    code: "// Disparando rápido sem imagens\\ndocument.addEventListener('DOMContentLoaded', () => {\\n  console.log('DOM Montado!');\\n});\\n\\n// Disparando lento com imagens\\nwindow.onload = () => console.log('Pronto');"
   },
   {
     id: "15", label: "LISTENERS", title: "addEventListener", colorText: "text-fuchsia-500", colorDot: "bg-fuchsia-500", icon: Ear,
@@ -169,7 +170,7 @@ const detailedTopics = [
       "Aceita remoção elegante com 'removeEventListener'."
     ],
     details: ["addEventListener", "removeEventListener", "Event Handler"],
-    code: "const btn = document.getElementById('save');\n\nfunction startAnim() { ... }\nfunction sendData() { ... }\n\n// Acoplando camadas juntas\nbtn.addEventListener('click', startAnim);\nbtn.addEventListener('click', sendData);"
+    code: "const btn = document.getElementById('save');\\n\\nfunction startAnim() { ... }\\nfunction sendData() { ... }\\n\\n// Acoplando camadas juntas\\nbtn.addEventListener('click', startAnim);\\nbtn.addEventListener('click', sendData);"
   },
   {
     id: "16", label: "PROPAGAÇÃO", title: "Manage Bubbling", colorText: "text-teal-500", colorDot: "bg-teal-500", icon: ArrowUpCircle,
@@ -180,20 +181,13 @@ const detailedTopics = [
       "e.stopPropagation(): Método salva as sub-camadas de loops."
     ],
     details: ["Bubbling", "Capturing", "stopPropagation()"],
-    code: "// 3º arg: false(Bubble), true(Capture)\nboxPai.addEventListener('click', () => {}, false);\n\nbtnFilho.addEventListener('click', (ev) => {\n  ev.stopPropagation(); // Trava!\n  console.log('So no filho!');\n}, false);"
+    code: "// 3º arg: false(Bubble), true(Capture)\\nboxPai.addEventListener('click', () => {}, false);\\n\\nbtnFilho.addEventListener('click', (ev) => {\\n  ev.stopPropagation(); // Trava!\\n  console.log('So no filho!');\\n}, false);"
   }
 ];
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isLightMode, setIsLightMode] = useState(false);
-  const [zoom, setZoom] = useState(1);
   const totalSlides = detailedTopics.length + 1; // 1 home + 16 topics
-
-  // Zoom logic applies to root HTML node
-  useEffect(() => {
-    document.documentElement.style.fontSize = `${16 * zoom}px`;
-  }, [zoom]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -206,15 +200,6 @@ export default function App() {
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         e.preventDefault();
         setCurrentSlide((prev) => Math.max(prev - 1, 0));
-      } else if (e.key.toLowerCase() === 'p') {
-        e.preventDefault();
-        setIsLightMode((prev) => !prev);
-      } else if (e.key === '+' || e.key === '=') {
-        e.preventDefault();
-        setZoom((prev) => Math.min(prev + 0.1, 2));
-      } else if (e.key === '-') {
-        e.preventDefault();
-        setZoom((prev) => Math.max(prev - 0.1, 0.5));
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -222,34 +207,7 @@ export default function App() {
   }, [totalSlides]);
 
   return (
-    <div 
-      className="h-screen w-screen bg-[#05060a] text-white font-sans overflow-hidden flex flex-col relative selection:bg-blue-500/30"
-      style={{ filter: isLightMode ? 'invert(1) hue-rotate(180deg)' : 'none', transition: 'filter 0.5s ease' }}
-    >
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-        <button 
-          onClick={() => setZoom(prev => Math.max(prev - 0.1, 0.5))}
-          className="p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md border border-white/10 transition-colors cursor-pointer"
-          title="Diminuir Fonte (-)"
-        >
-          <ZoomOut className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-        </button>
-        <button 
-          onClick={() => setZoom(prev => Math.min(prev + 0.1, 2))}
-          className="p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md border border-white/10 transition-colors cursor-pointer"
-          title="Aumentar Fonte (+)"
-        >
-          <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-        </button>
-        <button 
-          onClick={() => setIsLightMode(!isLightMode)}
-          className="p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md border border-white/10 transition-colors cursor-pointer"
-          title="Alternar Tema (P)"
-        >
-          {isLightMode ? <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
-        </button>
-      </div>
-
+    <div className="h-screen w-screen bg-[#05060a] text-white font-sans overflow-hidden flex flex-col relative selection:bg-blue-500/30">
       {/* Background Orbs */}
       <div className="fixed top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
       <div className="fixed bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
@@ -268,7 +226,7 @@ export default function App() {
             <button 
               key={idx} 
               onClick={() => setCurrentSlide(idx)} 
-              className={`rounded-full transition-all duration-300 ease-out cursor-pointer ${currentSlide === idx ? 'h-1.5 w-3 sm:h-1.5 sm:w-5 bg-blue-500' : 'h-1 w-1 sm:h-1.5 sm:w-1.5 bg-white/20 hover:bg-white/40'}`} 
+              className={\`rounded-full transition-all duration-300 ease-out cursor-pointer \${currentSlide === idx ? 'h-1.5 w-3 sm:h-1.5 sm:w-5 bg-blue-500' : 'h-1 w-1 sm:h-1.5 sm:w-1.5 bg-white/20 hover:bg-white/40'}\`} 
             />
           ))}
         </div>
@@ -284,7 +242,7 @@ export default function App() {
       {/* Slides Track */}
       <div 
         className="flex w-full h-full transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10"
-        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+        style={{ transform: \`translateX(-\${currentSlide * 100}vw)\` }}
       >
         {/* SLIDE 0: Overview Map Grid */}
         <div className="w-screen h-screen flex-shrink-0 flex flex-col relative items-center justify-center py-4 px-2 sm:p-6 lg:p-8 box-border overflow-hidden">
@@ -312,8 +270,8 @@ export default function App() {
                   >
                     <div>
                       <div className="flex items-center gap-1.5 mb-1 sm:mb-2">
-                        <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 ${topic.colorText}`} />
-                        <span className={`font-mono text-[8px] sm:text-[10px] tracking-wider ${topic.colorText}`}>{topic.id} {topic.label}</span>
+                        <IconComponent className={\`w-3 h-3 sm:w-4 sm:h-4 \${topic.colorText}\`} />
+                        <span className={\`font-mono text-[8px] sm:text-[10px] tracking-wider \${topic.colorText}\`}>{topic.id} {topic.label}</span>
                       </div>
                       <h3 className="text-[11px] sm:text-sm lg:text-base font-semibold leading-tight line-clamp-1 mb-0.5">{topic.title}</h3>
                       <p className="text-[9px] sm:text-[11px] text-gray-400 leading-snug line-clamp-2 md:line-clamp-3 block">{topic.description}</p>
@@ -352,14 +310,14 @@ export default function App() {
                 <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
                   
                   {/* Huge Background Number */}
-                  <div className={`absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 text-[150px] sm:text-[250px] lg:text-[400px] font-bold opacity-[0.02] ${topic.colorText} pointer-events-none font-mono selection:bg-transparent z-0`}>
+                  <div className={\`absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 text-[150px] sm:text-[250px] lg:text-[400px] font-bold opacity-[0.02] \${topic.colorText} pointer-events-none font-mono selection:bg-transparent z-0\`}>
                     {topic.id}
                   </div>
 
                   {/* Text Content */}
                   <div className="flex-[1.2] w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
-                    <div className={`font-mono text-[9px] sm:text-xs mb-2 sm:mb-4 font-semibold tracking-widest flex items-center gap-2 sm:gap-3 ${topic.colorText} flex-shrink-0`}>
-                      <div className={`p-1.5 sm:p-2 rounded-lg bg-white/5 border border-white/5 shadow-inner`}>
+                    <div className={\`font-mono text-[9px] sm:text-xs mb-2 sm:mb-4 font-semibold tracking-widest flex items-center gap-2 sm:gap-3 \${topic.colorText} flex-shrink-0\`}>
+                      <div className={\`p-1.5 sm:p-2 rounded-lg bg-white/5 border border-white/5 shadow-inner\`}>
                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 opacity-90" />
                       </div>
                       <span>{topic.id}. {topic.label}</span>
@@ -376,7 +334,7 @@ export default function App() {
                       <ul className="space-y-2.5 sm:space-y-4">
                         {topic.points.map((point, idx) => (
                           <li key={idx} className="flex flex-row items-start gap-2.5 sm:gap-3 bg-white/[0.02] p-2.5 sm:p-3 rounded-lg border border-white/[0.03] hover:bg-white/[0.04] transition-colors">
-                            <CheckCircle2 className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 ${topic.colorText}`} />
+                            <CheckCircle2 className={\`w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 \${topic.colorText}\`} />
                             <span className="text-gray-300 md:text-gray-400 text-[10px] sm:text-[13px] lg:text-[14px] leading-snug sm:leading-relaxed">{point}</span>
                           </li>
                         ))}
@@ -386,7 +344,7 @@ export default function App() {
                     <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 pt-3 border-t border-white/5 flex-shrink-0">
                       {topic.details.map((detail, idx) => (
                         <span key={idx} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-black/40 border border-white/5 rounded-full text-[9px] sm:text-xs text-gray-300 font-mono flex items-center gap-1.5 shadow-sm">
-                          <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${topic.colorDot}`}></div>
+                          <div className={\`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full \${topic.colorDot}\`}></div>
                           {detail}
                         </span>
                       ))}
@@ -409,7 +367,7 @@ export default function App() {
                       <div className="absolute top-0 right-0 p-2 opacity-10 pointer-events-none">
                         <IconComponent className="w-16 h-16 sm:w-24 sm:h-24" />
                       </div>
-                      <pre className={`text-[10px] sm:text-xs lg:text-[13px] font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
+                      <pre className={\`text-[10px] sm:text-xs lg:text-[13px] font-mono leading-[1.6] \${topic.colorText} brightness-125\`}>
                         <code>{topic.code}</code>
                       </pre>
                     </div>
@@ -422,7 +380,7 @@ export default function App() {
         })}
       </div>
       
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{__html: \`
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
           height: 4px;
@@ -437,7 +395,11 @@ export default function App() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: rgba(255, 255, 255, 0.2);
         }
-      `}} />
+      \`}} />
     </div>
   );
 }
+`;
+
+fs.writeFileSync("src/App.tsx", replacement);
+console.log("Rewrite completed successfully!");
