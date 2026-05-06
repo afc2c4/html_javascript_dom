@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   Network, Settings2, Search, FileEdit, Palette, ShieldCheck, PlaySquare, Globe, Fingerprint, CheckCircle2,
   ChevronLeft, ChevronRight, Zap, MousePointer2, Keyboard, Loader2, Clock, Ear, ArrowUpCircle, Sun, Moon,
-  ZoomIn, ZoomOut, Lightbulb, X
+  ZoomIn, ZoomOut, Lightbulb, X, Play, Layout, Power, Eye
 } from 'lucide-react';
 
 type AnalogyData = { items: string[]; images: string[] };
@@ -270,6 +271,467 @@ const analogies: Record<string, AnalogyData> = {
       "O programador forte sempre projeta um botão elétrico para trocar tudo pro sistema da bateria reserva silenciosa, rodando seguro pro offline."
     ],
     images: ["https://image.pollinations.ai/prompt/split%20road%20sunny%20happy%20path%20vs%20dark%20stormy%20path%20glowing%20signs?width=600&height=400&nologo=true"]
+  },
+
+  "v01": {
+    items: [
+      "O Vue é como um assistente de palco inteligente em um grande teatro.",
+      "Em vez de você carregar cada cenário manualmente toda vez que a cena muda...",
+      "Você apenas entrega o roteiro (Estado) e ele move todas as peças precisamente para que o público veja o que deve ver."
+    ],
+    images: ["https://image.pollinations.ai/prompt/theater%20stage%20assistant%20moving%20glowing%20props%20futuristic?width=600&height=400&nologo=true"]
+  },
+  "v02": {
+    items: [
+      "A Abstração Progressiva é como uma caixa de ferramentas modular de um astronauta.",
+      "Para um reparo pequeno, ele tira apenas a chave de fenda (o script tag).",
+      "Mas se a missão for complexa, ele conecta toda a oficina externa (Vite/Build Tools) para ter poder total."
+    ],
+    images: ["https://image.pollinations.ai/prompt/modular%20astronaut%20toolbox%20glowing%20tools%20space?width=600&height=400&nologo=true"]
+  },
+  "v03": {
+    items: [
+      "O Componente de Arquivo Único (SFC) é como um kit de refeição gourmet em uma caixa.",
+      "Os ingredientes (Template), a receita (Script) e a decoração do prato (Style) vêm todos juntos.",
+      "Isso evita que você tenha que correr pela cozinha inteira buscando peças em gavetas diferentes (HTML/JS/CSS separados)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20gourmet%20meal%20kit%20box%20futuristic%20design?width=600&height=400&nologo=true"]
+  },
+  "v04": {
+    items: [
+      "Os Estilos de API são como dois métodos de organização de uma biblioteca.",
+      "A Options API é como estantes fixas marcadas: 'Ficção', 'História' (data, methods).",
+      "A Composition API é como organizar por 'Temas': tudo sobre Dragões num canto, tudo sobre Viagens noutro, não importa o gênero."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20library%20organizing%20books%20with%20holograms?width=600&height=400&nologo=true"]
+  },
+  "v05": {
+    items: [
+      "Criar um projeto com 'create-vue' é como plantar uma semente de árvore tecnológica geneticamente modificada.",
+      "Você não precisa construir cada galho e folha manualmente do zero.",
+      "O comando prepara o solo (Vite), instala as raízes (Dependências) e deixa a estrutura pronta para você apenas decorar os frutos (Funcionalidades)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20tech%20seed%20growing%20into%20a%20digital%20tree%20fast%20motion?width=600&height=400&nologo=true"]
+  },
+  "v06": {
+    items: [
+      "A estrutura de pastas do Vite é como o mapa de compartimentos de uma estação espacial ultra-eficiente.",
+      "Cada coisa tem seu setor: os mantimentos em 'public', o motor e oxigênio em 'src', e os protocolos de voo em 'vite.config.ts'.",
+      "Essa organização garante que a nave decole rápido (HMR instantâneo) e nada fique solto flutuando no vácuo durante a missão."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20space%20station%20interior%20blueprints%20glowing%20neon?width=600&height=400&nologo=true"]
+  },
+  "v07": {
+    items: [
+      "Usar o Vue via CDN é como pedir uma refeição pronta por delivery em vez de montar uma cozinha industrial completa em casa.",
+      "Se você só quer um lanche rápido (uma interação pequena numa página), basta chamar o entregador (o script tag da rede).",
+      "Você economiza tempo de 'instalação' de fogões e pias (Vite/Build), mas para banquetes gigantes (SPAs), a cozinha própria ainda é melhor."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20food%20delivery%20drone%20glowing%20cyberpunk%20city?width=600&height=400&nologo=true"]
+  },
+  "v08": {
+    items: [
+      "O 'Import Map' é como um painel de indexação mestre em uma base secreta subterrânea gigante.",
+      "Ele mapeia que quando alguém grita 'VUE!', os robôs devem correr para o corredor C e buscar o item exato.",
+      "Sem ele, você teria que dar o endereço completo de latitude e longitude (a URL longa da CDN) toda vez que quisesse um parafuso novo."
+    ],
+    images: ["https://image.pollinations.ai/prompt/secret%20underground%20base%20glowing%20control%20panel%20map?width=600&height=400&nologo=true"]
+  },
+  "v09": {
+    items: [
+      "A Instância da Aplicação (createApp) é como o motor de ignição de um foguete.",
+      "Sem ele, você tem apenas metal frio e circuitos (HTML/JS parado).",
+      "Ao ligar a ignição, todos os sistemas de suporte à vida e propulsão (Plugins, State) acordam e se preparam para a missão."
+    ],
+    images: ["https://image.pollinations.ai/prompt/rocket%20engine%20ignition%20glowing%20blue%20fire%20futuristic?width=600&height=400&nologo=true"]
+  },
+  "v10": {
+    items: [
+      "O Componente Raiz é como a cabine de comando do capitão no topo desse foguete.",
+      "É o ponto de partida de todas as decisões; se ele não estiver lá, não há ninguém para dar ordens aos subsistemas.",
+      "Tudo o que acontece na nave (os componentes filhos) reporta direta ou indiretamente a essa central de controle."
+    ],
+    images: ["https://image.pollinations.ai/prompt/spaceship%20cockpit%20captain%20seat%20glowing%20holograms?width=600&height=400&nologo=true"]
+  },
+  "v11": {
+    items: [
+      "Montar a aplicação (.mount) é como encaixar o foguete na sua rampa de lançamento específica (o elemento HTML).",
+      "Até você acoplar, o foguete é apenas uma ideia ou um protótipo solto.",
+      "No momento que ele clica na rampa (DOM), as luzes se acendem e a ponte entre o código e o mundo real é estabelecida."
+    ],
+    images: ["https://image.pollinations.ai/prompt/rocket%20launch%20pad%20connecting%20glowing%20clamps?width=600&height=400&nologo=true"]
+  },
+  "v12": {
+    items: [
+      "A Interpolação de Texto (Mustaches) é como uma legenda holográfica que muda sozinha sobre um objeto.",
+      "Você não precisa ir lá e reescrever a placa toda vez que o preço ou o nome muda.",
+      "O sistema de projeção apenas lê o valor da memória e atualiza a luz flutuante instantaneamente."
+    ],
+    images: ["https://image.pollinations.ai/prompt/holographic%20label%20floating%20over%20item%20glowing%20text?width=600&height=400&nologo=true"]
+  },
+  "v13": {
+    items: [
+      "O v-bind (:) é como uma pulseira inteligente que muda a cor e a permissão de quem a veste.",
+      "Em vez de trocar a pulseira toda, você apenas altera o sinal enviado para ela (os atributos).",
+      "A pulseira responde mudando seu comportamento ou aparência conforme o nível de acesso do usuário."
+    ],
+    images: ["https://image.pollinations.ai/prompt/smart%20wristband%20changing%20colors%20glowing%20futuristic?width=600&height=400&nologo=true"]
+  },
+  "v14": {
+    items: [
+      "Expressões JavaScript no template são como ter uma mini-calculadora embutida na sua viseira de realidade aumentada.",
+      "Você não precisa voltar para a base para fazer cálculos simples de 'Soma' ou 'Inversão'.",
+      "A viseira resolve a matemática básica ali mesmo, diante dos seus olhos, enquanto você observa o ambiente."
+    ],
+    images: ["https://image.pollinations.ai/prompt/augmented%20reality%20visor%20showing%20math%20calculations%20glowing?width=600&height=400&nologo=true"]
+  },
+  "v15": {
+    items: [
+      "O 'ref()' é como fixar um sensor de rastreamento em uma caixa solitária.",
+      "O Vue passa a 'vigiar' essa caixa com um drone constante.",
+      "Assim que algo entra ou sai da caixa, o drone avisa o painel de controle para redesenhar o mapa da interface."
+    ],
+    images: ["https://image.pollinations.ai/prompt/high%20tech%20sensor%20on%20a%20glowing%20box%20drone%20scanning?width=600&height=400&nologo=true"]
+  },
+  "v16": {
+    items: [
+      "O 'reactive()' é como eletrificar toda a estrutura de uma estante de arquivos.",
+      "Cada gaveta, cada pasta e cada papel lá dentro agora tem um chip de presença.",
+      "Não importa onde você mexa na estante, o sistema central sente a vibração e atualiza o inventário geral."
+    ],
+    images: ["https://image.pollinations.ai/prompt/electrified%20filing%20cabinet%20glowing%20blue%20data%20streams?width=600&height=400&nologo=true"]
+  },
+  "v17": {
+    items: [
+      "A Mutação de Reatividade é como um espelho que reflete o futuro antes mesmo dele acontecer.",
+      "Quando você muda o valor (o estado), a realidade física (o DOM) tenta se ajustar na mesma velocidade da luz.",
+      "É um laço de feedback invisível que garante que o que você vê é sempre a verdade absoluta dos dados."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20mirror%20reflecting%20digital%20data%20transformation?width=600&height=400&nologo=true"]
+  },
+  "v18": {
+    items: [
+      "Uma Propriedade Computada é como um visor de 'Resumo' em um traje de combate.",
+      "Ele não fica recalculando o oxigênio a cada nanosegundo se você está parado; ele apenas mostra o último valor guardado.",
+      "Ele só gasta energia para atualizar quando sente que o tanque de oxigênio (a dependência) realmente variou."
+    ],
+    images: ["https://image.pollinations.ai/prompt/combat%20suit%20hud%20showing%20oxygen%20stats%20glowing?width=600&height=400&nologo=true"]
+  },
+  "v19": {
+    items: [
+      "O Cache de Computadas é como um assistente que já decorou a resposta de uma pergunta difícil.",
+      "Se você perguntar de novo e nada mudou no mundo, ele responde instantaneamente sem ler os livros novamente.",
+      "Isso poupa um tempo imenso de 'estudo' (processamento) que seria desperdiçado em resultados repetidos."
+    ],
+    images: ["https://image.pollinations.ai/prompt/smart%20android%20assistant%20recalling%20data%20fast?width=600&height=400&nologo=true"]
+  },
+  "v20": {
+    items: [
+      "A Computada Gravável (Writable) é como um termostato inteligente de última geração.",
+      "Você pode ler a temperatura (Get), mas se você forçar o ponteiro para cima (Set), ele automaticamente ajusta a potência do ar condicionado lá fora.",
+      "É um canal de mão dupla onde a visão e a causa estão sincronizadas por uma lógica secreta interna."
+    ],
+    images: ["https://image.pollinations.ai/prompt/smart%20thermostat%20changing%20colors%20glowing%20dial?width=600&height=400&nologo=true"]
+  },
+  "v21": {
+    items: [
+      "O Vínculo de Classe (Objeto) é como um uniforme que muda de detalhes dependendo do seu status.",
+      "Se você está ferido, a luz no ombro fica vermelha (:class='{ danger: isHurt }').",
+      "É uma forma automática de vestir o elemento com a aparência certa sem precisar trocar de roupa manualmente."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20soldier%20armor%20changing%20colors%20glowing%20red%20blue?width=600&height=400&nologo=true"]
+  },
+  "v22": {
+    items: [
+      "O Vínculo de Classe (Array) é como carregar várias medalhas ou acessórios ao mesmo tempo.",
+      "Você pode ter a medalha de 'Velocidade', de 'Fogo' e de 'Voo' simultaneamente.",
+      "O Vue apenas combina todos os estilos que você acumulou e os aplica de uma vez só no seu perfil."
+    ],
+    images: ["https://image.pollinations.ai/prompt/hero%20shoulder%20pads%20with%20multiple%20glowing%20badges?width=600&height=400&nologo=true"]
+  },
+  "v23": {
+    items: [
+      "Estilos Inline Dinâmicos são como um laser de pintura que ajusta milimetricamente a cor e o tamanho do objeto.",
+      "Em vez de escolher uma roupa pronta (Classe), você está alterando a fibra exata do tecido em tempo real.",
+      "Isso dá um controle total sobre valores que mudam constantemente, como a posição de um cursor ou a largura de uma barra de vida."
+    ],
+    images: ["https://image.pollinations.ai/prompt/laser%20projector%20coloring%20a%20cube%20dynamic%20neon?width=600&height=400&nologo=true"]
+  },
+  "v24": {
+    items: [
+      "O 'v-if' é como uma porta dimensional que só abre se você tiver a chave certa.",
+      "Se você não tem a chave, o resto do cômodo simplesmente não existe no nosso universo (DOM).",
+      "Isso economiza energia e espaço da realidade, criando a matéria apenas quando necessário."
+    ],
+    images: ["https://image.pollinations.ai/prompt/interdimensional%20portal%20opening%20glowing%20blue?width=600&height=400&nologo=true"]
+  },
+  "v25": {
+    items: [
+      "O 'v-show' é como um manto de invisibilidade de um espião.",
+      "O espião continua ali parado no mesmo lugar, ocupando espaço e respirando (está no DOM).",
+      "Você apenas ligou o campo de força que o torna invisível aos olhos (display: none)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/invisibility%20cloak%20shimmering%20stealth%20tech?width=600&height=400&nologo=true"]
+  },
+  "v26": {
+    items: [
+      "O v-if com '<template>' é como um grupo de soldados que se movem em formação fantasmagórica.",
+      "Eles não precisam de uma caixa física (div) em volta deles para serem controlados.",
+      "Se o capitão dá a ordem, o grupo todo aparece ou some, mantendo a formação limpa."
+    ],
+    images: ["https://image.pollinations.ai/prompt/ghostly%20army%20units%20appearing%20in%20formation%20neon?width=600&height=400&nologo=true"]
+  },
+  "v27": {
+    items: [
+      "O 'v-for' básico é como uma linha de montagem ultrarrápida de clones robóticos.",
+      "Você entrega um molde (o template) e uma lista de instruções (o Array).",
+      "A máquina dispara e constrói um robô perfeito para cada instrução da lista em milissegundos."
+    ],
+    images: ["https://image.pollinations.ai/prompt/robot%20factory%20assembly%20line%20cloning%20process?width=600&height=400&nologo=true"]
+  },
+  "v28": {
+    items: [
+      "O v-for com Objetos é como ler as especificações de uma peça técnica detalhada.",
+      "Você percorre cada detalhe: 'Peso', 'Material', 'Data de Fabricação'.",
+      "Para cada característica, o sistema gera uma linha no visor, extraindo tanto o nome quanto o valor de forma automática."
+    ],
+    images: ["https://image.pollinations.ai/prompt/mechanical%20blueprints%20scanning%20data%20hologram?width=600&height=400&nologo=true"]
+  },
+  "v29": {
+    items: [
+      "A ':key' é como colocar um rastreador GPS único em cada drone de uma frota de milhares.",
+      "Sem o rastreador, se dois drones trocam de lugar no ar, o controle central fica confuso.",
+      "Com a chave única, o Vue sabe exatamente quem é quem, mesmo que a frota inteira se reorganize."
+    ],
+    images: ["https://image.pollinations.ai/prompt/swarm%20of%20drones%20each%20with%20unique%20glowing%20id?width=600&height=400&nologo=true"]
+  },
+  "v30": {
+    items: [
+      "Escutar Eventos (v-on / @) é como instalar sensores de pressão em cada botão de um painel nuclear.",
+      "O Vue fica ali, com o ouvido encostado no metal, esperando o 'click' ou o 'toque'.",
+      "Assim que sente a vibração, ele dispara instantaneamente o protocolo que você programou."
+    ],
+    images: ["https://image.pollinations.ai/prompt/finger%20touching%20glowing%20control%20panel%20sensor?width=600&height=400&nologo=true"]
+  },
+  "v31": {
+    items: [
+      "Argumentos de Evento são como entregar um pacote de dados junto com um sinal de socorro.",
+      "Não basta dizer 'Aconteceu algo!'; você envia também o 'O que', 'Onde' e 'Quem'.",
+      "O socorrista (o método) recebe o pacote e já sabe exatamente como agir."
+    ],
+    images: ["https://image.pollinations.ai/prompt/data%20capsule%20flying%20through%20digital%20tunnel?width=600&height=400&nologo=true"]
+  },
+  "v32": {
+    items: [
+      "Modificadores de Evento (.stop, .prevent) são como filtros de segurança em um comunicador de rádio.",
+      "O '.stop' impede que a mensagem vaze para os canais vizinhos (Propagação).",
+      "O '.prevent' desliga o comportamento automático e teimoso do rádio (Submit/Reload)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/radio%20signal%20filtering%20glowing%20waveforms?width=600&height=400&nologo=true"]
+  },
+  "v33": {
+    items: [
+      "O 'v-model' é como um túnel de teletransporte instantâneo entre o que você digita e a alma da aplicação.",
+      "Se você digita um 'A', o estado reativo sente na hora. Se o estado mudar no código, o texto na tela se altera sozinho.",
+      "É uma conexão telepática que mantém a UI e os Dados em perfeita harmonia."
+    ],
+    images: ["https://image.pollinations.ai/prompt/teleportation%20tunnel%20glowing%20blue%20data%20transfer?width=600&height=400&nologo=true"]
+  },
+  "v34": {
+    items: [
+      "O Sincronizador de Texto é como uma caneta mágica que escreve em dois lugares ao mesmo tempo.",
+      "Uma ponta escreve no papel (o Input), a outra ponta escreve na memória do computador (JS).",
+      "Não há atraso, não há erro de cópia; as informações são gêmeas idênticas em dois mundos."
+    ],
+    images: ["https://image.pollinations.ai/prompt/magical%20pen%20writing%20glowing%20words%20on%20paper%20and%20screen?width=600&height=400&nologo=true"]
+  },
+  "v35": {
+    items: [
+      "Checkbox e Select dinâmicos são como um painel de triagem em uma central de logística.",
+      "Ao clicar em uma opção, um sinal elétrico é enviado para a lista mestra, marcando aquele item como 'Selecionado'.",
+      "O sistema de transporte inteligente já sabe quais caixas deve carregar no próximo lote baseado nessas marcações."
+    ],
+    images: ["https://image.pollinations.ai/prompt/logistics%20dashboard%20with%20glowing%20checkboxes%20and%20data?width=600&height=400&nologo=true"]
+  },
+  "v36": {
+    items: [
+      "O Gatilho 'onMounted' é como o grito de 'ESTAMOS VIVOS!' após a nave pousar em solo firme.",
+      "O motor da nave (DOM) já está acoplado e os sensores já podem ler o terreno real.",
+      "É o momento perfeito para ligar as câmeras e começar a buscar dados (Requisições API)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/spaceship%20landing%20on%20neon%20planet%20glowing%20lights?width=600&height=400&nologo=true"]
+  },
+  "v37": {
+    items: [
+      "O Gatilho 'onUpdated' é como um sistema de radar que emite um bipe toda vez que a paisagem muda.",
+      "Se uma montanha de dados cresceu ou diminuiu, o componente percebe e avisa: 'A realidade foi recalibrada'.",
+      "Útil para ajustar câmeras ou efeitos visuais após os dados forçarem uma mudança de layout."
+    ],
+    images: ["https://image.pollinations.ai/prompt/radar%20screen%20beeping%20glowing%20green%20data%20fluctuation?width=600&height=400&nologo=true"]
+  },
+  "v38": {
+    items: [
+      "O Gatilho 'onUnmounted' é como o protocolo de limpeza de uma base secreta antes dela ser abandonada.",
+      "Você desliga as luzes, corta a energia e limpa os rastros (Event Listeners e Timers).",
+      "Isso garante que nada fique rodando inutilmente e gastando os recursos do computador (Vazamentos de Memória)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/secret%20base%20shutting%20down%20lights%20fading%20out?width=600&height=400&nologo=true"]
+  },
+  "v39": {
+    items: [
+      "Observadores (watch) são como cães de guarda robóticos treinados para vigiar uma única caixa específica.",
+      "Eles não fazem nada enquanto a caixa estiver parada.",
+      "Mas se a caixa vibrar (o dado mudar), o cão late e executa uma ação de resposta imediata."
+    ],
+    images: ["https://image.pollinations.ai/prompt/cyber%20guard%20dog%20watching%20a%20glowing%20box%20intensely?width=600&height=400&nologo=true"]
+  },
+  "v40": {
+    items: [
+      "O Deep Watcher é como usar um raio-X para espiar dentro de várias caixas umas dentro das outras.",
+      "O cão de guarda não olha só para a superfície da caixa grande; ele vê se uma formiga se mexeu lá no fundo da última caixa.",
+      "É um monitoramento pesado que não deixa escapar nenhum detalhe, por mais enterrado que esteja no objeto."
+    ],
+    images: ["https://image.pollinations.ai/prompt/x-ray%20vision%20scanning%20nested%20boxes%20glowing%20data?width=600&height=400&nologo=true"]
+  },
+  "v41": {
+    items: [
+      "O 'watchEffect' é como um sistema de vigília onipresente que olha para tudo ao mesmo tempo.",
+      "Ele não precisa ser avisado de quem observar; ele observa todos que estão participando da conversa no momento.",
+      "Se qualquer um dos envolvidos mudar de ideia, o sistema de vigília reage instantaneamente sem precisar de nomes ou IDs."
+    ],
+    images: ["https://image.pollinations.ai/prompt/panopticon%20surveillance%20system%20glowing%20digital%20eyes?width=600&height=400&nologo=true"]
+  },
+  "v42": {
+    items: [
+      "Referências de Template (ref) são como colocar uma etiqueta mágica direta em um objeto físico.",
+      "Elas permitem que o seu código estique o braço e toque no objeto real do DOM.",
+      "É o último recurso para quando a 'telepatia' do Vue não é suficiente e você precisa interagir fisicamente com a máquina."
+    ],
+    images: ["https://image.pollinations.ai/prompt/mystical%20tag%20attached%20to%20a%20futuristic%20machine%20glowing?width=600&height=400&nologo=true"]
+  },
+  "v43": {
+    items: [
+      "Referências em Componentes são como ter o controle remoto direto da cabine de comando de outra nave.",
+      "Você não está apenas enviando uma mensagem; você está acessando os painéis internos e botões daquela nave.",
+      "Use com cuidado! Dar ordens diretas para outras naves pode criar um caos de comunicação se não houver disciplina."
+    ],
+    images: ["https://image.pollinations.ai/prompt/spaceship%20remote%20control%20accessing%20other%20ship%20internal?width=600&height=400&nologo=true"]
+  },
+  "v44": {
+    items: [
+      "Referências em v-for são como dar um walkie-talkie para cada membro de um pelotão de elite.",
+      "Você agora tem uma lista de contatos para falar com cada soldado individualmente.",
+      "Pode pedir para o soldado 5 baixar a cabeça e o soldado 12 atirar, tudo de forma coordenada e precisa."
+    ],
+    images: ["https://image.pollinations.ai/prompt/squad%20of%20soldiers%20each%20with%20glowing%20walkie-talkie?width=600&height=400&nologo=true"]
+  },
+  "v45": {
+    items: [
+      "Fundamentos dos Componentes são como módulos espaciais de uma estação orbital modular.",
+      "Cada módulo tem seu próprio oxigênio, luz e lógica, mas todos se encaixam perfeitamente para criar algo maior.",
+      "É a arte de dividir um castelo gigante em pequenas salas portáteis e reutilizáveis."
+    ],
+    images: ["https://image.pollinations.ai/prompt/space%20station%20modules%20assembling%20in%20orbit%20glowing?width=600&height=400&nologo=true"]
+  },
+  "v46": {
+    items: [
+      "Props são como cápsulas de suprimentos enviadas da nave mãe para os exploradores terrestres.",
+      "Os exploradores usam o que está dentro da cápsula (Dados) para sobreviver e se orientar.",
+      "Importante: É uma via de mão única; os exploradores nunca mandam a cápsula de volta com lixo (Props são imutáveis)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/supply%20capsule%20dropping%20from%20sky%20glowing%20trail?width=600&height=400&nologo=true"]
+  },
+  "v47": {
+    items: [
+      "Emits são como sinalizadores de fumaça ou luz enviados pelos exploradores para avisar a nave mãe.",
+      "'A missão acabou!', 'Encontramos água!', 'Algo deu errado!'.",
+      "A nave mãe fica olhando para o horizonte, esperando esses sinais para decidir o próximo passo da grande estratégia."
+    ],
+    images: ["https://image.pollinations.ai/prompt/exploration%20flare%20light%20reaching%20the%20stars%20glowing?width=600&height=400&nologo=true"]
+  },
+
+  // --- REACT ANALOGIES ---
+  "r01": {
+    items: [
+      "O React é como construir com blocos de LEGO inteligentes e independentes.",
+      "Cada peça tem seu próprio manual de instruções e sabe como se comportar no castelo.",
+      "Se você quiser mudar uma torre, você não precisa desmontar a base; apenas troca o 'módulo' da torre e o castelo se ajusta."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20lego%20bricks%20glowing%20assembling%20themselves?width=600&height=400&nologo=true"]
+  },
+  "r02": {
+    items: [
+      "O Virtual DOM é como um rascunho de papel para um arquiteto antes de construir o prédio real.",
+      "É muito mais rápido e barato apagar e redesenhar no papel (Memória) do que derrubar paredes (DOM Real).",
+      "O React desenha tudo no papel primeiro e só manda os pedreiros mexerem no prédio real na parte exata que mudou."
+    ],
+    images: ["https://image.pollinations.ai/prompt/architect%20drawing%20glowing%20blueprints%20hologram?width=600&height=400&nologo=true"]
+  },
+  "r03": {
+    items: [
+      "O JSX é como um sanduíche gourmet onde o pão (HTML) e o recheio (Lógica JS) são fundidos em um só.",
+      "Não há separação entre a receita e o prato; a própria estrutura do prato descreve o que ele faz.",
+      "Isso evita que você tenha que olhar em cadernos diferentes para entender por que o sanduíche tem aquele visual."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20fusion%20food%20glowing%20neon%20molecular?width=600&height=400&nologo=true"]
+  },
+  "r04": {
+    items: [
+      "O Estado (State) é como a memória de curto prazo de um robô.",
+      "Ele se lembra se a luz está acesa ou se o usuário clicou no botão de alerta.",
+      "Se o robô esquece o estado (ou ele muda), o comportamento visual do robô se altera na hora para refletir a nova realidade."
+    ],
+    images: ["https://image.pollinations.ai/prompt/cybernetic%20robot%20brain%20glowing%20synapses%20blue?width=600&height=400&nologo=true"]
+  },
+  "r05": {
+    items: [
+      "Props são como cartas de comando enviadas de um general (Componente Pai) para seus soldados (Componentes Filhos).",
+      "O soldado lê a carta e executa a ordem exatamente como foi escrita.",
+      "Mas o soldado nunca pode reescrever a carta do general; ele apenas a segue fielmente (Props são somente leitura)."
+    ],
+    images: ["https://image.pollinations.ai/prompt/holographic%20commander%20giving%20orders%20to%20squad?width=600&height=400&nologo=true"]
+  },
+
+  // --- ANGULAR ANALOGIES ---
+  "a01": {
+    items: [
+      "O Angular é como uma fábrica de automóveis ultra-organizada com protocolos de segurança rígidos.",
+      "Você não pode simplesmente colocar qualquer peça em qualquer lugar; tudo deve seguir o manual técnico obrigatório.",
+      "Essa disciplina garante que naves complexas sejam construídas com uma qualidade e estabilidade de nível militar."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20car%20factory%20automated%20robots%20precision?width=600&height=400&nologo=true"]
+  },
+  "a02": {
+    items: [
+      "A Arquitetura Modular (NgModules) é como os contêineres de um navio cargueiro gigante.",
+      "Tudo o que é relacionado a 'Navegação' fica em um contêiner; 'Pagamentos' fica em outro.",
+      "Isso permite que você carregue ou descarregue partes inteiras da funcionalidade sem bagunçar o resto do navio."
+    ],
+    images: ["https://image.pollinations.ai/prompt/giant%20cargo%20ship%20with%20glowing%20neon%20containers?width=600&height=400&nologo=true"]
+  },
+  "a03": {
+    items: [
+      "O Two-Way Data Binding é como um par de walkie-talkies sempre abertos entre a tela e o código.",
+      "Se você fala na tela (digita), o código ouve na hora. Se o código fala (muda o valor), a tela repete o som.",
+      "É um dueto eterno onde nenhum dos dois fica fora de sintonia por um segundo sequer."
+    ],
+    images: ["https://image.pollinations.ai/prompt/two%20walkie-talkies%20connected%20by%20glowing%20laser%20beam?width=600&height=400&nologo=true"]
+  },
+  "a04": {
+    items: [
+      "A Injeção de Dependência é como um sistema de encanamento inteligente em uma mansão.",
+      "A torneira (o Componente) não precisa saber onde o reservatório de água (o Serviço) está.",
+      "Ela apenas pede: 'Me dê água!', e o sistema central entrega o recurso exatamente no ponto certo da parede."
+    ],
+    images: ["https://image.pollinations.ai/prompt/high%20tech%20plumbing%20system%20glowing%20blue%20pipes?width=600&height=400&nologo=true"]
+  },
+  "a05": {
+    items: [
+      "O TypeScript no Angular é como um traje de armadura com sensores de integridade estrutural.",
+      "Se você tenta fazer um movimento impossível ou perigoso, a armadura trava e avisa o erro antes de você se machucar.",
+      "Isso transforma o desenvolvedor em um piloto mais confiante, pois o sistema vigia cada linha de código contra falhas tolas."
+    ],
+    images: ["https://image.pollinations.ai/prompt/iron%20man%20style%20suit%20with%20error%20scanners%20glowing?width=600&height=400&nologo=true"]
   },
 
   "34": {
@@ -572,6 +1034,662 @@ const analogies: Record<string, AnalogyData> = {
     images: ["https://image.pollinations.ai/prompt/cyberpunk%20ninja%20throwing%20glowing%20neon%20boomerang%20slashing%20heavy%20decimal%20rocks?width=600&height=400&nologo=true"]
   }
 };
+
+const vueContentGroups = [
+  { id: "vue-g1", title: "Introdução ao Vue (Guia Inicial)", start: 0, end: 4, color: "bg-emerald-500" },
+  { id: "vue-g2", title: "Introdução Rápida (Quick Start)", start: 4, end: 8, color: "bg-blue-500" },
+  { id: "vue-g3", title: "Fundamentos I (Aplicação e Sintaxe)", start: 8, end: 14, color: "bg-indigo-500" },
+  { id: "vue-g4", title: "Fundamentos II (Reatividade e Lógica)", start: 14, end: 20, color: "bg-purple-500" },
+  { id: "vue-g5", title: "Fundamentos III (Estilos e Condicionais)", start: 20, end: 26, color: "bg-pink-500" },
+  { id: "vue-g6", title: "Fundamentos IV (Listas e Eventos)", start: 26, end: 32, color: "bg-orange-500" },
+  { id: "vue-g7", title: "Fundamentos V (Forms e Formulários)", start: 32, end: 35, color: "bg-teal-500" },
+  { id: "vue-g8", title: "Fundamentos VI (Ciclo de Vida e Watchers)", start: 35, end: 41, color: "bg-rose-500" },
+  { id: "vue-g9", title: "Fundamentos VII (Refs e Componentização)", start: 41, end: 47, color: "bg-violet-500" }
+];
+
+const reactContentGroups = [
+  { id: "react-g1", title: "Introdução ao React", start: 0, end: 5, color: "bg-cyan-500" }
+];
+
+const angularContentGroups = [
+  { id: "angular-g1", title: "Introdução ao Angular", start: 0, end: 5, color: "bg-red-500" }
+];
+
+const vueDetailedTopics = [
+  {
+    id: "v01", label: "O QUE É VUE?", title: "O Framework Vue.js", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Globe,
+    description: "Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em padrões HTML, CSS e JavaScript e oferece um modelo de programação declarativo e baseado em componentes.",
+    points: [
+      "Renderização Declarativa: Estende o HTML padrão para descrever saídas baseadas no estado JS.",
+      "Reatividade: Rastreia automaticamente as alterações do estado JS e atualiza o DOM.",
+      "Progressivo: Pode ser uma simples biblioteca ou um framework completo."
+    ],
+    details: ["Renderização Declarativa", "Sistema de Reatividade", "Focado na Camada View", "Facilidade de Integração"],
+    code: "// Exemplo de Reatividade básica no Vue\nimport { createApp, ref } from 'vue'\n\ncreateApp({\n  setup() {\n    const count = ref(0)\n    return { count }\n  }\n}).mount('#app')"
+  },
+  {
+    id: "v02", label: "PROGRESSIVO", title: "A Abstração Progressiva", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Zap,
+    description: "Vue foi projetado para ser adaptável. Ele pode ser usado de várias maneiras, dependendo da complexidade do projeto, desde o aprimoramento de HTML estático até Single Page Applications (SPAs).",
+    points: [
+      "Sem Build: Pode ser usado diretamente via CDN como um roteiro de melhoria progressiva.",
+      "Com Build: Automação completa com Vite e componentes SFC.",
+      "Ecossistema: Router, Pinia e ferramentas oficiais integradas."
+    ],
+    details: ["Melhoria Progressiva", "Single-Page Application", "Server-Side Rendering", "Mobile & Desktop"],
+    code: "<!-- Uso via CDN (Sem Build) -->\n<script src=\"https://unpkg.com/vue@3\"></script>\n\n<div id=\"app\">{{ message }}</div>\n\n<script>\n  Vue.createApp({ data() { return { message: 'Olá Vue!' } } }).mount('#app')\n</script>"
+  },
+  {
+    id: "v03", label: "SFC", title: "Single-File Components", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: FileEdit,
+    description: "Componentes de Ficheiro Único (SFCs, ou arquivos *.vue) são a forma recomendada de escrever componentes Vue. Eles encapsulam a lógica, o modelo e os estilos em um só lugar.",
+    points: [
+      "Template: O HTML que define a estrutura visual.",
+      "Script: A lógica do componente (JS/TS).",
+      "Style: O CSS (com suporte a escopo local)."
+    ],
+    details: ["Arquivos .vue", "Encapsulamento", "Pré-processamento", "Escopo de Estilo"],
+    code: "<script setup>\nimport { ref } from 'vue'\nconst greeting = ref('Hello World!')\n</script>\n\n<template>\n  <p class=\"greeting\">{{ greeting }}</p>\n</template>\n\n<style scoped>\n.greeting { color: red; }\n</style>"
+  },
+  {
+    id: "v04", label: "API STYLES", title: "Options vs Composition API", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Layout,
+    description: "O Vue oferece dois estilos de API. Ambos resolvem os mesmos problemas, mas de maneiras organizacionais diferentes.",
+    points: [
+      "Options API: Organiza por propriedades de objeto (data, methods, mounted). Ideal para iniciantes.",
+      "Composition API: Organiza por lógica usando funções (setup, ref, computed). Ideal para reutilização e Typescript.",
+      "Intercambiável: Você pode usar ambos no mesmo projeto ou até no mesmo componente."
+    ],
+    details: ["Options API (Clássico)", "Composition API (Moderno)", "<script setup>", "Reutilização de Lógica"],
+    code: "// Composition API (Moderno)\n<script setup>\nimport { ref, onMounted } from 'vue'\n\nconst count = ref(0)\nfunction increment() { count.value++ }\n\nonMounted(() => console.log('Pronto!'))\n</script>"
+  },
+  {
+    id: "v05", label: "CRIANDO PROJETO", title: "O Comando create-vue", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Zap,
+    description: "A forma oficial de começar um projeto Vue com ferramentas de construção (build tools) é através do scaffold create-vue.",
+    points: [
+      "Comando: Execute 'npm create vue@latest' para iniciar o assistente interativo.",
+      "Ferramentas: Suporte nativo para TypeScript, JSX, Router, Pinia, Vitest, e ESLint.",
+      "Vite: Alimentado pelo motor Vite para um desenvolvimento extremamente rápido."
+    ],
+    details: ["Padrão da Indústria", "Assistente Interativo", "Configuração Modular", "Focado em DX"],
+    code: "# Criar aplicação Vue oficial\nnpm create vue@latest\n\n# Entrar na pasta e instalar\ncd <project-name>\nnpm install\nnpm run dev"
+  },
+  {
+    id: "v06", label: "ESTRUTURA", title: "Arquivos e Pastas do Projeto", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Layout,
+    description: "Um projeto Vue moderno tem uma estrutura organizada para facilitar a escalabilidade e manutenção.",
+    points: [
+      "src/main.ts: O ponto de entrada que cria e monta a instância da aplicação.",
+      "src/App.vue: O componente raiz da aplicação.",
+      "src/components/: Onde residem os componentes secundários e reutilizáveis."
+    ],
+    details: ["main.js / main.ts", "Pastas assets/ e static/", "vite.config.ts", "package.json"],
+    code: "// src/main.ts\nimport { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
+  },
+  {
+    id: "v07", label: "USO VIA CDN", title: "Vue sem Ferramentas de Build", colorText: "text-amber-400", colorDot: "bg-amber-400", icon: Globe,
+    description: "Vue pode ser usado sem um processo de build, ideal para aprimorar páginas web existentes de forma progressiva.",
+    points: [
+      "Global Build: Um único arquivo JS que expõe o objeto 'Vue' no escopo global.",
+      "ES Module Build: Aproveita o suporte nativo a módulos nos navegadores modernos.",
+      "Sem Compilação: Os templates são compilados direto no navegador (runtime)."
+    ],
+    details: ["unpkg.com", "Melhoria Progressiva", "Rápido de configurar", "Sem Node_modules"],
+    code: "<!-- ES Module Build -->\n<div id=\"app\">{{ message }}</div>\n\n<script type=\"module\">\n  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'\n  createApp({ data() { return { message: 'Hello!' } } }).mount('#app')\n</script>"
+  },
+  {
+    id: "v08", label: "IMPORT MAPS", title: "Mapas de Importação", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: Network,
+    description: "Import Maps permitem que você use aliases para URLs de módulos longos, facilitando o uso de módulos ES via CDN.",
+    points: [
+      "Aliases: Define 'vue' para apontar para uma URL específica da versão mais estável.",
+      "Organização: Mantém o código limpo ao usar imports simples como 'import { ref } from \"vue\"'.",
+      "Suporte: Funcionam nativamente em navegadores modernos sem ferramentas externas."
+    ],
+    details: ["script type='importmap'", "URLs amigáveis", "Gerenciamento de versões", "Native ESM"],
+    code: "<script type=\"importmap\">\n  {\n    \"imports\": {\n      \"vue\": \"https://unpkg.com/vue@3/dist/vue.esm-browser.js\"\n    }\n  }\n</script>\n\n<script type=\"module\">\n  import { createApp } from 'vue'\n  // 'vue' resolve para a URL acima!\n</script>"
+  },
+  {
+    id: "v09", label: "A INSTÂNCIA", title: "Criando uma Aplicação", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Settings2,
+    description: "Toda aplicação Vue começa com a criação de uma instância de aplicação usando a função createApp.",
+    points: [
+      "Ponto de Entrada: A instância é onde você registra recursos globais (plugins, diretivas).",
+      "Encapsulamento: Múltiplas instâncias podem coexistir na mesma página sem conflitos.",
+      "Cadeia: Métodos de instância como .use() e .component() podem ser encadeados."
+    ],
+    details: ["createApp", "Instância de App", "Root Component", "Plugins Globais"],
+    code: "import { createApp } from 'vue'\nconst app = createApp({ /* opções */ })\n\napp.use(myPlugin)\napp.mount('#app')"
+  },
+  {
+    id: "v10", label: "RAIZ", title: "O Componente Raiz", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
+    description: "A instância createApp requer um objeto de componente que servirá como o 'componente raiz' da árvore de componentes.",
+    points: [
+      "Pai de Todos: É o componente de nível superior que contém todos os outros.",
+      "Single File Component: Geralmente é um arquivo App.vue importado no main.js.",
+      "Opções: Pode conter dados, métodos e gatilhos de ciclo de vida globais."
+    ],
+    details: ["App.vue", "Component Tree", "Entry Point", "Root Instance"],
+    code: "// Importando o componente raiz\nimport App from './App.vue'\nconst app = createApp(App)\napp.mount('#app')"
+  },
+  {
+    id: "v11", label: "MONTAGEM", title: "Montando no DOM", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
+    description: "Uma instância de aplicação não renderizará nada até que seu método .mount() seja chamado no elemento do DOM desejado.",
+    points: [
+      "Seletor CSS: Recebe uma string (ex: '#app') ou um elemento real do DOM.",
+      "Conteúdo Inicial: O Vue limpará o conteúdo do elemento e renderizará a app dentro dele.",
+      "Último Passo: A montagem deve ocorrer após todas as configurações da aplicação (plugins, etc)."
+    ],
+    details: ["app.mount()", "Container ID", "DOM Connection", "Initial Render"],
+    code: "<div id=\"app\"></div>\n\n<script>\n  app.mount('#app')\n</script>"
+  },
+  {
+    id: "v12", label: "INTERPOLAÇÃO", title: "Sintaxe de Mustaches", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: FileEdit,
+    description: "A forma mais básica de vinculação de dados é a interpolação de texto usando as 'chaves duplas' (Double Mustaches).",
+    points: [
+      "Sincronização: O texto dentro das chaves será substituído pelo valor da propriedade correspondente.",
+      "Reatividade: Sempre que a propriedade muda, o texto no navegador é atualizado automaticamente.",
+      "Raw HTML: Mustache interpreta dados como texto puro, não HTML (use v-html para isso)."
+    ],
+    details: ["{{ expressao }}", "Text Content", "Auto-update", "Reactive Bind"],
+    code: "<span>Mensagem: {{ msg }}</span>\n\n<!-- Atencão: v-html é perigoso (XSS) -->\n<p>HTML: <span v-html=\"rawHtml\"></span></p>"
+  },
+  {
+    id: "v13", label: "ATRIBUTOS", title: "Vinculando com v-bind", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Palette,
+    description: "Mustaches não funcionam em atributos HTML. Para vincular um atributo a uma expressão dinâmica, usamos a diretiva v-bind.",
+    points: [
+      "Abreviação: Em vez de 'v-bind:id', podemos simplesmente usar ':id'.",
+      "Booleanos: Atributos como 'disabled' desaparecerão se o valor for 'falsy' (null, false, undefined).",
+      "Múltiplos Atributos: v-bind sem argumento pode vincular um objeto inteiro de atributos."
+    ],
+    details: ["v-bind:href", ":src", ":id", ":class"],
+    code: "<!-- Forma longa -->\n<div v-bind:id=\"dynamicId\"></div>\n\n<!-- Abreviação (Padrão) -->\n<button :disabled=\"isButtonDisabled\">Enviar</button>"
+  },
+  {
+    id: "v14", label: "EXPRESSÕES", title: "Lógica no Template", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: Network,
+    description: "O Vue suporta todo o poder das expressões JavaScript dentro de mustaches e diretivas, desde que seja apenas UMA expressão.",
+    points: [
+      "Unitário: Deve ser uma expressão que possa retornar um valor (não declarações como 'var a = 1').",
+      "Acesso Global: Templates têm acesso limitado a globais permitidos (Math, Date).",
+      "Simplicidade: Evite lógica complexa no template; prefixe-a em propriedades computadas."
+    ],
+    details: ["JS Expressions", "Ternários", "Math & Date", "String Interpolation"],
+    code: "{{ number + 1 }}\n{{ ok ? 'SIM' : 'NÃO' }}\n{{ message.split('').reverse().join('') }}\n\n<div :id=\"`list-${id}`\"></div>"
+  },
+  {
+    id: "v15", label: "REF", title: "Estado Reativo com ref()", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Zap,
+    description: "Na Composition API, a forma recomendada de declarar um estado reativo é usando a função ref().",
+    points: [
+      "Qualquer Tipo: Funciona com strings, números, booleanos ou objetos complexos.",
+      ".value: No Script, você acessa o valor via 'count.value'. No Template, ele é desembrulhado automaticamente.",
+      "Identidade: O objeto retornado por ref() mantém a reatividade mesmo quando passado para funções."
+    ],
+    details: ["ref(initialValue)", ".value syntax", "Auto-unwrapping", "Reatividade forte"],
+    code: "import { ref } from 'vue'\n\nconst count = ref(0)\nconsole.log(count.value) // 0\n\ncount.value++"
+  },
+  {
+    id: "v16", label: "REACTIVE", title: "Objetos com reactive()", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
+    description: "A função reactive() cria uma versão reativa de um objeto (ou array) usando Proxies de JavaScript.",
+    points: [
+      "Apenas Objetos: Ao contrário do ref(), reactive() funciona apenas com tipos de objeto (Object, Array, Map).",
+      "Sem .value: O acesso é direto nas propriedades do objeto como um objeto normal.",
+      "Limitação: Perde a reatividade se for desestruturado ou reatribuído inteiramente."
+    ],
+    details: ["reactive({})", "Proxy based", "Deep reactivity", "State management"],
+    code: "import { reactive } from 'vue'\n\nconst state = reactive({ count: 0 })\nstate.count++ // Acesso direto!"
+  },
+  {
+    id: "v17", label: "MUTAÇÃO", title: "Sistema de Reatividade", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Network,
+    description: "O sistema de reatividade do Vue rastreia dependências e dispara atualizações do DOM instantaneamente após a mutação.",
+    points: [
+      "DOM Assíncrono: O Vue não atualiza o DOM imediatamente após a mudança; ele espera o próximo 'tick'.",
+      "Deep: Por padrão, a reatividade é profunda; mudar um item em um sub-objeto dispara a atualização.",
+      "Proxies: No Vue 3, o sistema usa ES6 Proxies para interceptar get/set de forma transparente."
+    ],
+    details: ["nextTick()", "Dependency Tracking", "Proxy Interception", "Async Updates"],
+    code: "import { nextTick } from 'vue'\n\nasync function increment() {\n  count.value++\n  // DOM ainda nã mudou...\n  await nextTick()\n  // DOM agora está atualizado!\n}"
+  },
+  {
+    id: "v18", label: "CONCEITO", title: "Propriedades Computadas", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: FileEdit,
+    description: "Para lógica complexa que depende de outros estados, usamos computed() para criar valores derivados reativos.",
+    points: [
+      "Declarativo: Descreve o valor final baseado em outros refs ou objetos reactive.",
+      "Auto-Update: Se os dados base mudarem, a computada recalcula o valor automaticamente.",
+      "Limpo: Mantém o template focado em apresentação, movendo a lógica para o Script."
+    ],
+    details: ["computed(() => ...)", "Derived State", "Reatividade Automática", "Clean Templates"],
+    code: "const count = ref(1)\nconst double = computed(() => count.value * 2)\n\n// double.value será 2"
+  },
+  {
+    id: "v19", label: "CACHE", title: "Computada vs Métodos", colorText: "text-amber-400", colorDot: "bg-amber-400", icon: Clock,
+    description: "A principal diferença entre uma computada e um método é o sistema de cache inteligente baseado em dependências.",
+    points: [
+      "Cache: Computadas são armazenadas em cache. Elas SÓ recalculam se uma dependência reativa mudar.",
+      "Performance: Métodos executam toda vez que ocorre uma nova renderização, mesmo se nada mudou neles.",
+      "Imutável: Por padrão, computadas são apenas leitura (readonly)."
+    ],
+    details: ["Caching", "Dependency tracking", "Efficiency", "Getter only"],
+    code: "// Computada (usa Cache)\nconst listSize = computed(() => items.length)\n\n// Método (executa sempre)\nfunction getListSize() { return items.length }"
+  },
+  {
+    id: "v20", label: "WRITABLE", title: "Computed Gravável", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: MousePointer2,
+    description: "Embora a maioria das computadas sejam 'getters', você pode criar uma computada que aceita valores (setter).",
+    points: [
+      "Getter: Define como ler o valor.",
+      "Setter: Define o que acontece ao tentar atribuir um novo valor à propriedade computada.",
+      "Sincronização: Útil para vincular componentes de UI (como Inputs) a estados complexos."
+    ],
+    details: ["get()", "set()", "Two-way binding", "Custom Logic"],
+    code: "const fullName = computed({\n  get() { return firstName.value + ' ' + lastName.value },\n  set(newValue) {\n    [firstName.value, lastName.value] = newValue.split(' ')\n  }\n})"
+  },
+  {
+    id: "v21", label: "CLASSES (OBJ)", title: "Classes Dinâmicas", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Palette,
+    description: "Podemos passar um objeto para :class para alternar classes dinamicamente.",
+    points: [
+      "Chave/Valor: A chave é o nome da classe, o valor é uma condição booleana.",
+      "Combinação: Classes dinâmicas coexistem com a classe estática normal.",
+      "Limpeza: Mantém a manipulação do DOM fora do JavaScript manual."
+    ],
+    details: [":class='{ active: isActive }'", "Inline Objects", "State driven visual", "Toggles"],
+    code: "<div \n  class=\"base-bullet\"\n  :class=\"{ active: isActive, 'text-danger': hasError }\"\n></div>"
+  },
+  {
+    id: "v22", label: "CLASSES (ARRAY)", title: "Sintaxe de Array", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
+    description: "Podemos vincular :class a um array para aplicar uma lista de classes.",
+    points: [
+      "Multi-seleção: Ótimo para aplicar múltiplas classes baseadas em diferentes estados.",
+      "Ternários: Podemos usar expressões ternárias dentro do array.",
+      "Objetos em Arrays: Você pode misturar as duas sintaxes para flexibilidade total."
+    ],
+    details: [":class='[ac1, ac2]'", "Conditional Arrays", "Class composition", "Dynamic list"],
+    code: "<div :class=\"[activeClass, errorClass]\"></div>\n\n<!-- Com ternário -->\n<div :class=\"[isActive ? activeClass : '', errorClass]\"></div>"
+  },
+  {
+    id: "v23", label: "ESTILOS INLINE", title: "Vínculo de Estilo", colorText: "text-pink-500", colorDot: "bg-pink-500", icon: Palette,
+    description: "A diretiva :style suporta valores de objeto que correspondem às propriedades CSS do elemento.",
+    points: [
+      "CamelCase: Propriedades CSS podem usar nomes camelCase (fontSize) ou kebab-case ('font-size').",
+      "Objetos: Vincular a um objeto de estilo limpa o template e melhora a legibilidade.",
+      "Auto-prefixing: O Vue adiciona prefixos de navegador automaticamente quando necessário."
+    ],
+    details: [":style='{ color: c }'", "Dynamic CSS", "Inline Overrides", "Vendor Prefixing"],
+    code: "<div :style=\"{ color: activeColor, fontSize: fontSize + 'px' }\"></div>\n\n<!-- Vincular a objeto -->\n<div :style=\"styleObject\"></div>"
+  },
+  {
+    id: "v24", label: "V-IF", title: "Renderização Condicional", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Zap,
+    description: "A diretiva v-if é usada para renderizar condicionalmente um bloco. O bloco só será renderizado se a expressão retornar um valor verdadeiro.",
+    points: [
+      "Verdadeiro: Se falso, o elemento é removido completamente do DOM.",
+      "Blocos: Pode ser usado com v-else e v-else-if para condições complexas.",
+      "Custo: Maior custo ao alternar (lazy), menor custo inicial se for falso."
+    ],
+    details: ["v-if", "v-else-if", "v-else", "Lazy rendering"],
+    code: "<h1 v-if=\"awesome\">Vue is awesome!</h1>\n<h1 v-else>Oh no 😢</h1>"
+  },
+  {
+    id: "v25", label: "V-SHOW", title: "Visibilidade do Elemento", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Globe,
+    description: "Outra opção para exibir condicionalmente um elemento é a diretiva v-show.",
+    points: [
+      "Sempre no DOM: O elemento permanece no DOM, apenas alterna 'display: none'.",
+      "Frequência: Melhor para elementos que alternam a visibilidade com muita frequência.",
+      "Simplicidade: Não suporta a tag <template> nem v-else."
+    ],
+    details: ["display: none", "Toggle efficiency", "Always mounted", "CSS based"],
+    code: "<h1 v-show=\"ok\">Hello!</h1>"
+  },
+  {
+    id: "v26", label: "TEMPLATE", title: "v-if no <template>", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Layout,
+    description: "Como v-if é uma diretiva, ela deve ser anexada a um único elemento. Mas e se quisermos alternar mais de um elemento?",
+    points: [
+      "Invisível: <template> age como um wrapper invisível que não aparece no DOM final.",
+      "Agrupamento: Permite aplicar v-if a um conjunto de elementos sem adicionar tags extras.",
+      "Sintaxe: Funciona apenas com v-if, não com v-show."
+    ],
+    details: ["<template v-if>", "Invisible wrapper", "Logic grouping", "Clean DOM"],
+    code: "<template v-if=\"ok\">\n  <h1>Title</h1>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</template>"
+  },
+  {
+    id: "v27", label: "V-FOR", title: "Renderização de Listas", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: FileEdit,
+    description: "Usamos a diretiva v-for para renderizar uma lista de elementos com base em um array.",
+    points: [
+      "Sintaxe: 'item in items', onde items é o array fonte e item é o apelido do elemento atual.",
+      "Índice: Suporta um segundo argumento opcional para o índice: '(item, index) in items'.",
+      "Escopo: O template dentro do v-for tem acesso total às propriedades do pai."
+    ],
+    details: ["item in items", "(item, index)", "Array rendering", "Sync UI"],
+    code: "<ul>\n  <li v-for=\"item in items\" :key=\"item.id\">\n    {{ item.message }}\n  </li>\n</ul>"
+  },
+  {
+    id: "v28", label: "OBJETOS", title: "v-for com Objetos", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Layout,
+    description: "Você também pode usar v-for para percorrer as propriedades de um objeto.",
+    points: [
+      "Valor: '(value) in myObject' para pegar os valores.",
+      "Chave: '(value, key) in myObject' para pegar chave e valor.",
+      "Índice: '(value, key, index) in myObject' para ter também a posição."
+    ],
+    details: ["Object iteration", "Key/Value access", "Metadata lists", "Property loop"],
+    code: "<ul>\n  <li v-for=\"(value, key) in myObject\">\n    {{ key }}: {{ value }}\n  </li>\n</ul>"
+  },
+  {
+    id: "v29", label: "IMPORTÂNCIA DA KEY", title: "Atributo :key", colorText: "text-red-500", colorDot: "bg-red-500", icon: Fingerprint,
+    description: "Quando o Vue atualiza uma lista renderizada com v-for, ele usa uma estratégia de 'remendos no local' (patch in-place).",
+    points: [
+      "Identidade: A key ajuda o Vue a rastrear a identidade de cada nó para reutilizar e reordenar elementos.",
+      "Performance: Sem keys, o Vue pode ter comportamentos inesperados em estados de componentes filhos.",
+      "Padrão: É altamente recomendado sempre fornecer uma key para v-for."
+    ],
+    details: [":key='unique_id'", "DOM tracking", "Performance boost", "State preservation"],
+    code: "<div v-for=\"item in items\" :key=\"item.id\">\n  <!-- conteúdo -->\n</div>"
+  },
+  {
+    id: "v30", label: "V-ON", title: "Manipulação de Eventos", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: MousePointer2,
+    description: "Usamos a diretiva v-on, comumente abreviada como @, para ouvir eventos do DOM e executar JavaScript quando eles ocorrem.",
+    points: [
+      "Abreviação: '@click' é o mesmo que 'v-on:click'.",
+      "Métodos: Pode chamar um nome de método ou executar código JavaScript diretamente (inline).",
+      "Nativos: Suporta todos os eventos nativos do navegador."
+    ],
+    details: ["@click", "v-on:submit", "Inline handlers", "Method handlers"],
+    code: "<button @click=\"count++\">Adicionar 1</button>\n<p>O contador é: {{ count }}</p>"
+  },
+  {
+    id: "v31", label: "ARGUMENTOS", title: "Chamando Métodos", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Network,
+    description: "Podemos passar argumentos personalizados para um método em um manipulador de eventos.",
+    points: [
+      "Customizado: 'say(\"oi\")' passa a string para a função.",
+      "Evento Nativo: Se precisar do objeto de evento nativo, use a variável especial '$event'.",
+      "Arrow Functions: Também suporta passagem de múltiplos argumentos complexos."
+    ],
+    details: ["$event", "Method arguments", "Action payloads", "Event handling"],
+    code: "<button @click=\"warn('Form not submitted.', $event)\">\n  Submit\n</button>"
+  },
+  {
+    id: "v32", label: "MODIFICADORES", title: "Modificadores de Eventos", colorText: "text-teal-500", colorDot: "bg-teal-500", icon: Settings2,
+    description: "É muito comum chamar event.preventDefault() ou event.stopPropagation() dentro de manipuladores. O Vue oferece modificadores para isso.",
+    points: [
+      ".stop: Interrompe a propagação do evento (bubbling).",
+      ".prevent: Impede o comportamento padrão do navegador (como recarregar no submit).",
+      "Encaixe: Os modificadores foram encadeados: '@click.stop.prevent'."
+    ],
+    details: [".prevent", ".stop", ".once", ".capture"],
+    code: "<!-- impede o recarregamento da página -->\n<form @submit.prevent=\"onSubmit\"></form>\n\n<!-- o clique não vai propagar para o pai -->\n<a @click.stop=\"doThis\"></a>"
+  },
+  {
+    id: "v33", label: "V-MODEL", title: "Entrada de Forms", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: FileEdit,
+    description: "Ao lidar com formulários no frontend, precisamos sincronizar o estado dos elementos de entrada com o estado no JavaScript. O v-model simplifica isso.",
+    points: [
+      "Bidirecional: O valor do input atualiza a variável e a variável atualiza o input.",
+      "Tipo de Input: Funciona com <input>, <textarea> e <select> automaticamente.",
+      "Abreviação: v-model é na verdade um 'açúcar sintático' para v-bind:value e v-on:input."
+    ],
+    details: ["v-model", "Two-way bind", "Form state", "Input sync"],
+    code: "<input v-model=\"text\">\n<p>Editando: {{ text }}</p>"
+  },
+  {
+    id: "v34", label: "TIPOS INPUT", title: "Texto e Área", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
+    description: "O v-model se adapta ao tipo do elemento. Para textos simples e áreas de texto, ele usa a propriedade value e ouvintes de entrada.",
+    points: [
+      "Text: <input type='text'> padrão.",
+      "Textarea: Diferente da interpolação {{ }}, <textarea> usa v-model.",
+      "IME: v-model não atualiza durante a composição IME (ex: chinês) até que o caractere seja confirmado."
+    ],
+    details: ["<input>", "<textarea>", "IME support", "Value binding"],
+    code: "<span>Mensagem multilinha é:</span>\n<p style=\"white-space: pre-line;\">{{ message }}</p>\n<textarea v-model=\"message\" placeholder=\"add lines\"></textarea>"
+  },
+  {
+    id: "v35", label: "CONTROLES", title: "Checkbox e Select", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
+    description: "Para elementos de múltipla escolha como checkboxes e seletores, o v-model trabalha com valores booleanos ou arrays.",
+    points: [
+      "Checkbox: Se único, é booleano. Se múltiplos, v-model aponta para um Array.",
+      "Radio: Atribui o valor do rádio selecionado à variável.",
+      "Select: Sincroniza a opção selecionada. Suporta valores únicos ou múltiplos (se multiple estiver presente)."
+    ],
+    details: ["Checkbox array", "Radio buttons", "Multi-select", "Dynamic options"],
+    code: "<input type=\"checkbox\" id=\"jack\" value=\"Jack\" v-model=\"checkedNames\">\n<input type=\"checkbox\" id=\"john\" value=\"John\" v-model=\"checkedNames\">\n\n<span>Nomes: {{ checkedNames }}</span>"
+  },
+  {
+    id: "v36", label: "ONMOUNTED", title: "Gancho de Montagem", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: PlaySquare,
+    description: "Cada instância de componente Vue passa por uma série de etapas de inicialização e o onMounted é uma das mais importantes.",
+    points: [
+      "Pronto: Executado após o componente ter sido montado no DOM.",
+      "DOM Access: É o lugar seguro para acessar elementos reais via 'refs'.",
+      "Side Effects: Ideal para iniciar chamadas de API ou configurar timers."
+    ],
+    details: ["onMounted()", "DOM Ready", "Initial Fetch", "Component Start"],
+    code: "import { onMounted } from 'vue'\n\nonMounted(() => {\n  console.log('O componente foi montado!')\n})"
+  },
+  {
+    id: "v37", label: "ONUPDATED", title: "Gancho de Atualização", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Clock,
+    description: "Chamado após o componente atualizar sua árvore DOM devido a uma mudança de estado reativo.",
+    points: [
+      "Re-render: Disparado sempre que qualquer dado usado no template muda.",
+      "Precaução: Evite mudar o estado do componente dentro deste gancho (risco de loop infinito).",
+      "DOM Sync: Use se você precisar ler o novo estado do DOM pós-renderização."
+    ],
+    details: ["onUpdated()", "DOM Re-render", "Post-render logic", "Sync state"],
+    code: "import { onUpdated } from 'vue'\n\nonUpdated(() => {\n  // DOM agora está sincronizado com o novo estado\n})"
+  },
+  {
+    id: "v38", label: "ONUNMOUNTED", title: "Gancho de Desmontagem", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Power,
+    description: "Chamado após o componente ter sido removido do DOM (destruído).",
+    points: [
+      "Limpeza: O lugar essencial para remover event listeners manuais.",
+      "Recursos: Pare intervalos (setInterval) ou cancele assinaturas de dados.",
+      "Memória: Previne vazamentos de memória (Memory Leaks) na aplicação."
+    ],
+    details: ["onUnmounted()", "Cleanup", "Destroy", "Memory safe"],
+    code: "import { onUnmounted } from 'vue'\n\nonUnmounted(() => {\n  clearInterval(timer)\n  console.log('Componente removido!')\n})"
+  },
+  {
+    id: "v39", label: "WATCH", title: "Observadores Reativos", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Eye,
+    description: "Nem tudo pode ser resolvido com computadas. Às vezes precisamos reagir a uma mudança com 'efeitos colaterais' (API calls, etc).",
+    points: [
+      "Vigilância: Observa uma fonte de dados específica e executa um callback quando ela muda.",
+      "Old/New: O callback recebe o novo valor e o valor antigo como argumentos.",
+      "Preciso: Ideal para salvar estados em LocalStorage ou disparar animações manuais."
+    ],
+    details: ["watch(source, cb)", "Side effects", "Async reacting", "Old/New values"],
+    code: "watch(question, async (newQ, oldQ) => {\n  if (newQ.includes('?')) {\n    const res = await fetch(...)\n  }\n})"
+  },
+  {
+    id: "v40", label: "DEEP WATCH", title: "Observação Profunda", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Search,
+    description: "Por padrão, o watch em um objeto não dispara se uma propriedade interna mudar, apenas se o objeto for substituído.",
+    points: [
+      "Sub-níveis: Ative 'deep: true' para monitorar todas as propriedades aninhadas.",
+      "Custo: Observações profundas em grandes estruturas podem ser lentas.",
+      "Reactive: Objetos criados com 'reactive()' são monitorados profundamente por padrão no watch."
+    ],
+    details: ["{ deep: true }", "Nested data", "Full sync", "Object tracking"],
+    code: "watch(settings, (newVal) => {\n  // Dispara se settings.theme mudar!\n}, { deep: true })"
+  },
+  {
+    id: "v41", label: "WATCHEFFECT", title: "Observação de Efeito", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Zap,
+    description: "Simplifica a observação ao rastrear automaticamente todas as dependências reativas usadas dentro do callback.",
+    points: [
+      "Automático: Você não precisa listar o que observar; o Vue detecta o que você usou.",
+      "Imediato: Diferente do watch, o watchEffect roda uma vez imediatamente ao ser criado.",
+      "Injeção: Útil quando você tem múltiplos estados influenciando uma única ação."
+    ],
+    details: ["watchEffect()", "Auto-tracking", "Immediate start", "Effect sync"],
+    code: "watchEffect(() => {\n  // Roda sempre que 'userId' OU 'token' mudar\n  fetchData(userId.value, token.value)\n})"
+  },
+  {
+    id: "v42", label: "TEMPL_REFS", title: "Referências de Template", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: MousePointer2,
+    description: "Embora o Vue prefira o modelo declarativo, às vezes você precisa de acesso direto ao elemento DOM subjacente.",
+    points: [
+      "Atributo ref: Adicione 'ref=\"myInput\"' no elemento no template.",
+      "Ref JS: Crie uma constante com o mesmo nome usando 'ref(null)'.",
+      "Timing: A referência só é preenchida APÓS o componente ser montado."
+    ],
+    details: ["ref='nome'", "DOM access", "Focus control", "Direct touch"],
+    code: "<input ref=\"inputRef\">\n\n<script setup>\nconst inputRef = ref(null)\nonMounted(() => inputRef.value.focus())\n</script>"
+  },
+  {
+    id: "v43", label: "COMP_REFS", title: "Refs em Componentes", colorText: "text-orange-400", colorDot: "bg-orange-400", icon: Layout,
+    description: "As refs também podem ser usadas em componentes filhos para acessar suas instâncias públicas.",
+    points: [
+      "Instância: Permite chamar métodos expostos pelo componente filho.",
+      "Encapsulamento: Por padrão, componentes SFC são fechados (private) para refs.",
+      "defineExpose: O filho deve usar defineExpose para escolher o que o pai pode ver."
+    ],
+    details: ["defineExpose", "Child access", "Public API", "Component control"],
+    code: "<!-- Pai -->\n<BaseModal ref=\"modal\" />\n\nconst modal = ref(null)\nmodal.value.open() // Chama método do filho"
+  },
+  {
+    id: "v44", label: "V-FOR REFS", title: "Refs em Listas", colorText: "text-red-400", colorDot: "bg-red-400", icon: Network,
+    description: "Quando uma ref é usada dentro de um v-for, ela se torna um array contendo todos os elementos da lista.",
+    points: [
+      "Coleção: O valor da ref será um Array de elementos do DOM ou instâncias de componentes.",
+      "Ordem: A ordem do array de refs não é garantida para corresponder à ordem da lista.",
+      "Uso: Comumente usado para gerenciar focos dinâmicos ou medir dimensões de listas."
+    ],
+    details: ["Array refs", "Dynamic collection", "Loop access", "Bulk refs"],
+    code: "<li v-for=\"i in list\" ref=\"itemRefs\">{{ i }}</li>\n\nconst itemRefs = ref([])"
+  },
+  {
+    id: "v45", label: "MODULARIDADE", title: "Fundamentos de Componentes", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Layout,
+    description: "Componentes permitem dividir a interface em peças independentes, reutilizáveis e isoladas.",
+    points: [
+      "Abstração: Um componente encapsula seu próprio template, lógica e estilo.",
+      "Reutilização: O mesmo componente pode ser instanciado várias vezes com comportamentos diferentes.",
+      "Hierarquia: Aplicações são construídas como uma árvore de componentes aninhados."
+    ],
+    details: ["Reusability", "Composition", "Isolamento", "Component Tree"],
+    code: "<!-- Reutilizando o mesmo componente -->\n<ButtonCounter />\n<ButtonCounter />\n<ButtonCounter />"
+  },
+  {
+    id: "v46", label: "PROPS", title: "Passando Dados (Props)", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: ArrowUpCircle,
+    description: "Props são atributos customizados que você pode registrar em um componente para permitir que o pai passe dados para ele.",
+    points: [
+      "Fluxo Unidirecional: Dados fluem de cima para baixo. Filhos nunca devem alterar props.",
+      "Validação: Você pode definir tipos, se é obrigatório e valores padrão.",
+      "Declarativo: O pai passa o dado como um atributo HTML comum ou via v-bind."
+    ],
+    details: ["defineProps()", "One-way data flow", "Validation", "Read-only"],
+    code: "// Filho\ndefineProps(['title'])\n\n// Pai\n<BlogPost :title=\"post.title\" />"
+  },
+  {
+    id: "v47", label: "EMITS", title: "Escutando Eventos (Emits)", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
+    description: "Componentes filhos podem emitir seus próprios eventos para notificar o pai sobre alguma ação interna.",
+    points: [
+      "Sinalização: O filho 'grita' um evento; o pai 'ouve' usando @nome-do-evento.",
+      "Payloads: Eventos podem carregar dados adicionais para o pai processar.",
+      "Contrato: Use defineEmits para documentar os eventos que o componente pode disparar."
+    ],
+    details: ["defineEmits()", "Event bubbling", "Child-to-parent", "Custom events"],
+    code: "// Filho\nconst emit = defineEmits(['enlarge-text'])\n<button @click=\"emit('enlarge-text')\">Aumentar</button>\n\n// Pai\n<BlogPost @enlarge-text=\"fontSize += 0.1\" />"
+  }
+];
+
+const reactDetailedTopics = [
+  {
+    id: "r01", label: "O QUE É REACT?", title: "Biblioteca de Interfaces", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Globe,
+    description: "React é uma biblioteca JavaScript para construir interfaces de usuário baseadas em componentes.",
+    points: [
+      "Declarativo: Você descreve como a UI deve ser para cada estado, e o React cuida de atualizar o DOM.",
+      "Baseado em Componentes: Construa componentes encapsulados que gerenciam seu próprio estado.",
+      "Aprenda uma vez, escreva em qualquer lugar: Pode ser usado no navegador (DOM), em mobile (Native) e até VR."
+    ],
+    details: ["Component-Based", "Declarative UI", "Ecossistema Rico", "Meta/Facebook"],
+    code: "import React from 'react';\n\nfunction Welcome() {\n  return <h1>Olá, Mundo!</h1>;\n}"
+  },
+  {
+    id: "r02", label: "VIRTUAL DOM", title: "O Motor de Performance", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Zap,
+    description: "O Virtual DOM é uma representação em memória do DOM real, permitindo atualizações extremamente rápidas.",
+    points: [
+      "Diffing Algorithm: O React compara a nova árvore virtual com a anterior para encontrar mudanças.",
+      "Reconciliação: Apenas os elementos que realmente mudaram são atualizados no navegador.",
+      "Eficiência: Evita manipulações custosas de todo o documento HTML."
+    ],
+    details: ["Memory DOM", "Diffing", "Batch Updates", "Reconciliation"],
+    code: "// O React faz isso por baixo dos panos\n// comparando árvores de objetos JS\nconst virtualNode = {\n  type: 'h1',\n  props: { children: 'Olá!' }\n};"
+  },
+  {
+    id: "r03", label: "JSX", title: "JavaScript XML", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: FileEdit,
+    description: "JSX é uma extensão de sintaxe para JavaScript que se assemelha ao HTML.",
+    points: [
+      "Expressividade: Permite escrever a estrutura da UI dentro da lógica JavaScript.",
+      "Segurança: O React escapa automaticamente qualquer valor antes de renderizar para prevenir XSS.",
+      "Compilação: O JSX é transformado em chamadas normais de função JavaScript (React.createElement)."
+    ],
+    details: ["Syntax Sugar", "HTML-in-JS", "Babel Compilation", "Type Safe"],
+    code: "const element = (\n  <div className=\"greetings\">\n    <h1>Hello, {name}!</h1>\n  </div>\n);"
+  },
+  {
+    id: "r04", label: "STATE", title: "Estado do Componente", colorText: "text-cyan-500", colorDot: "bg-cyan-500", icon: Settings2,
+    description: "O State é um objeto que contém dados que podem mudar ao longo da vida do componente.",
+    points: [
+      "useState Hook: A forma moderna de adicionar estado a componentes funcionais.",
+      "Imutabilidade: Nunca altere o estado diretamente; sempre use a função de setter (ex: setState).",
+      "Re-render: Quando o estado muda, o componente e seus filhos são renderizados novamente.",
+    ],
+    details: ["Hooks", "useState", "Reactive Logic", "Data Flow"],
+    code: "import { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}"
+  },
+  {
+    id: "r05", label: "PROPS", title: "Propriedades", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: ArrowUpCircle,
+    description: "Props são entradas de um componente. Elas são como argumentos de função.",
+    points: [
+      "Read-Only: Um componente nunca deve modificar suas próprias props.",
+      "Unidirecional: Os dados fluem do componente pai para o filho.",
+      "Flexível: Props podem ser strings, números, booleanos, objetos ou até funções."
+    ],
+    details: ["Configuração", "Arguments", "Immutability", "Parent-Child Bridge"],
+    code: "function Welcome(props) {\n  return <h1>Olá, {props.name}</h1>;\n}\n\n// Uso: <Welcome name=\"Alice\" />"
+  }
+];
+
+const angularDetailedTopics = [
+  {
+    id: "a01", label: "O QUE É ANGULAR?", title: "Framework de Plataforma", colorText: "text-red-500", colorDot: "bg-red-500", icon: Globe,
+    description: "Angular é uma plataforma e framework para construir aplicações cliente em HTML e TypeScript.",
+    points: [
+      "Completo: Inclui tudo o que você precisa (Router, HTTP Client, Forms) sem bibliotecas externas.",
+      "Opinionated: Fornece uma estrutura clara e padrões para escalabilidade empresarial.",
+      "Escrito em TypeScript: Oferece tipagem forte e detecção de erros em tempo de compilação."
+    ],
+    details: ["Full-featured", "Google Framework", "Enterprise Grade", "TypeScript Native"],
+    code: "@Component({\n  selector: 'app-root',\n  template: '<h1>{{ title }}</h1>'\n})\nexport class AppComponent { title = 'Olá Angular!'; }"
+  },
+  {
+    id: "a02", label: "MÓDULOS", title: "Arquitetura NgModules", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: Layout,
+    description: "NgModules configuram o injetor e o compilador e ajudam a organizar partes relacionadas da aplicação.",
+    points: [
+      "Declarações: Lista de componentes, diretivas e pipes que pertencem a este módulo.",
+      "Importações: Outros módulos cujas classes exportadas são necessárias.",
+      "Bootstrapping: Define o componente raiz que o Angular insere no DOM."
+    ],
+    details: ["NgModule", "Organization", "Encapsulamento", "Dependency Mesh"],
+    code: "@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }"
+  },
+  {
+    id: "a03", label: "BINDING", title: "Data Binding Bidirecional", colorText: "text-red-400", colorDot: "bg-red-400", icon: Zap,
+    description: "Angular permite sincronizar a lógica e a visão de forma automática e extremamente potente.",
+    points: [
+      "Interpolação: {{ valor }} para exibir dados no HTML.",
+      "Property Binding: [property]='valor' para passar dados para elementos.",
+      "Two-way Binding: [(ngModel)]='valor' para sincronia total (Banana in a box)."
+    ],
+    details: ["Two-way sync", "[(ngModel)]", "Banana in a Box", "Reactive Sync"],
+    code: "<input [(ngModel)]=\"name\">\n<p>Olá {{ name }}!</p>"
+  },
+  {
+    id: "a04", label: "DEPENDENCY INJECTION", title: "Injeção de Dependência", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Settings2,
+    description: "Angular possui um sistema de DI poderoso que fornece instâncias de classes e serviços conforme necessário.",
+    points: [
+      "Injetor: O mecanismo que cria as instâncias e as fornece aos componentes.",
+      "Provedores: Definem como os serviços devem ser instanciados (ex: Singleton).",
+      "Desacoplamento: Componentes não criam seus próprios serviços; eles os recebem."
+    ],
+    details: ["DI Pattern", "Singleton Services", "Clean Code", "Testability"],
+    code: "constructor(private dataService: DataService) {\n  // Angular injeta o serviço automaticamente!\n}"
+  },
+  {
+    id: "a05", label: "TYPESCRIPT", title: "Fundamentos em TS", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: ShieldCheck,
+    description: "Angular abraça o TypeScript para fornecer ferramentas de desenvolvimento superiores e código mais seguro.",
+    points: [
+      "Interfaces e Tipos: Defina formas rigorosas para os dados da sua aplicação.",
+      "Decoradores: Metadados que dizem ao Angular como processar classes (ex: @Component).",
+      "Classes: Uso extensivo de orientação a objetos moderna para organizar lógica complexa."
+    ],
+    details: ["Strict Typing", "Decorators", "ESNext Classes", "Code Intelligence"],
+    code: "export class User {\n  id: number;\n  name: string;\n}"
+  }
+];
 
 const detailedTopics = [
   {
@@ -1385,12 +2503,51 @@ const detailedTopics = [
   }
 ];
 
+const contentGroups = [
+  { id: "g1", title: "DOM & Elementos (1-9)", start: 0, end: 9, color: "bg-blue-500" },
+  { id: "g2", title: "Eventos JavaScript (10-16)", start: 9, end: 16, color: "bg-purple-500" },
+  { id: "g3", title: "AJAX & JSON (17-28)", start: 16, end: 28, color: "bg-emerald-500" },
+  { id: "g4", title: "Tratamento de Exceções (29-51)", start: 28, end: 51, color: "bg-red-500" },
+  { id: "g5", title: "Operadores Cond/Log (52-59)", start: 51, end: 59, color: "bg-cyan-500" },
+  { id: "g6", title: "Ternário (60-63)", start: 59, end: 63, color: "bg-amber-500" },
+  { id: "g7", title: "Bitwise (64-73)", start: 63, end: 73, color: "bg-indigo-500" }
+];
+
 export default function App() {
+  const [selectedDisciplina, setSelectedDisciplina] = useState<string | null>(null);
+  const [selectedTecnologia, setSelectedTecnologia] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeGroupIndex, setActiveGroupIndex] = useState<number | null>(null);
   const [isLightMode, setIsLightMode] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [isAnalogyOpen, setIsAnalogyOpen] = useState(false);
-  const totalSlides = detailedTopics.length + 1; // 1 home + topics
+
+  const getDetailedTopics = () => {
+    switch(selectedTecnologia) {
+      case 'Vue JS': return vueDetailedTopics;
+      case 'React JS': return reactDetailedTopics;
+      case 'Angular': return angularDetailedTopics;
+      default: return detailedTopics;
+    }
+  };
+
+  const getContentGroups = () => {
+    switch(selectedTecnologia) {
+      case 'Vue JS': return vueContentGroups;
+      case 'React JS': return reactContentGroups;
+      case 'Angular': return angularContentGroups;
+      default: return contentGroups;
+    }
+  };
+
+  const currentTopics = getDetailedTopics();
+  const currentGroups = getContentGroups();
+
+  const filteredTopics = activeGroupIndex !== null 
+    ? currentTopics.slice(currentGroups[activeGroupIndex].start, currentGroups[activeGroupIndex].end)
+    : currentTopics;
+
+  const totalSlides = filteredTopics.length + 1; // 1 home + topics
 
   // Zoom logic applies to root HTML node
   useEffect(() => {
@@ -1470,36 +2627,47 @@ export default function App() {
         </button>
       </div>
 
-      {/* Background Orbs */}
-      <div className="fixed top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
-      <div className="fixed bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
+      {/* Background Elements */}
+      {!selectedDisciplina ? (
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600 rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+        </div>
+      ) : (
+        <>
+          <div className="fixed top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
+          <div className="fixed bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none z-0"></div>
+        </>
+      )}
 
       {/* Navigation Overlay */}
-      <div className="fixed bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-1 sm:gap-2 bg-black/60 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-white/10 shadow-lg">
-        <button 
-          onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
-          disabled={currentSlide === 0}
-          className="text-white/50 hover:text-white transition-colors disabled:opacity-20 flex items-center justify-center cursor-pointer p-1"
-        >
-          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5"/>
-        </button>
-        <div className="flex gap-1 sm:gap-1.5 relative items-center px-1">
-          {Array.from({ length: totalSlides }).map((_, idx) => (
-            <button 
-              key={idx} 
-              onClick={() => setCurrentSlide(idx)} 
-              className={`rounded-full transition-all duration-300 ease-out cursor-pointer ${currentSlide === idx ? 'h-1.5 w-3 sm:h-1.5 sm:w-5 bg-blue-500' : 'h-1 w-1 sm:h-1.5 sm:w-1.5 bg-white/20 hover:bg-white/40'}`} 
-            />
-          ))}
+      {selectedDisciplina && currentSlide !== 0 && (
+        <div className="fixed bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-1 sm:gap-2 bg-black/60 backdrop-blur-md px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-white/10 shadow-lg">
+          <button 
+            onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
+            disabled={currentSlide === 0}
+            className="text-white/50 hover:text-white transition-colors disabled:opacity-20 flex items-center justify-center cursor-pointer p-1"
+          >
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5"/>
+          </button>
+          <div className="flex gap-1 sm:gap-1.5 relative items-center px-1">
+            {Array.from({ length: totalSlides }).map((_, idx) => (
+              <button 
+                key={idx} 
+                onClick={() => setCurrentSlide(idx)} 
+                className={`rounded-full transition-all duration-300 ease-out cursor-pointer ${currentSlide === idx ? 'h-1.5 w-3 sm:h-1.5 sm:w-5 bg-blue-500' : 'h-1 w-1 sm:h-1.5 sm:w-1.5 bg-white/20 hover:bg-white/40'}`} 
+              />
+            ))}
+          </div>
+          <button 
+            onClick={() => setCurrentSlide(prev => Math.min(totalSlides - 1, prev + 1))}
+            disabled={currentSlide === totalSlides - 1}
+            className="text-white/50 hover:text-white transition-colors disabled:opacity-20 flex items-center justify-center cursor-pointer p-1"
+          >
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5"/>
+          </button>
         </div>
-        <button 
-          onClick={() => setCurrentSlide(prev => Math.min(totalSlides - 1, prev + 1))}
-          disabled={currentSlide === totalSlides - 1}
-          className="text-white/50 hover:text-white transition-colors disabled:opacity-20 flex items-center justify-center cursor-pointer p-1"
-        >
-          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5"/>
-        </button>
-      </div>
+      )}
 
       {/* Slides Track */}
       <div 
@@ -1510,83 +2678,407 @@ export default function App() {
         <div className="w-screen h-screen flex-shrink-0 flex flex-col relative items-center justify-center py-4 px-2 sm:p-6 lg:p-8 box-border overflow-hidden">
           <div className="w-full h-full max-w-[1400px] flex flex-col pb-10 sm:pb-12 pt-2 sm:pt-4">
             
-            <header className="flex flex-row items-end justify-between mb-3 sm:mb-6 flex-shrink-0 px-2 sm:px-0">
-              <div>
-                <h1 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-blue-400 mb-0.5 sm:mb-1">O Core do JavaScript & AJAX</h1>
-                <p className="text-[10px] sm:text-xs lg:text-sm text-gray-400">Guia Visual: DOM API & Eventos (W3C DOM Reference)</p>
-              </div>
-              <div className="flex space-x-2">
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-900/30 border border-blue-500/50 rounded-full text-[8px] sm:text-[10px] font-mono text-blue-300 tracking-widest hidden sm:inline-block">V.DOM.EVENTS</span>
-              </div>
-            </header>
+            <AnimatePresence mode="wait">
+              {!selectedDisciplina ? (
+                /* LEVEL 0: DISCIPLINE SELECTION */
+                <motion.div 
+                  key="level0"
+                  initial={{ opacity: 0, scale: 0.98, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, scale: 1.02, filter: 'blur(10px)' }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex-grow flex flex-col justify-center w-full"
+                >
+                  <header className="mb-8 lg:mb-12 text-center">
+                    <div className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-mono text-[9px] sm:text-xs tracking-[0.3em] uppercase mb-4 lg:mb-6">
+                      Plataforma de Ensino v2.0
+                    </div>
+                    <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-4 tracking-tighter uppercase italic">
+                      Mapa de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Disciplinas</span>
+                    </h1>
+                    <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto px-4">
+                      Selecione uma área de conhecimento para explorar os módulos interativos e aprofundar seus estudos.
+                    </p>
+                  </header>
 
-            {/* Grouped Grid layout */}
-            <div className="flex-grow min-h-0 mt-2 overflow-y-auto custom-scrollbar pr-2 flex flex-col gap-6 sm:gap-8 pb-4">
-              {[
-                { title: "DOM & Elementos (1-9)", start: 0, end: 9, color: "bg-blue-500" },
-                { title: "Eventos JavaScript (10-16)", start: 9, end: 16, color: "bg-purple-500" },
-                { title: "AJAX & JSON (17-28)", start: 16, end: 28, color: "bg-emerald-500" },
-                { title: "Tratamento de Exceções (29-51)", start: 28, end: 51, color: "bg-red-500" },
-                { title: "Operadores Cond/Log (52-59)", start: 51, end: 59, color: "bg-cyan-500" },
-                { title: "Ternário (60-63)", start: 59, end: 63, color: "bg-amber-500" },
-                { title: "Bitwise (64-73)", start: 63, end: 73, color: "bg-indigo-500" }
-              ].map((group, groupIndex) => (
-                <div key={groupIndex}>
-                  <h2 className="text-sm sm:text-base lg:text-lg font-bold text-white/90 mb-3 flex items-center gap-2">
-                    <span className={`w-2.5 h-2.5 rounded-full ${group.color}`}></span>
-                    {group.title}
-                  </h2>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-1.5 sm:gap-2 lg:gap-2.5">
-                    {detailedTopics.slice(group.start, group.end).map((topic, offset) => {
-                      const index = group.start + offset;
-                      const IconComponent = topic.icon;
-                      return (
-                        <div 
-                          key={topic.id} 
-                          onClick={() => setCurrentSlide(index + 1)} 
-                          className="cursor-pointer group bg-white/5 border border-white/5 sm:border-white/10 rounded-lg sm:rounded-xl p-2 sm:p-2.5 lg:p-3 backdrop-blur-sm flex flex-col justify-between hover:bg-white/[0.08] transition-all hover:scale-[1.03] active:scale-95 shadow-sm overflow-hidden"
-                        >
-                          <div>
-                            <div className="flex items-center gap-1.5 mb-1 sm:mb-2">
-                              <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 ${topic.colorText}`} />
-                              <span className={`font-mono text-[8px] sm:text-[10px] tracking-wider ${topic.colorText}`}>{topic.id} {topic.label}</span>
-                            </div>
-                            <h3 className="text-[11px] sm:text-sm lg:text-base font-semibold leading-tight line-clamp-1 mb-0.5">{topic.title}</h3>
-                            <p className="text-[9px] sm:text-[11px] text-gray-400 leading-snug line-clamp-2 md:line-clamp-3 block">{topic.description}</p>
-                          </div>
-                          <div className="mt-2 text-right">
-                            <span className="text-[8px] sm:text-[10px] bg-white/5 px-1.5 py-0.5 rounded text-gray-400 font-mono inline-block group-hover:bg-white/10 transition-colors">ACESSAR &rarr;</span>
-                          </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto w-full px-4 overflow-y-auto custom-scrollbar max-h-[60vh] sm:max-h-none pb-8">
+                    <button 
+                      onClick={() => setSelectedDisciplina("Programação Front-End Web")}
+                      className="group relative bg-[#090e1a] border-2 border-blue-500/30 rounded-3xl p-6 sm:p-8 text-left hover:border-blue-500 transition-all hover:scale-[1.02] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20 relative z-10">
+                        <Globe className="w-6 h-6 sm:w-10 sm:h-10 text-white" />
+                      </div>
+                      <h2 className="text-xl sm:text-3xl font-black text-white mb-2 italic tracking-tight group-hover:text-blue-400 transition-colors relative z-10">Programação Front-End Web</h2>
+                      <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 line-clamp-3 relative z-10">
+                        Domine a manipulação do DOM, eventos avançados, AJAX, arquitetura assíncrona e lógica de operadores com analogias visuais potentes.
+                      </p>
+                      <div className="flex items-center justify-between relative z-10">
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-mono text-blue-500 uppercase tracking-widest">DISCIPLINA ATIVA</span>
+                          <span className="text-xs font-bold text-white">73 MÓDULOS</span>
                         </div>
-                      );
-                    })}
+                        <div className="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold group-hover:px-6 transition-all shadow-lg shadow-blue-600/30">
+                          EXPLORAR &rarr;
+                        </div>
+                      </div>
+                    </button>
+
+                    {/* Placeholders */}
+                    {["Estrutura de Dados", "Banco de Dados", "UX/UI Design", "Redes & Cloud", "IA Aplicada"].map((disc) => (
+                      <div key={disc} className="bg-white/[0.02] border border-white/5 rounded-3xl p-6 sm:p-8 grayscale opacity-20 cursor-not-allowed flex flex-col justify-between">
+                        <div>
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-800 flex items-center justify-center mb-6">
+                            <Settings2 className="w-6 h-6 sm:w-10 sm:h-10 text-gray-700" />
+                          </div>
+                          <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mb-2 truncate">{disc}</h2>
+                          <p className="text-gray-800 text-xs sm:text-sm line-clamp-2">Conteúdo em curadoria pela equipe técnica universitária.</p>
+                        </div>
+                        <div className="mt-8 flex items-center justify-between text-[10px] font-mono text-gray-700 border-t border-white/5 pt-4">
+                          <span>EM BREVE</span>
+                          <span className="bg-white/5 px-2 py-0.5 rounded">0% LOADED</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
+                </motion.div>
+              ) : !selectedTecnologia ? (
+                /* LEVEL 1: TECHNOLOGY/SUB-THEME SELECTION */
+                <motion.div 
+                  key="level1"
+                  initial={{ opacity: 0, x: 20, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex-grow flex flex-col justify-center w-full"
+                >
+                  <header className="mb-8 lg:mb-12">
+                    <button 
+                      onClick={() => setSelectedDisciplina(null)}
+                      className="flex items-center gap-2 text-gray-500 hover:text-white text-[10px] font-mono mb-4 transition-colors cursor-pointer group uppercase tracking-widest"
+                    >
+                      <ChevronLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform" /> VOLTAR AO MAPA DE DISCIPLINAS
+                    </button>
+                    <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-2 tracking-tighter uppercase italic">
+                      {selectedDisciplina}
+                    </h1>
+                    <p className="text-blue-400 font-mono text-xs sm:text-base tracking-[0.2em] uppercase">Selecione o Eixo Tecnológico</p>
+                  </header>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl">
+                    <button 
+                      onClick={() => setSelectedTecnologia("Javascript")}
+                      className="group relative bg-gradient-to-br from-[#f7df1e]/20 to-black border border-[#f7df1e]/40 rounded-3xl p-8 text-left hover:border-[#f7df1e] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-[#f7df1e]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                      <div className="w-16 h-16 rounded-2xl bg-[#f7df1e] flex items-center justify-center mb-6 shadow-lg shadow-[#f7df1e]/20 relative z-10">
+                        <Zap className="w-10 h-10 text-black fill-black" />
+                      </div>
+                      <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#f7df1e] transition-colors relative z-10 uppercase">Javascript</h2>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                        O motor fundamental do web moderno. Explore desde manipulação básica até operações complexas de baixo nível.
+                      </p>
+                      <div className="flex items-center justify-between relative z-10">
+                        <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">73 SLIDES</span>
+                        <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                      </div>
+                    </button>
+
+                    <button 
+                      onClick={() => setSelectedTecnologia("Vue JS")}
+                      className="group relative bg-gradient-to-br from-[#42b883]/20 to-black border border-[#42b883]/40 rounded-3xl p-8 text-left hover:border-[#42b883] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-[#42b883]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                      <div className="w-16 h-16 rounded-2xl bg-[#42b883] flex items-center justify-center mb-6 shadow-lg shadow-[#42b883]/20 relative z-10">
+                        <Globe className="w-10 h-10 text-white" />
+                      </div>
+                      <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#42b883] transition-colors relative z-10 uppercase">Vue JS</h2>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                        A Abstração Progressiva do JavaScript. Construa aplicações escaláveis com templates intuitivos e um ecossistema robusto.
+                      </p>
+                      <div className="flex items-center justify-between relative z-10">
+                        <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">4 SLIDES</span>
+                        <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                      </div>
+                    </button>
+
+                    <button 
+                      onClick={() => setSelectedTecnologia("React JS")}
+                      className="group relative bg-[#61dafb]/10 border border-[#61dafb]/30 rounded-3xl p-8 text-left hover:border-[#61dafb]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#61dafb]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
+                      <div className="w-14 h-14 rounded-2xl bg-[#61dafb]/20 border border-[#61dafb]/40 flex items-center justify-center mb-6">
+                        <Zap className="w-8 h-8 text-[#61dafb] fill-[#61dafb]/20" />
+                      </div>
+                      <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#61dafb] transition-colors uppercase">React JS</h2>
+                      <p className="text-gray-400 text-xs leading-relaxed mb-8">Biblioteca líder da Meta. Focada em componentes reativos, JSX e Virtual DOM. A queridinha do mercado.</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-[#61dafb] bg-[#61dafb]/10 px-3 py-1 rounded-full border border-[#61dafb]/20">5 SLIDES</span>
+                        <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
+                      </div>
+                    </button>
+
+                    <button 
+                      onClick={() => setSelectedTecnologia("Angular")}
+                      className="group relative bg-[#dd0031]/10 border border-[#dd0031]/30 rounded-3xl p-8 text-left hover:border-[#dd0031]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#dd0031]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
+                      <div className="w-14 h-14 rounded-2xl bg-[#dd0031]/20 border border-[#dd0031]/40 flex items-center justify-center mb-6">
+                        <ShieldCheck className="w-8 h-8 text-[#dd0031]" />
+                      </div>
+                      <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#dd0031] transition-colors uppercase">Angular</h2>
+                      <p className="text-gray-400 text-xs leading-relaxed mb-8">Framework completo e altamente estruturado do Google. TypeScript nativo e ideal para grandes sistemas.</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-[#dd0031] bg-[#dd0031]/10 px-3 py-1 rounded-full border border-[#dd0031]/20">5 SLIDES</span>
+                        <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
+                      </div>
+                    </button>
+
+                    {/* Future Placeholders */}
+                    {["HTML5 & CSS3", "Node.js", "Docker"].map((tech) => (
+                      <div key={tech} className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 grayscale opacity-20 cursor-not-allowed flex flex-col justify-between">
+                        <div>
+                          <div className="w-16 h-16 rounded-2xl bg-gray-800 flex items-center justify-center mb-6">
+                            <Settings2 className="w-8 h-8 text-gray-700" />
+                          </div>
+                          <h2 className="text-2xl font-bold text-gray-800 mb-2 truncate uppercase italic">{tech}</h2>
+                          <p className="text-gray-800 text-sm">Em breve disponível na trilha {selectedDisciplina}.</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ) : (
+                /* LEVEL 2: TOPIC MAP */
+                <motion.div 
+                  key="level2"
+                  initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex-grow flex flex-col min-h-0 w-full"
+                >
+                  <header className="flex flex-row items-end justify-between mb-3 sm:mb-6 flex-shrink-0 px-2 sm:px-0">
+                    <div>
+                      <button 
+                        onClick={() => {
+                          setSelectedTecnologia(null);
+                          setActiveGroupIndex(null);
+                        }}
+                        className="flex items-center gap-2 text-gray-500 hover:text-white text-[9px] sm:text-[10px] font-mono mb-2 transition-colors cursor-pointer group uppercase tracking-widest"
+                      >
+                        <ChevronLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform" /> VOLTAR PARA {selectedDisciplina}
+                      </button>
+                      <h1 className="text-[22px] sm:text-3xl lg:text-5xl font-black tracking-tighter text-blue-400 mb-0.5 sm:mb-1 uppercase italic leading-none">{selectedTecnologia}</h1>
+                      <p className="text-[10px] sm:text-xs lg:text-sm text-gray-400 uppercase tracking-[0.2em] font-mono opacity-60">Conteúdo Avançado de Programação</p>
+                    </div>
+                    <div className="flex flex-col items-end gap-2">
+                      <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-900/30 border border-blue-500/50 rounded-full text-[8px] sm:text-[10px] font-mono text-blue-300 tracking-widest hidden sm:inline-block uppercase font-bold">
+                        {
+                          selectedTecnologia === 'Vue JS' ? 'VUE.CORE.REFERENCE' : 
+                          selectedTecnologia === 'React JS' ? 'REACT.CORE.REFERENCE' : 
+                          selectedTecnologia === 'Angular' ? 'ANGULAR.CORE.REFERENCE' : 
+                          'JS.CORE.REFERENCE'
+                        }
+                      </span>
+                      {activeGroupIndex !== null && (
+                        <div className="flex items-center gap-2 bg-indigo-500/20 border border-indigo-500/40 px-3 py-1 rounded-full animate-in slide-in-from-right-4">
+                          <span className="text-[8px] sm:text-[10px] font-mono text-indigo-300 uppercase">FILTRADO: {currentGroups[activeGroupIndex].title.split('(')[0]}</span>
+                          <button 
+                            onClick={() => setActiveGroupIndex(null)}
+                            className="text-white hover:text-red-400 pb-0.5 cursor-pointer"
+                            title="Limpar Filtro"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </header>
+
+                  <div className="flex-grow min-h-0 mt-4 overflow-y-auto custom-scrollbar pr-2 pb-8">
+                    {activeGroupIndex === null ? (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                        {currentGroups.map((group, groupIndex) => (
+                          <button
+                            key={group.id}
+                            onClick={() => setActiveGroupIndex(groupIndex)}
+                            className="group relative bg-[#0d121f] border border-white/10 rounded-2xl p-6 text-left hover:border-blue-500/50 transition-all hover:scale-[1.02] active:scale-98 shadow-xl overflow-hidden cursor-pointer h-full flex flex-col justify-between min-h-[160px]"
+                          >
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full -mr-8 -mt-8 group-hover:scale-150 transition-transform duration-500"></div>
+                            
+                            <div>
+                              <div className={`w-10 h-10 rounded-xl ${group.color} bg-opacity-20 flex items-center justify-center mb-4 border border-white/10 group-hover:border-white/30 transition-colors`}>
+                                <Layout className="w-5 h-5 text-white" />
+                              </div>
+                              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                {group.title.split('(')[0]}
+                              </h2>
+                              <p className="text-xs text-gray-400 font-mono tracking-widest uppercase mb-4">
+                                {group.end - group.start} Módulos Disponíveis
+                              </p>
+                            </div>
+
+                            <div className="flex items-center justify-between mt-auto">
+                              <span className="text-[10px] font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">
+                                SLIDES {group.start + 1} - {group.end}
+                              </span>
+                              <div className="flex items-center gap-1 text-blue-400 font-bold text-[10px] sm:text-xs">
+                                EXPLORAR <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                        
+                        {/* Stats card */}
+                        <div className="bg-white/5 border border-white/5 rounded-2xl p-6 flex flex-col justify-center items-center text-center opacity-60">
+                          <h3 className="text-2xl font-bold text-white/40">{currentTopics.length}</h3>
+                          <p className="text-[10px] font-mono uppercase tracking-tighter text-gray-500">Módulos Totais</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="animate-in fade-in slide-in-from-right-4 duration-500 space-y-6">
+                        <div className="flex items-center justify-between bg-white/5 p-4 rounded-xl border border-white/10 sticky top-0 backdrop-blur-md z-20">
+                          <div className="flex items-center gap-4">
+                            <button 
+                              onClick={() => setActiveGroupIndex(null)}
+                              className="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white cursor-pointer"
+                            >
+                              <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <div>
+                              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                                <span className={`w-3 h-3 rounded-full ${currentGroups[activeGroupIndex].color}`}></span>
+                                {currentGroups[activeGroupIndex].title}
+                              </h2>
+                              <p className="text-xs text-gray-400">Escolha um módulo para iniciar a apresentação</p>
+                            </div>
+                          </div>
+                          <button 
+                            onClick={() => {
+                              setCurrentSlide(1);
+                            }}
+                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2 rounded-lg transition-all flex items-center gap-2 text-xs shadow-lg shadow-blue-500/20 cursor-pointer"
+                          >
+                            APRENSENTAÇÃO COMPLETA <Play className="w-4 h-4 fill-white" />
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 pt-2">
+                          {currentTopics.slice(currentGroups[activeGroupIndex].start, currentGroups[activeGroupIndex].end).map((topic, offset) => {
+                            const IconComponent = topic.icon;
+                            return (
+                              <div 
+                                key={topic.id} 
+                                onClick={() => {
+                                  setCurrentSlide(offset + 1);
+                                }} 
+                                className="cursor-pointer group bg-[#111625] border border-white/10 rounded-xl p-4 transition-all hover:bg-blue-500/10 hover:border-blue-500/40 hover:scale-[1.03] active:scale-95 shadow-sm"
+                              >
+                                <div className="flex items-center justify-between mb-3">
+                                  <div className={`${topic.colorText} bg-white/5 p-1.5 rounded-lg group-hover:bg-white/10`}>
+                                    <IconComponent className="w-4 h-4" />
+                                  </div>
+                                  <span className="text-[10px] font-mono text-gray-600">MOD {topic.id}</span>
+                                </div>
+                                <div className="flex items-center gap-2 mb-1">
+                                  <div className={`w-1.5 h-1.5 rounded-full ${topic.colorDot}`}></div>
+                                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">{topic.label}</span>
+                                </div>
+                                <h3 className="text-xs sm:text-sm font-bold text-white line-clamp-2 leading-snug group-hover:text-blue-300">
+                                  {topic.title}
+                                </h3>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <footer className="mt-4 pt-3 border-t border-white/10 flex flex-row justify-between items-center text-[8px] sm:text-[10px] text-gray-500 tracking-widest font-mono uppercase flex-shrink-0 relative px-2 sm:px-0">
               <div>SISTEMA DE ENSINO (Baseado W3C Schools)</div>
               <div className="flex space-x-3">
-                <span className="text-blue-500/80">INTERATIVO 73 MÓDULOS</span>
+                <span className="text-blue-500/80">INTERATIVO {currentTopics.length} MÓDULOS</span>
               </div>
             </footer>
           </div>
         </div>
 
-        {/* SLIDES 1 to 16 */}
-        {detailedTopics.map((topic, index) => {
+        {/* SLIDES */}
+        {filteredTopics.map((topic, index) => {
           const IconComponent = topic.icon;
           return (
             <div key={topic.id} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-3 sm:p-8 pb-14 sm:pb-20 box-border overflow-hidden">
               <div className="w-full h-full max-w-[1200px] z-10 flex flex-col justify-center max-h-full">
                 
-                <button 
-                  onClick={() => setCurrentSlide(0)} 
-                  className="mb-2 sm:mb-4 text-gray-400 hover:text-white flex items-center gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider transition-colors cursor-pointer w-max flex-shrink-0 bg-white/5 px-3 py-1.5 rounded-full hover:bg-white/10"
-                >
-                  <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" /> MAPA DE CONTEÚDO
-                </button>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-4 px-1 gap-2">
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={() => {
+                        setCurrentSlide(0);
+                      }} 
+                      className="text-gray-400 hover:text-white flex items-center gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider transition-colors cursor-pointer bg-white/5 px-3 py-1.5 rounded-full hover:bg-white/10"
+                    >
+                      <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" /> {activeGroupIndex !== null ? "VOLTAR PARA ASSUNTO" : "MAPA DE CONTEÚDO"}
+                    </button>
+
+                    <button 
+                      onClick={() => {
+                        setActiveGroupIndex(null);
+                        setCurrentSlide(0);
+                      }} 
+                      className="text-gray-400 hover:text-white flex items-center gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider transition-colors cursor-pointer bg-white/5 px-3 py-1.5 rounded-full hover:bg-white/10"
+                    >
+                      <Layout className="w-3 h-3 sm:w-4 sm:h-4" /> {activeGroupIndex === null ? "MAPA DE CATEGORIAS" : "MENU DE CATEGORIAS"}
+                    </button>
+
+                    <button 
+                      onClick={() => {
+                        setSelectedTecnologia(null);
+                        setActiveGroupIndex(null);
+                        setCurrentSlide(0);
+                      }} 
+                      className="text-gray-400 hover:text-white flex items-center gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider transition-colors cursor-pointer bg-white/5 px-3 py-1.5 rounded-full hover:bg-white/10"
+                    >
+                      <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" /> VOLTAR AO MAPA DE TECNOLOGIAS
+                    </button>
+
+                    <button 
+                      onClick={() => {
+                        setSelectedDisciplina(null);
+                        setSelectedTecnologia(null);
+                        setActiveGroupIndex(null);
+                        setCurrentSlide(0);
+                      }} 
+                      className="text-gray-400 hover:text-white flex items-center gap-1 sm:gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider transition-colors cursor-pointer bg-white/5 px-3 py-1.5 rounded-full hover:bg-white/10"
+                    >
+                      <Globe className="w-3 h-3 sm:w-4 sm:h-4" /> MAPA DISCIPLINAS
+                    </button>
+                  </div>
+
+                  {activeGroupIndex !== null && (
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] sm:text-xs font-mono text-gray-500 uppercase tracking-widest hidden lg:inline">
+                        ASSUNTO: <span className="text-blue-400">{currentGroups[activeGroupIndex].title.split('(')[0]}</span>
+                      </span>
+                      <button 
+                        onClick={() => {
+                          const absoluteIndex = currentGroups[activeGroupIndex].start + index;
+                          setActiveGroupIndex(null);
+                          setCurrentSlide(absoluteIndex + 1);
+                        }}
+                        className="text-[9px] sm:text-[11px] font-mono bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-full transition-all cursor-pointer"
+                      >
+                        EXIBIR TODOS OS MÓDULOS
+                      </button>
+                    </div>
+                  )}
+                </div>
                 
                 <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
                   
@@ -1671,7 +3163,7 @@ export default function App() {
         </button>
       )}
 
-      {isAnalogyOpen && currentSlide > 0 && detailedTopics[currentSlide - 1] && (
+      {isAnalogyOpen && currentSlide > 0 && currentTopics[currentSlide - 1] && (
         <div 
           className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setIsAnalogyOpen(false)}
@@ -1690,22 +3182,22 @@ export default function App() {
               <div className="flex items-center gap-3 mb-6 sm:mb-8 flex-shrink-0">
                 <Lightbulb className="w-8 h-8 text-indigo-400" />
                 <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
-                  Analogia: {detailedTopics[currentSlide - 1].title}
+                  Analogia: {currentTopics[currentSlide - 1].title}
                 </h2>
               </div>
               <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
                 
                 <div className="flex flex-col gap-6">
                   <ul className="list-disc pl-5 sm:pl-8 space-y-3 sm:space-y-4">
-                    {analogies[detailedTopics[currentSlide - 1].id]?.items.map((item, idx) => (
+                    {analogies[currentTopics[currentSlide - 1].id]?.items.map((item, idx) => (
                       <li key={idx} className="text-lg sm:text-2xl text-gray-300 leading-relaxed font-light">
                         {item}
                       </li>
                     ))}
                   </ul>
-                  {analogies[detailedTopics[currentSlide - 1].id]?.images?.length > 0 && (
+                  {analogies[currentTopics[currentSlide - 1].id]?.images?.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 w-full place-items-start">
-                      {analogies[detailedTopics[currentSlide - 1].id].images.map((imgSrc, idx) => (
+                      {analogies[currentTopics[currentSlide - 1].id].images.map((imgSrc, idx) => (
                         <div key={idx} className="relative rounded-xl overflow-hidden border border-indigo-500/30 shadow-lg w-full max-w-sm">
                           <img 
                             src={imgSrc} 
