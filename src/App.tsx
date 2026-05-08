@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   Network, Settings2, Search, FileEdit, Palette, ShieldCheck, PlaySquare, Globe, Fingerprint, CheckCircle2,
   ChevronLeft, ChevronRight, Zap, MousePointer2, Keyboard, Loader2, Clock, Ear, ArrowUpCircle, Sun, Moon,
-  ZoomIn, ZoomOut, Lightbulb, X, Play, Layout, Power, Eye
+  ZoomIn, ZoomOut, Lightbulb, X, Play, Layout, Power, Eye, BookOpen
 } from 'lucide-react';
 
 type AnalogyData = { items: string[]; images: string[] };
@@ -921,6 +921,29 @@ const analogies: Record<string, AnalogyData> = {
     ],
     images: ["https://image.pollinations.ai/prompt/nuclear%20submarine%20control%20room%20glowing%20red%20launch%20keys%20two%20generals?width=600&height=400&nologo=true"]
   },
+  "57": {
+    items: [
+      "O Lógico AND (&&) atua como dois guardas simultâneos de um cofre ultra-secreto. O cofre só abre se as chaves dos DOIS guardas forem inseridas ao mesmo tempo.",
+      "Se o primeiro guarda faltar, o alarme (Short-Circuit) toca instantaneamente e o sistema nem se dá o trabalho de conferir se o segundo estava no posto."
+    ],
+    images: ["https://image.pollinations.ai/prompt/two%20guards%20turning%20glowing%20keys%20in%20massive%20vault%20door?width=600&height=400&nologo=true"]
+  },
+  "58": {
+    items: [
+      "O Lógico OR (||) atua como entradas de ar alternativas num motor de nave espacial.",
+      "Se o conduto principal (Condição A) fechar as comportas, a nave imediatamente puxa oxigênio pelo conduto secundário (Condição B), mantendo a chama viva (Passar).",
+      "Só haverá asfixia total (Falso) se ambas as válvulas colapsarem."
+    ],
+    images: ["https://image.pollinations.ai/prompt/spaceship%20engine%20vents%20opening%20glowing%20blue%20air%20intake?width=600&height=400&nologo=true"]
+  },
+  "59": {
+    items: [
+      "A Negação Lógica (!) é como os óculos infravermelhos da equipe tática.",
+      "Eles revertem brutalmente a visibilidade do abismo escuro da realidade fria da noite falseada, tornando-a num teatro incandescente aceso (true).",
+      "Onde existia luz cegante opressora do inimigo (true), a lente escurece tornando o caminho furtivo seguro."
+    ],
+    images: ["https://image.pollinations.ai/prompt/tactical%20glowing%20night%20vision%20goggles%20inverting%20colors%20dark%20city?width=600&height=400&nologo=true"]
+  },
   "60": {
     items: [
       "O Ternário atua como um pedágio ultra veloz com apenas duas sinaleiras num cruzamento simples e direto de uma pista expressa.",
@@ -1032,6 +1055,200 @@ const analogies: Record<string, AnalogyData> = {
       "Ao lançar o golpe reverso para resgatar (~ de volta), ele reassume o número no estado positivo Original, só que agora extremamente lustroso, rápido, limpo perfeitamente dos malditos resíduos decimais caídos atrás."
     ],
     images: ["https://image.pollinations.ai/prompt/cyberpunk%20ninja%20throwing%20glowing%20neon%20boomerang%20slashing%20heavy%20decimal%20rocks?width=600&height=400&nologo=true"]
+  },
+  "74": {
+    items: [
+      "Debugging não é apenas desentupir canos quando a água para de sair. É estudar todo o manifesto da engenharia do prédio e se perguntar: de onde vem essa água?",
+      "Um bug nunca é aleatório; ele é um atestado de que o JS atendeu cegamente uma ordem torta que nós mesmos assinamos sem ler direito.",
+      "A mentalidade correta transforma o pânico da tela vermelha em curiosidade científica.",
+      "Você não está lutando contra a máquina, está decifrando um quebra-cabeça de lógica pura onde você mesmo escondeu as peças.",
+      "Aceite que o computador é impiedosamente literal: ele fez exatamente, letra por letra, o que você mandou, mesmo que seja absurdo."
+    ],
+    images: ["https://image.pollinations.ai/prompt/detective%20looking%20at%20holographic%20city%20blueprints%20glowing%20neon?width=600&height=400&nologo=true"]
+  },
+  "75": {
+    items: [
+      "A Filosofia do Debugger é como montar um cenário de crime. Não se grita com a cena por ter uma poça vermelha no chão, você coleta evidências.",
+      "O detetive (você) isola a área, cria um perímetro de isolamento (entender o escopo) e busca a arma do crime (a linha exata do erro).",
+      "O depoimento da testemunha (o erro do console) pode ser confuso, mas contém a chave para rastrear os passos do suspeito.",
+      "Assumir que a culpa é do compilador, do framework ou da linguagem é o equivalente a culpar fantasmas por pegadas sujas no tapete.",
+      "A pacatez na observação revela que todo estado de variável, antes da quebra, forma uma linha do tempo clara se analisada friamente."
+    ],
+    images: ["https://image.pollinations.ai/prompt/cyberpunk%20crime%20scene%20reconstruction%20hologram%20glowing%20data?width=600&height=400&nologo=true"]
+  },
+  "76": {
+    items: [
+      "A estratégia científica é tratar o código com jaleco branco de pesquisador laboratorial. Observamos a mutação suspeita da variável antes de intervir.",
+      "Você cria a 'vacina' mental (a hipótese): 'Se a variável chega nula aqui, a função anterior falhou em retornar'.",
+      "E então você testa rigorosamente essa hipótese isolando o pedaço de código, sem alterar mais nada no sistema global.",
+      "Escrever código por coincidência fingindo consertar é ser um cirurgião vendado metendo o bisturi no paciente e vibrando quando ele não morre na mesa.",
+      "A verdadeira cura exige confirmar se o bug desapareceu exatamente por causa da sua alteração, e não devido a um mero efeito colateral aleatório."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20lab%20microscope%20inspecting%20glowing%20dna%20code?width=600&height=400&nologo=true"]
+  },
+  "77": {
+    items: [
+      "O Console é exatamente como o rádio transmissor militar amarrado fortemente na central da sua sala de guerra (o DevTools).",
+      "Com o W3C você quebra a escuridão; não precisa de espiões invisíveis tateando na tela com botões visuais no HTML para ler dados.",
+      "As variáveis em campo de batalha se comunicam ativamente, revelando suas confidências mais íntimas pelas ondas limpas do log.",
+      "Depender do arcaico 'alert()' é usar sinais de fumaça irritantes que pausam todo o exército a cada mensagem avulsa.",
+      "O console.log transmite inteligência de forma contínua, letal e silenciosa nos bastidores, sem nunca interromper o fluxo natural da batalha."
+    ],
+    images: ["https://image.pollinations.ai/prompt/military%20radio%20console%20glowing%20tactical%20screens?width=600&height=400&nologo=true"]
+  },
+  "78": {
+    items: [
+      "Fugir do log mais básico para o console.table é como abandonar rabiscos apressados e caóticos de post-it na geladeira.",
+      "Em vez disso, você liga telões majestosos que organizam as bagunças em planilhas limpas, mostrando os super Arrays de Dados na sua central de controle.",
+      "E o brilhante console.group atua como gavetas dinâmicas e pastas rotuladas num escritório em chamas para esconder papelada verbosa.",
+      "Você preserva intensamente a sanidade no meio da fumaça visual de infinitas impressões, recolhendo sub-dados em sanfonas expansíveis.",
+      "O console.error grita na cor rubro-sangue da interface com sirene, deixando explícito o socorro imediato, diferenciando do texto trivial brando."
+    ],
+    images: ["https://image.pollinations.ai/prompt/command%20center%20holographic%20tables%20showing%20organized%20data%20grids?width=600&height=400&nologo=true"]
+  },
+  "79": {
+    items: [
+      "O Console.time funciona como o cronômetro dourado e letal do maestro de uma corrida esportiva, apertado friamente.",
+      "A cada laço complexo de loop, ele vigia os cêntimos de segundo passados até a marca de chegada obrigatória do start/finish.",
+      "É o verdadeiro detector implacável de gargalos invisíveis que arrastam correntes e que o olho humano jamais perceberia.",
+      "Dessa maneira, nenhum algoritmo sorrateiro roubará segundos inteiros de latência acobertando complexidade O(N^2) no meio do motor.",
+      "Quando otimizamos com precisão cronometrada, mudamos a resposta do sistema do peso de um trator arrastado para a leveza de um trem bala macio."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20golden%20stopwatch%20floating%20above%20digital%20racetrack?width=600&height=400&nologo=true"]
+  },
+  "80": {
+    items: [
+      "Um Breakpoint não é apenas uma pausa; é uma gigante fenda abissal rasgando todos os velozes tecidos do tempo. Você congelou a engrenagem do Matrix.",
+      "Você abandona de vez as leituras mortas (console.log do passado) e ganha acesso de espectro puro ao espaço microscópico em tempo real.",
+      "O sistema completo tranca a respiração: as renderizações de monitor apagam, o fluxo do cursor para e a música suspende no micro loop.",
+      "Com uma lanterna pericial na mão do desenvolvedor ciente, checamos meticulosamente cada próton flutuando nessa redoma intocada e petrificada.",
+      "Podemos caminhar no tempo milímetro a milímetro (Step Over), dissecando o estado cristalizado antes do desastre se consolidar e estourar no HTML final."
+    ],
+    images: ["https://image.pollinations.ai/prompt/matrix%20time%20freeze%20bullets%20stopped%20in%20mid-air%20glowing%20green?width=600&height=400&nologo=true"]
+  },
+  "81": {
+    items: [
+      "A simples inserção da dura palavra mágica 'debugger;' no oceano do seu código atua como uma oculta armadilha de peso gigantesco enterrada na areia.",
+      "Se o DevTools estiver fechado, seus sensores de fumaça não checam a dinamite e o fluxo pula livre a linha sorrateira como poeira invisível.",
+      "Porém, se a cortina for aberta pelo F12, a armadilha virtual capta contato, trava as correntes pesadas e joga a âncora esmagando o avanço na mesma hora.",
+      "É o para-quedas tático brutal sendo puxado a dois palmos do chão, imobilizando o ambiente onde um bug mortal ia fugir no próximo milissegundo livre.",
+      "Dessa posição forçada e encravada, o desenvolvedor é o rei de todo o escopo lexical do instante, dominando absolutas informações das variáveis presas ao redor."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20digital%20trap%20on%20the%20ground%20stopping%20a%20data%20stream?width=600&height=400&nologo=true"]
+  },
+  "82": {
+    items: [
+      "Os temidos e lendários Breakpoints Condicionais operam como os silenciados soldados atiradores de longa distância da guarda perita.",
+      "Em um gigantesco loop repetitivo infernal, seria impossível o operador humano dar o play em cada uma de mil voltas monótonas da roda gigante.",
+      "Esses atiradores não param comboios de dados bons; deixam passarem correndo invisivelmente noventa e nove laços incólumes velozes.",
+      "A sua mira infravermelha se trava em bater exclusivamente aquele pacote único e anômalo que carrega a placa 'i === 99'.",
+      "É matar o inseto voador sem ter que gastar munição pesada com tédio absoluto parando por mil séculos contínuos no botão do mouse apertando avançar."
+    ],
+    images: ["https://image.pollinations.ai/prompt/futuristic%20sniper%20aiming%20laser%20sight%20at%20single%20glowing%20number?width=600&height=400&nologo=true"]
+  },
+  "83": {
+    items: [
+      "A complexa Anatomia do Objeto de Bug parece o impenetrável cofre da caixa negra arrancada das violentas cinzas de destroços de um avião chocado.",
+      "Você nunca verá apenas a dolorosa manchete vermelha do 'Message'. O núcleo sagrado repousa no brilhante fio rastreado do valioso 'Stack Trace'.",
+      "O rastro de migalhas ziguezagueia pelos intrincados corredores de memória, dedurando todos as funções pelo caminho reverso até as entranhas.",
+      "Este mapa prova incontestavelmente e na cara de todos quem despachou a chave primária que, lá na ponta dos galhos caídos, ocasionou fatalmente a falha mortal do sistema.",
+      "Conhecer ler estapafúrdias rotas invertidas é a real habilidade de navegar do caos infernal até o conforto aconchegante da variável raiz esquecida intocada."
+    ],
+    images: ["https://image.pollinations.ai/prompt/black%20box%20flight%20recorder%20glowing%20orange%20in%20ruins?width=600&height=400&nologo=true"]
+  },
+  "84": {
+    items: [
+      "Tipificar duramente e rapidamente as criaturas e demônios virtuais na hora gloriosa que estouram poupa anos invocando os xamãs e espíritos errados nos feitiços.",
+      "Os erros não são todos picles jogados da mesma cor: eles vêm fardados com selos da vergonha em inglês, cada qual urrando nomes diferentes como 'TypeError' e a assombração 'ReferenceError'.",
+      "No escopo da dor de sintaxe, o dev inocente violava cruelmente as barreiras mágicas querendo cruzar uma densa e escura ponte de palavras sem alicerce de chaves { fechando os ciclos lógicos.",
+      "E o 'TypeError' esbraveja o julgamento onde o desenvolvedor delirou imaginando que um fino copo d'água invisível de variáveis nulas conteria os mesmos métodos fortes de tijolos String em caixa alta.",
+      "Ler a identificação do inimigo reduz a tática de combate a usar estritamente o bisturi correto perante cada armadura única apresentada pelos erros."
+    ],
+    images: ["https://image.pollinations.ai/prompt/classification%20of%20glowing%20holographic%20demons%20in%20glass%20tubes?width=600&height=400&nologo=true"]
+  },
+  "85": {
+    items: [
+      "A armadura espessa do envolvente e glorioso Try...Catch soa e reluz magicamente como o resistente colete à prova de pesadíssimas balas das zonas táticas de alto estresse do código real.",
+      "Quando subitamente a afiada faca de ponta esguia vinda das sombras falhas perfura sua bela e pura lógica intocada armada com abraços no bloco 'try'... a surpresa impera e avança.",
+      "Mas a barreira robusta invisível trava, resvala na couraça espessa da placa frontal e ricocheteia brutal e seguramente a contaminação envenenada sem conseguir de fato destroçar ou devorar o estômago vivo da aplicação central.",
+      "O processo engasga temporariamente no escudo rígido. É neste suave instante que o habilidoso e pacificado paramédico perito (Bloco Catch) examina com calma meticulosa todos os restos sujos incriminatórios presos ou cravados de veneno capturados.",
+      "É o poder de aceitar falhas oriundas da selva selvagem dos dados externos, protegendo internamente seus robôs pacíficos para que não precisem paralisar de medo e fechem as portas subsequentes."
+    ],
+    images: ["https://image.pollinations.ai/prompt/cybernetic%20bulletproof%20vest%20absorbing%20glowing%20energy%20blast?width=600&height=400&nologo=true"]
+  },
+  "86": {
+    items: [
+      "O domínio e disparo do grito ardente de 'Throw New Error' definitivamente se afasta infinitamente do erro que despenca impuro da boca de quebras aleatórias da rede assombrada de acidentes impuros.",
+      "Ao jogar seu próprio Throw, você encarna o criador rigoroso e o juiz infalível da aplicação. É como explodir a ponte ao ver que um invasor corrompido burlou uma checagem crítica num saque de limite.",
+      "O programador bloqueia a contaminação acionando ele próprio o botão paralisante vermelho cortando fluxo antes que o lixo grave num banco de dados real sujo ou manche os furos financeiros no cofre.",
+      "A blindagem absoluta dessa barricada arquitetural resguarda heroicamente os negócios perante qualquer traição invasora sutil do código vizinho desordenado descuidado com sujeiras soltas nas vírgulas maliciosas imperceptíveis.",
+      "O arquiteto experiente prefere desmoronar e encerrar de pé a operação pela proteção nobre, do que ver a infecção mansa transitar no silêncio da noite corroer lentamente seu servidor puro dourado limpo de manchas podres."
+    ],
+    images: ["https://image.pollinations.ai/prompt/wizard%20slamming%20staff%20destroying%20glowing%20bridge%20barrier?width=600&height=400&nologo=true"]
+  },
+  "87": {
+    items: [
+      "Os mensageiros desbravadores de pacotes Assíncronos operam como motoqueiros de entrega saindo sozinhos à deriva debaixo de chuvas noturnas caçando respostas fora dos muros do projeto local no imenso continente remoto obscuro.",
+      "Eles pedem os pedidos longe dos radares confortáveis seguros da tela visual imediata. Aquele processo de Fetch vai rasgar oceano de rede longa cega vazia sob o clima cruel trêmulo temporal onde pingos longos gelados derrubam satélites inteiros misticamente.",
+      "Se não existir no final da linha o heróico braço que aguarda de sentinela segurando uma corda escrita como '.catch()' ancorada pra acolher as pedras de tempestades dos fracassos do retorno sujo ou Timeout frio do vento invisível...",
+      "A triste e trágica notícia ruim nunca estoura, os mensageiros desaparecem e o usuário fica eternamente num calado vazio branco doloroso achando que o Loading hipnótico ainda rodará anos à frente girando sem esperança num circo tonto trágico abandonado.",
+      "Tratar os catchs assíncronos não é código defensivo simples solto chato; é ser comandante do painel vital que garante luz vermelha de socorro ou de 'aguarde' ao ver as naves se perdendo nos campos asteroideos de rotas trancadas perdidas e distantes que não respondem ordens centrais velozes síncronas rápidas de um segundo e meio."
+    ],
+    images: ["https://image.pollinations.ai/prompt/astronaut%20drifting%20silently%20in%20dark%20space%20no%20radio%20glowing%20visor?width=600&height=400&nologo=true"]
+  },
+  "88": {
+    items: [
+      "O feitiço mestre supremo 'Async / Await' funciona magistral e perfeitamente enjaulando a temporalidade louca rebelde e imponderável dentro da dominação linear imposta das cordas serenas suaves.",
+      "A tortura demoníaca dos labirintos sem fundo e infernais das chamas diabólicas dos longuíssimos Callbacks Hell espiralam alagando os códigos num 'V' horizontal cortante sem limites sangrando a tela da IDE.",
+      "Ao jogar Await no cavalo arisco do fluxo da web assíncrona, a engine puxa violentamente a rédea mestra dourada e estaciona a carruagem real inteira e tranca as rodas no silêncio.",
+      "A engine ordena pacientemente aguardar para só pisar uma régua abaixo da sintaxe assim que milagrosamente e divinamente o mensageiro cruzar exausto e vivo os portões trazendo a carta da API."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20time%20funnel%20capturing%20scattered%20ghost%20ships?width=600&height=400&nologo=true"]
+  },
+  "89": {
+    items: [
+      "Na majestosa pista expressa chamada Call Stack, existe estritamente um único carrinho de golfe (a função JS atual) capaz de cruzar a via restrita, afinal o JS é single-threaded rígido.",
+      "Quando uma macro task enorme morosa pacata preguiçosa gorda espaçosa como 'setTimeout' desponta, ela não fura a fila da pista real dourada principal onde o JS opera síncrono rápido fino mestre.",
+      "Ao invés disso, ela é rigorosamente escorraçada jogada aos gelos frios e sonolentos dos acostamentos de barro estendido longo na vila prisional fria pacífica da famosa 'Task Queue'.",
+      "Apenas num momento futuro onde finalmente a via principal mágica central do JS sol síncrono estiver perfeitamente vazia, o Event Loop surge, portando o seu majestoso bastão policial de luz e libera a engavetada."
+    ],
+    images: ["https://image.pollinations.ai/prompt/single%20lane%20neon%20highway%20with%20cars%20waiting%20at%20glowing%20toll%20booth?width=600&height=400&nologo=true"]
+  },
+  "90": {
+    items: [
+      "Na corte luxuosa silenciosa esnobe implacável mágica das microtasks moram os Deuses Reais sagrados nascidos das brilhantes resoluções douradas incontestáveis de Promises validadas puras das chamas eternas.",
+      "Enquanto os macrotasks sujos gélidos tristes mendigam calados no relento das esquinas congelantes esperando o setTimeout lerdo, as Microtasks puxam majestosamente sua carteira e crachá dourado de sangue limpo.",
+      "Elas rasgam e furam cruelmente a humilde fila dos plebeus amontoados sujos ignorados, pois são donos abençoados pelo coração VIP do sagrado Event Loop e sempre andam e voam na frente limpos purificados.",
+      "Sempre passarão na linha síncrona real cortando a fumaça ruidosa do caos da Engine em prioridades elitistas mágicas das quais nenhum humilde click mortal mundano sonha ter jamais no inferno."
+    ],
+    images: ["https://image.pollinations.ai/prompt/vip%20door%20bouncers%20letting%20glowing%20elites%20bypass%20massive%20crowd?width=600&height=400&nologo=true"]
+  },
+  "91": {
+    items: [
+      "A esplendorosa Aba Sagrada de Network vira e metamorfoseia o desenvolvedor ingênuo na maior besta caçadora investigadora perita militar com radar infravermelho de escuta máxima.",
+      "A tela de escutas grampeadas arranca quaisquer véus ilusórios da fumaça falsa e lê todas as cartinhas secretas despachadas aos Reinos Remotos dos Backends tristes frios chuvosos longínquos.",
+      "Mesmo que a função JS se finja de inocente no frontend local, o investigador flagra cruamente na tabela temporal exata o segundo macabro e o retorno 500 do servidor distante inimigo falho.",
+      "Rastrear essas vísceras silenciosas prova falsas culpas inocentando as belhas variáveis locais, e aponta guilhotinas direto para o backend desastrado mentiroso culpado do lago negro."
+    ],
+    images: ["https://image.pollinations.ai/prompt/wiretap%20interception%20station%20glowing%20data%20streams%20hologram?width=600&height=400&nologo=true"]
+  },
+  "92": {
+    items: [
+      "O Checklist final blindado inegociável não é mero papel timbrado mofado bolorento das regras. Ele é o soro curativo injetado nas veias cruéis dos programadores perdidos que pulam assustados em ziguezague.",
+      "Antes de arrancar dentes com martelos ignorantes e pancadas cegas na sorte, o detetive pára feito estátua de granito. Ele afere luz, mede batimentos numéricos, inspeciona isoladas fiações antes de tocar num só arquivo.",
+      "O silêncio do planejamento e observação evita a histeria fútil. Você não edita atirando no escuro, você apenas assiste a pulsação do log, garantindo e entendendo o sintoma com oxigênio militar cravado na pele.",
+      "Só quando a resposta matemática fecha exata e celestial, o dedo desce suavemente tocando a pena, resolvendo o oceano em chamas com 3 letrinhas limpas precisas."
+    ],
+    images: ["https://image.pollinations.ai/prompt/astronaut%20checking%20glowing%20suit%20dials%20before%20airlock%20opens?width=600&height=400&nologo=true"]
+  },
+  "93": {
+    items: [
+      "No cume cristalino inatingível da letal sabedoria do mestre supremo engenheiro, ergue-se o espelho escravo: se você gagueja fracassando pateticamente ao tentar explicar claramente o porquê estrito do sol ter morrido localmente...",
+      "O veredito sangrento e doloroso é seco e rasgante: você jamais entendeu o bug. Jamais. Apenas jogou engrenagens sujas na parede suada como cego tentando esmagar o teclado implorando um sim aos deuses cegos.",
+      "Se não tens a didática pacata cristalina de narrar no milímetro aos plebeus como uma solitária vírgula causou o furacão infernal, sua coroa de sênior e sua mestria não existem genuinamente nas veias sábias reais.",
+      "O domínio real é sol puro pacífico calmo curado radioso eterno. O bug purificado explica a si mesmo nas palavras serenas poéticas exatas do lorde que estuda antes de martelar cinicamente cego no suor do medo letargico amargo."
+    ],
+    images: ["https://image.pollinations.ai/prompt/glowing%20monk%20meditating%20under%20neon%20code%20waterfall?width=600&height=400&nologo=true"]
   }
 };
 
@@ -2500,6 +2717,226 @@ const detailedTopics = [
     ],
     details: ["Inversor Solitário", "Atalho ~~", "Eficiência Math"],
     code: "// Removendo decimais brutalmente rápido\nlet numero = 10.99;\n\n// A inversão dupla limpa por causa do Cast de 32b\nconsole.log(~~numero); // Resultado: 10"
+  },
+  {
+    id: "74", label: "MINDSET", title: "Título e Objetivo", colorText: "text-fuchsia-500", colorDot: "bg-fuchsia-500", icon: Search,
+    description: "Transformando bugs em aprendizado. Debugging não é apenas consertar.",
+    points: [
+      "Foco principal: Entender o estado da aplicação e o fluxo exato de execução.",
+      "Debugging não é apenas 'consertar' o código o mais rápido possível.",
+      "Devemos buscar enxergar as entrelinhas e entender as consequências de cada linha de código."
+    ],
+    details: ["Mindset", "Aprendizado Contínuo", "Estado da Aplicação"],
+    code: "// Bug: O que você escreveu vs O que ele fez\nconst expectation = 'perfeição';\nconst reality = 'undefined';"
+  },
+  {
+    id: "75", label: "INTRO", title: "A Filosofia do Debugger", colorText: "text-pink-500", colorDot: "bg-pink-500", icon: Lightbulb,
+    description: "O que é: O processo sistemático de localizar e reduzir defeitos.",
+    points: [
+      "Raciocínio: Por que o código falha? Geralmente, a lacuna entre o que você acha que escreveu e o que o computador realmente está executando.",
+      "Todo bug é um feedback lógico e objetivo do computador sobre as suas ordens.",
+      "O computador nunca erra em executar as instruções que foram dadas."
+    ],
+    details: ["Localização", "Redução de Defeitos", "Raciocínio Lógico"],
+    code: "// O mindset correto\nconsole.log('Não mude o código ainda, encontre a raiz.');"
+  },
+  {
+    id: "76", label: "ESTRATÉGIA", title: "A Estratégia Científica", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Network,
+    description: "Aplique o método científico antes de sujar as mãos no código.",
+    points: [
+      "Passos fundamentais: Observação -> Hipótese -> Teste -> Correção.",
+      "Evite completamente o 'Coding by Coincidence' (mudar coisas aleatoriamente até funcionar).",
+      "Isso evita regressões e garante que o problema real foi tratado, e não apenas ocultado."
+    ],
+    details: ["Método Científico", "Observação", "Testes de Hipótese"],
+    code: "function scientificMethod() {\n  observe();\n  formulateHypothesis();\n  test();\n  applyFix();\n}"
+  },
+  {
+    id: "77", label: "CONSOLE API", title: "O Padrão W3C", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
+    description: "A porta de entrada primária para comunicação entre o código rodando e o desenvolvedor.",
+    points: [
+      "O objeto console é o padrão mundial para a comunicação direta com ferramentas de desenvolvedor.",
+      "Principais métodos: log() para dados gerais, info() para avisos, warn() para perigos temporários...",
+      "...e error() para falhas críticas que precisam pintar a tela de vermelho."
+    ],
+    details: ["console.log", "console.info", "console.warn", "console.error"],
+    code: "console.log('Mensagem Padrão');\nconsole.warn('Atenção: Uso de API depreciada');\nconsole.error('Falha de conexão com BD');"
+  },
+  {
+    id: "78", label: "CONSOLE++", title: "Além do console.log()", colorText: "text-cyan-500", colorDot: "bg-cyan-500", icon: PlaySquare,
+    description: "Use o potencial total do objeto console para estruturar o caos do debug.",
+    points: [
+      "Uso de console.table() para renderizar arrays e objetos complexos em uma planilha legível.",
+      "Uso de console.group() e console.groupEnd() para aninhar logs e organizar funções complexas ou loops extensos.",
+      "Isso economiza tempo cognitivo durante análises longas de dados em cadeia."
+    ],
+    details: ["console.table", "console.group", "Estruturação de Logs"],
+    code: "console.table([{nome: 'João', id: 1}, {nome: 'Maria', id: 2}]);\nconsole.group('Processamento Start');\nconsole.log('Step 1');\nconsole.groupEnd();"
+  },
+  {
+    id: "79", label: "PERFORMANCE", title: "Medição de Tempo", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Clock,
+    description: "Cronômetros nativos para caçar lentidões invisíveis no Javascript.",
+    points: [
+      "Use console.time('label') para iniciar e console.timeEnd('label') para marcar e parar.",
+      "Raciocínio: Identificar gargalos lógicos onde o processamento está demorando mais do que o esperado.",
+      "Ótimo para medir loops O(N^2) que parecem inofensivos em baixo volume mas travam em larga escala."
+    ],
+    details: ["console.time", "console.timeEnd", "Análise de Gargalos"],
+    code: "console.time('BuscaUsuarios');\n//...long-running task\nconsole.timeEnd('BuscaUsuarios'); // 'BuscaUsuarios: 125.4ms'"
+  },
+  {
+    id: "80", label: "BREAKPOINTS", title: "O Conceito de Breakpoint", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: ShieldCheck,
+    description: "A técnica de parar o tempo. A evolução natural de apenas imprimir coisas no log.",
+    points: [
+      "O que é: Um ponto de parada forçada na execução do código.",
+      "Raciocínio crucial: Em vez de 'printar' o passado e torcer para ver algo útil, nós pausamos o presente.",
+      "Permite que inspecionemos o estado atual, todas as variáveis e o escopo local no exato momento da anomalia."
+    ],
+    details: ["Pausando a Execução", "Inspeção de Memória", "Congelando o DOM"],
+    code: "// No DevTools (F12) vá até a aba Sources\n// Clique na linha que deseja pausar\n// A linha ficará destacada em azul/vermelho"
+  },
+  {
+    id: "81", label: "DEBUGGER", title: "A Palavra-chave debugger", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Zap,
+    description: "A forma baseada em código (programática) de invocar uma pausa no navegador.",
+    points: [
+      "Sintaxe: basta escrever a palavra especial 'debugger;' no meio do seu código.",
+      "Como funciona: O motor JS (V8) detecta isso e interrompe a execução automaticamente se o DevTools estiver aberto.",
+      "Se o DevTools estiver fechado, a engine geralmente ignora a palavra como se não houvesse impedimento."
+    ],
+    details: ["Programatic Breakpoint", "DevTools Trigger", "debugger;"],
+    code: "function computeTaxes(val) {\n  let final = val * 1.2;\n  debugger; // Vai pausar AQUI\n  return final;\n}"
+  },
+  {
+    id: "82", label: "CONDICIONAIS", title: "Breakpoints Condicionais", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Eye,
+    description: "Parecelamento de paradas: Pare apenas quando o bicho pegar.",
+    points: [
+      "Raciocínio: Parar a execução apenas quando uma variável atingir um valor específico (ex: i === 99 em um loop de 1000).",
+      "Evite pressionar 'Play' (Resume) 98 vezes manualmente tentando encontrar o ciclo onde o erro ocorre.",
+      "Uma habilidade incrivelmente valiosa que economiza horas de irritação e tempo mental."
+    ],
+    details: ["Conditional Checks", "Loop Debugging", "Precisão Cirúrgica"],
+    code: "for(let i = 0; i < 1000; i++) {\n  // Clique com botão direito no Breakpoint (DevTools)\n  // Add conditional breakpoint: i === 99\n}"
+  },
+  {
+    id: "83", label: "ERRO: ANATOMIA", title: "Por Dentro do Error", colorText: "text-red-500", colorDot: "bg-red-500", icon: X,
+    description: "Conheça o seu inimigo. Afinal, um Erro é apenas um Objeto padronizado.",
+    points: [
+      "O objeto Error nativo é composto por três veias principais: Name, Message e o riquíssimo Stack Trace.",
+      "O Stack Trace (Pilha de Chamadas) é o mapa do crime; ele mostra a hierarquia (quem chamou quem) que levou ao momento da falha.",
+      "Ele lê de baixo para cima (ou cima para baixo dependendo da engine), apontando o arquivo exato e linha da origem."
+    ],
+    details: ["Object Error", "Message & Name", "Stack Trace"],
+    code: "const err = new Error('Falha catastrófica');\nconsole.log(err.name); // 'Error'\nconsole.log(err.message); // 'Falha...'\nconsole.log(err.stack);"
+  },
+  {
+    id: "84", label: "ERRO: TIPOLOGIA", title: "Tipos de Erros Comuns", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: FileEdit,
+    description: "Saber de que tipo você está sofrendo acelera 80% do seu diagnóstico.",
+    points: [
+      "SyntaxError: O compilador nem consegue ler. Você esqueceu uma chave, vírgula ou ponto (Erro de escrita).",
+      "ReferenceError: Variável não definida. Você chamou algo que não existe no escopo temporal do JS.",
+      "TypeError: Operação aplicada ao tipo de dado errado, como tentar chamar 'null.map()' ou tentar reatribuir const."
+    ],
+    details: ["SyntaxError", "ReferenceError", "TypeError", "RangeError"],
+    code: "foo(); // ReferenceError se foo não existir\nnull.length; // TypeError\nJSON.parse('{err:}'); // SyntaxError"
+  },
+  {
+    id: "85", label: "ERRO: DEFESA", title: "A Armadura Try...Catch", colorText: "text-teal-500", colorDot: "bg-teal-500", icon: ShieldCheck,
+    description: "Evite que o seu aplicativo se desintegre e caia na tela branca da morte.",
+    points: [
+      "Raciocínio mestre: 'Tente executar este código instável; se falhar, capture o erro gracefully e mantenha a aplicação viva'.",
+      "Comando try envolve a zona de colisão. Comando catch recolhe as peças (o Objeto Error gerado).",
+      "Use também o 'finally' opcional para executar limpezas independente do código ter quebrado ou sucesso."
+    ],
+    details: ["try { }", "catch (e) { }", "finally { }", "Graceful Degradation"],
+    code: "try {\n  riskyOperation();\n} catch (error) {\n  console.warn('Protegido! Erro foi:', error.message);\n} finally {\n  cleanupResouces();\n}"
+  },
+  {
+    id: "86", label: "ERRO: ATAQUE", title: "Lançando Suas Próprias Granadas", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Zap,
+    description: "Crie suas próprias fronteiras explodindo o código quando uma regra de negócio sensível é violada.",
+    points: [
+      "Sintaxe base: 'throw new Error(\"Mensagem Customizada\")'. Isso emite o mesmo erro mortal de uma falha do motor JS.",
+      "Por que usar? Para validar regras de negócio rigorosas (ex: idade de um correntista) e barrar prosseguimentos mal-formatados.",
+      "A execução é parada no momento do 'throw', antes que um dado de fato corrompido contamine ou apague um Banco de Dados valioso."
+    ],
+    details: ["throw new Error()", "Business Logic", "Fail Fast"],
+    code: "function withdraw(amount) {\n  if (amount > balance) {\n    throw new Error('Saldo insuficiente!');\n  }\n  balance -= amount;\n}"
+  },
+  {
+    id: "87", label: "ASYNC: NATURA", title: "O Desafio do Tempo Inconstante", colorText: "text-sky-500", colorDot: "bg-sky-500", icon: Clock,
+    description: "Bugs em assincronia não quebram de cima pra baixo. Eles quebram em horários aleatórios.",
+    points: [
+      "Pilar Assíncrono: A internet e Promises que resolvem apenas no futuro e o 'async/await' criam armadilhas de fluxo temporal.",
+      "O Grande Problema: Se um erro ocorre dentro de uma Promise em processo e você não tem um .catch() mapeado, é um 'Unhandled Rejection'.",
+      "O erro pode desaparecer do rastreio padrão do Stack, deixando você cego ao bug silenciosamente letal."
+    ],
+    details: ["Promises", "Async/Await", "Unhandled Rejection"],
+    code: "fetch('/api/data').then(res => {\n  process(res.id); // E se der erro aqui?\n  // Se não houver .catch(), a falha fica muda.\n});"
+  },
+  {
+    id: "88", label: "ASYNC: TRY/AWAIT", title: "Raciocínio Assíncrono Linear", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: PlaySquare,
+    description: "A melhor cura para assincronia caótica é prender o fluxo usando async/await.",
+    points: [
+      "Uso de 'await' contido perfeitamente dentro de blocos try/catch sincroniza a leitura e a defesa no mesmo escopo local.",
+      "Diferença essencial: Erros de rede (fetch failed, CORS) vs Falhas lógicas no parse/processamento dos dados que vieram (ex: JSON.parse).",
+      "Ambos são capturados pela rede do catch e você pode discriminar por meio do error.message."
+    ],
+    details: ["try/catch with async", "Network vs Logic Errors", "Awaiting Data"],
+    code: "async function load() {\n  try {\n    const res = await fetch('/data');\n    const json = await res.json();\n  } catch (err) {\n    console.error('Falhou no fetch ou JSON:', err);\n  }\n}"
+  },
+  {
+    id: "89", label: "EVENT LOOP: QUEUES", title: "Call Stack vs Task Queue", colorText: "text-fuchsia-400", colorDot: "bg-fuchsia-400", icon: Network,
+    description: "A arquitetura de processamento em uma só via do Javascript e como ela engole tarefas simultâneas.",
+    points: [
+      "O Javascript executa apenas UMA coisa por vez primariamente pela Call Stack. Mas gerencia eventos e Promises terceirizando pro Browser (Web APIs).",
+      "Quando o tempo de um setTimeout (Macrotask) acaba, o Browser posta ele na Task Queue.",
+      "O 'Event Loop' vigia: quando a Stack principal estiver fazia, ele puxa a próxima tarefa da fila e executa."
+    ],
+    details: ["Call Stack", "Task Queue", "Web APIs", "Single Thread"],
+    code: "console.log('1');\nsetTimeout(() => console.log('3'), 0);\nconsole.log('2');\n// Resultado: 1, 2, e só então o 3 da fila."
+  },
+  {
+    id: "90", label: "EVENT LOOP: MICRO", title: "Depurando Microtasks", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: Zap,
+    description: "O submundo VIP da fila de eventos, que fura a fila regular (Task Queue).",
+    points: [
+      "Promises (e o '.then()') residem na Microtask Queue. É uma fila que tem absoluta prioridade sobre a Task Queue normal (como setTimeout).",
+      "Se você gerar microtasks em um loop infinito, você trava o render (pintura do navegador) e crasha a página.",
+      "No DevTools, verifique a origem de uma Promise que falhou vazia prestando atenção à tabulação de 'Uncaught in Promise'."
+    ],
+    details: ["Microtasks", "Promises Priority", "Render Blocking"],
+    code: "Promise.resolve().then(() => console.log('Microtask VIP'));\nsetTimeout(() => console.log('Macrotask'), 0);\n// Microtask sempre roda ANTES da Macrotask."
+  },
+  {
+    id: "91", label: "TOOLS: NETWORK", title: "As Ferramentas Ocultas", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Globe,
+    description: "Nem sempre a culpa é do código Javascript no Frontend. Às vezes o back-end está pegando fogo.",
+    points: [
+      "Sources Tab (Chrome/Firefox): O local sagrado onde a mágica do debugger() em tela Cheia acontece.",
+      "Network Tab: Sua principal aliada para depurar requisições API falhas (Status 404, 500), inspecionar payloads e analisar tempos de resposta.",
+      "Verifique as abas de Headers e Preview no Network para confirmar o que você tentou enviar se alinha com o que o Servidor esperava."
+    ],
+    details: ["Sources Tab", "Network Tab", "API Inspection", "Payload Debugging"],
+    code: "// Se a Promise do Fetch falhar, NUNCA culpe o front antes de...\n// ...vermelhar no 'Network Tab' se foi erro 400 ou 500 do BE."
+  },
+  {
+    id: "92", label: "CHECKLIST", title: "Sanidade Pré e Pós Debug", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: CheckCircle2,
+    description: "Os 3 passos antes de rasgar um código que já funciona na tentativa de corrigir um que falha.",
+    points: [
+      "1) Reprodução: O erro é consistente e reprodutível? Posso fazer a falha ocorrer todas as vezes que executo um passo a passo?",
+      "2) Estado e Observação: O estado das constantes e estado do framework que alimentam o bug estão corretos ANTES do crash?",
+      "3) Rota: O código tomou o IF ou fluxo assíncrono que deduzi na cabeça, ou ele saltou sem eu notar para uma chamada espúria?"
+    ],
+    details: ["Reprodutibilidade", "Validação de Variáveis", "Checagem de Fluxo"],
+    code: "if (!reproducible) {\n  console.warn('Não conserte fantasmas. Recrie o laboratório.');\n}"
+  },
+  {
+    id: "93", label: "FIM: SABEDORIA", title: "O Veredito do Sábio", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Lightbulb,
+    description: "Para onde ir agora?",
+    points: [
+      "Resumo Master: Depurar com maestria significa conseguir letalmente isolar o problema e LER o código como se você fosse o compilador nativo (V8).",
+      "É um exercício profundo de traduzir a mente mecânica exata fria do processador sem ser atrapalhado pelos achismos humanos.",
+      "Frase final de ouro: 'Se você não consegue explicar detalhadamente por que havia o bug, você ainda não entendeu o seu próprio código'."
+    ],
+    details: ["Intuição V8", "Compreensão Holística", "Domínio Absoluto"],
+    code: "throw new Success('Você agora é um Mestre de Debugging em Javascript.');"
   }
 ];
 
@@ -2510,7 +2947,8 @@ const contentGroups = [
   { id: "g4", title: "Tratamento de Exceções (29-51)", start: 28, end: 51, color: "bg-red-500" },
   { id: "g5", title: "Operadores Cond/Log (52-59)", start: 51, end: 59, color: "bg-cyan-500" },
   { id: "g6", title: "Ternário (60-63)", start: 59, end: 63, color: "bg-amber-500" },
-  { id: "g7", title: "Bitwise (64-73)", start: 63, end: 73, color: "bg-indigo-500" }
+  { id: "g7", title: "Bitwise (64-73)", start: 63, end: 73, color: "bg-indigo-500" },
+  { id: "g8", title: "Maestria em Debugging (74-93)", start: 73, end: 93, color: "bg-fuchsia-500" }
 ];
 
 export default function App() {
@@ -2521,6 +2959,7 @@ export default function App() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [isAnalogyOpen, setIsAnalogyOpen] = useState(false);
+  const [isArticleOpen, setIsArticleOpen] = useState(false);
 
   const getDetailedTopics = () => {
     switch(selectedTecnologia) {
@@ -2561,11 +3000,12 @@ export default function App() {
 
       if (e.key === 'Escape') {
         setIsAnalogyOpen(false);
+        setIsArticleOpen(false);
       } else if (e.key.toLowerCase() === 'a') {
         e.preventDefault();
         // Apenas abre a analogia se houver uma (ou seja, slide > 0)
         setIsAnalogyOpen((prev) => currentSlide > 0 ? !prev : false);
-      } else if (isAnalogyOpen) {
+      } else if (isAnalogyOpen || isArticleOpen) {
         // prevent slide navigation when modal is open
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === ' ') e.preventDefault();
         return;
@@ -2574,6 +3014,7 @@ export default function App() {
         setCurrentSlide((prev) => {
           const next = Math.min(prev + 1, totalSlides - 1);
           setIsAnalogyOpen(false); // Fecha ao trocar de slide
+          setIsArticleOpen(false); // Fecha ao trocar de slide
           return next;
         });
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
@@ -2581,6 +3022,7 @@ export default function App() {
         setCurrentSlide((prev) => {
           const next = Math.max(prev - 1, 0);
           setIsAnalogyOpen(false); // Fecha ao trocar de slide
+          setIsArticleOpen(false); // Fecha ao trocar de slide
           return next;
         });
       } else if (e.key.toLowerCase() === 'p') {
@@ -2596,7 +3038,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [totalSlides, isAnalogyOpen, currentSlide]);
+  }, [totalSlides, isAnalogyOpen, isArticleOpen, currentSlide]);
 
   return (
     <div 
@@ -3082,6 +3524,15 @@ export default function App() {
                 
                 <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
                   
+                  {/* Article Open Button */}
+                  <button 
+                    onClick={() => setIsArticleOpen(true)}
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2 sm:p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-gray-400 hover:text-white transition-colors shadow-lg cursor-pointer flex items-center justify-center group"
+                    title="Ler aprofundamento"
+                  >
+                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                  </button>
+
                   {/* Huge Background Number */}
                   <div className={`absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 text-[150px] sm:text-[250px] lg:text-[400px] font-bold opacity-[0.02] ${topic.colorText} pointer-events-none font-mono selection:bg-transparent z-0`}>
                     {topic.id}
@@ -3090,25 +3541,26 @@ export default function App() {
                   {/* Text Content */}
                   <div className="flex-[1.2] w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
                     <div className={`font-mono text-[9px] sm:text-xs mb-2 sm:mb-4 font-semibold tracking-widest flex items-center gap-2 sm:gap-3 ${topic.colorText} flex-shrink-0`}>
-                      <div className={`p-1.5 sm:p-2 rounded-lg bg-white/5 border border-white/5 shadow-inner`}>
-                         <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 opacity-90" />
+                      <div className={`relative p-1.5 sm:p-2 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
+                         <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
+                         <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
                       </div>
-                      <span>{topic.id}. {topic.label}</span>
+                      <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-base">{topic.id}. {topic.label}</span>
                     </div>
                     
-                    <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 tracking-tight text-white flex-shrink-0">{topic.title}</h3>
+                    <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 tracking-tight text-white flex-shrink-0 drop-shadow-lg">{topic.title}</h3>
                     
-                    <p className="text-gray-300 text-[11px] sm:text-sm lg:text-base leading-relaxed mb-3 sm:mb-6 flex-shrink-0 font-medium">
+                    <p className="text-gray-300 text-sm sm:text-base lg:text-xl leading-relaxed mb-4 sm:mb-6 flex-shrink-0 font-medium">
                       {topic.description}
                     </p>
                     
                     {/* Points Container with Auto Scroll if needed */}
                     <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px]">
-                      <ul className="space-y-2.5 sm:space-y-4">
+                      <ul className="space-y-3 sm:space-y-5">
                         {topic.points.map((point, idx) => (
-                          <li key={idx} className="flex flex-row items-start gap-2.5 sm:gap-3 bg-white/[0.02] p-2.5 sm:p-3 rounded-lg border border-white/[0.03] hover:bg-white/[0.04] transition-colors">
-                            <CheckCircle2 className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 ${topic.colorText}`} />
-                            <span className="text-gray-300 md:text-gray-400 text-[10px] sm:text-[13px] lg:text-[14px] leading-snug sm:leading-relaxed">{point}</span>
+                          <li key={idx} className="flex flex-row items-start gap-3 sm:gap-4 bg-white/[0.04] p-4 sm:p-5 rounded-xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.02] transition-all cursor-pointer group">
+                            <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-0.5 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
+                            <span className="text-white text-lg sm:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed font-medium tracking-wide drop-shadow-md">{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -3137,8 +3589,8 @@ export default function App() {
                       </div>
                     </div>
                     <div className="p-3 sm:p-5 overflow-auto flex-grow custom-scrollbar relative">
-                      <div className="absolute top-0 right-0 p-2 opacity-10 pointer-events-none">
-                        <IconComponent className="w-16 h-16 sm:w-24 sm:h-24" />
+                      <div className="absolute top-0 right-0 p-2 opacity-15 pointer-events-none animate-pulse">
+                        <IconComponent className={`w-16 h-16 sm:w-24 sm:h-24 ${topic.colorText} drop-shadow-[0_0_15px_currentColor]`} style={{ filter: 'drop-shadow(0 0 15px currentColor)' }} />
                       </div>
                       <pre className={`text-[10px] sm:text-xs lg:text-[13px] font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
                         <code>{topic.code}</code>
@@ -3163,7 +3615,7 @@ export default function App() {
         </button>
       )}
 
-      {isAnalogyOpen && currentSlide > 0 && currentTopics[currentSlide - 1] && (
+      {isAnalogyOpen && currentSlide > 0 && filteredTopics[currentSlide - 1] && (
         <div 
           className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setIsAnalogyOpen(false)}
@@ -3182,22 +3634,22 @@ export default function App() {
               <div className="flex items-center gap-3 mb-6 sm:mb-8 flex-shrink-0">
                 <Lightbulb className="w-8 h-8 text-indigo-400" />
                 <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
-                  Analogia: {currentTopics[currentSlide - 1].title}
+                  Analogia: {filteredTopics[currentSlide - 1].title}
                 </h2>
               </div>
               <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
                 
                 <div className="flex flex-col gap-6">
                   <ul className="list-disc pl-5 sm:pl-8 space-y-3 sm:space-y-4">
-                    {analogies[currentTopics[currentSlide - 1].id]?.items.map((item, idx) => (
+                    {analogies[filteredTopics[currentSlide - 1].id]?.items.map((item, idx) => (
                       <li key={idx} className="text-lg sm:text-2xl text-gray-300 leading-relaxed font-light">
                         {item}
                       </li>
                     ))}
                   </ul>
-                  {analogies[currentTopics[currentSlide - 1].id]?.images?.length > 0 && (
+                  {analogies[filteredTopics[currentSlide - 1].id]?.images?.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 w-full place-items-start">
-                      {analogies[currentTopics[currentSlide - 1].id].images.map((imgSrc, idx) => (
+                      {analogies[filteredTopics[currentSlide - 1].id].images.map((imgSrc, idx) => (
                         <div key={idx} className="relative rounded-xl overflow-hidden border border-indigo-500/30 shadow-lg w-full max-w-sm">
                           <img 
                             src={imgSrc} 
@@ -3216,6 +3668,72 @@ export default function App() {
         </div>
       )}
       
+      {isArticleOpen && currentSlide > 0 && filteredTopics[currentSlide - 1] && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setIsArticleOpen(false)}
+        >
+          <div 
+            className="bg-[#0b0f19] border border-blue-500/30 rounded-2xl p-6 sm:p-10 w-[90vw] max-w-4xl max-h-[85vh] flex flex-col shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-300"
+            onClick={e => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setIsArticleOpen(false)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-500 hover:text-white transition-colors cursor-pointer p-2 hover:bg-white/10 rounded-full z-10"
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+            <div className="flex flex-col h-full bg-gradient-to-b from-transparent to-black/20">
+              <div className="flex items-center gap-3 mb-6 sm:mb-8 flex-shrink-0">
+                <BookOpen className="w-8 h-8 text-blue-400" />
+                <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
+                  Aprofundamento: {filteredTopics[currentSlide - 1].title}
+                </h2>
+              </div>
+              <div className="flex-grow overflow-y-auto pr-4 custom-scrollbar space-y-6 sm:space-y-8 pb-4">
+                <div className="space-y-6 text-lg sm:text-xl text-gray-300 leading-relaxed font-light font-sans">
+                  <p>
+                    O conceito de <strong className="text-white font-semibold">{filteredTopics[currentSlide - 1].title}</strong> é um pilar fundamental neste ecossistema. 
+                    {' '}{filteredTopics[currentSlide - 1].description} Compreender essa base nos permite escrever aplicações estruturadas e de fácil manutenção, 
+                    elevando o padrão da nossa arquitetura de software de maneira assertiva.
+                  </p>
+                  
+                  <p>
+                    Se dissecarmos seu funcionamento de perto, notaremos comportamentos essenciais que guiam essa tecnologia. 
+                    Primeiramente, notamos que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[0]}</strong>. 
+                    {filteredTopics[currentSlide - 1].points.length > 1 && (
+                      <> Em seguida, outro fator crucial é que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[1]}</strong>.</>
+                    )}
+                    {filteredTopics[currentSlide - 1].points.length > 2 && (
+                      <> Por fim, a natureza dessa estrutura dita que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[2]}</strong>.</>
+                    )}
+                    {' '}Estes pontos atuam em conjunto de forma harmônica para resolver gargalos críticos que encontraríamos em abordagens e cenários tradicionais do desenvolvimento.
+                  </p>
+
+                  <p>
+                    Para aplicar esses maravilhosos conceitos de forma robusta e plena, deve-se voltar a atenção aos detalhes técnicos envolvidos, 
+                    como <strong className="text-emerald-400 font-medium">{filteredTopics[currentSlide - 1].details.join(', ')}</strong>.
+                    Dominar esses aspectos separa drasticamente o código amador de um código resiliente e pronto e flexível para escalar em produção. 
+                    Acompanhe abaixo o <strong className="text-fuchsia-400 font-medium">código demonstrativo</strong> ilustrando a aplicação real na prática:
+                  </p>
+                </div>
+                
+                {filteredTopics[currentSlide - 1].code && (
+                  <div className="pt-2">
+                    <div className="p-4 sm:p-6 bg-[#05060a] border border-fuchsia-500/30 shadow-[0_0_15px_rgba(217,70,239,0.15)] rounded-xl overflow-x-auto relative group">
+                        <div className="absolute inset-0 bg-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500"></div>
+                        <pre className="text-fuchsia-300 font-mono text-sm sm:text-base leading-[1.6]">
+                          <code>{filteredTopics[currentSlide - 1].code}</code>
+                        </pre>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style dangerouslySetInnerHTML={{__html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
