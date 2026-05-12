@@ -4312,12 +4312,21 @@ export default function App() {
                        <div className="bg-[#080b12]/90 border border-white/5 rounded-2xl p-6 sm:p-8 flex flex-col overflow-auto backdrop-blur-md">
                           <h4 className="text-white/50 uppercase tracking-widest font-mono text-xs sm:text-sm mb-4 sm:mb-6">Pontos Chave</h4>
                           <div className="space-y-3 sm:space-y-4">
-                            {topic.points.map((pt, i) => (
-                               <div key={i} className="flex gap-3 items-center bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
-                                  <CheckCircle2 className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 ${topic.colorText}`} />
-                                  <span className="text-white font-medium text-base sm:text-xl">{pt}</span>
+                            {topic.points.map((pt, i) => {
+                               const paragraph = (topic as any).article ? ((topic as any).article.split('\n\n')[i] || topic.description) : topic.description;
+                               const cleanText = paragraph.replace(/\*\*/g, '').replace(/\*/g, '');
+                               const firstSentenceMatch = cleanText.match(/^[^.!?]+[.!?]/);
+                               const supportText = firstSentenceMatch ? firstSentenceMatch[0] : cleanText;
+                               return (
+                               <div key={i} className="flex gap-4 items-start bg-white/5 p-4 sm:p-5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                  <CheckCircle2 className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-1 ${topic.colorText}`} />
+                                  <div className="flex flex-col">
+                                    <span className="text-white font-medium text-base sm:text-xl mb-1">{pt}</span>
+                                    <span className="text-gray-400 text-sm sm:text-base font-light leading-relaxed">{supportText}</span>
+                                  </div>
                                </div>
-                            ))}
+                               );
+                            })}
                           </div>
                        </div>
                        
