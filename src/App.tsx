@@ -3663,13 +3663,13 @@ export default function App() {
                 >
                   <header className="mb-8 lg:mb-12 text-center">
                     <div className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-mono text-[9px] sm:text-xs tracking-[0.3em] uppercase mb-4 lg:mb-6">
-                      Plataforma de Ensino v2.0
+                      Plataforma Interativa de Aulas
                     </div>
-                    <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-4 tracking-tighter uppercase italic">
-                      Mapa de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Disciplinas</span>
+                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-white mb-6 tracking-tighter shadow-blue-500">
+                      Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 font-serif italic pr-2">Edu</span>
                     </h1>
-                    <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto px-4">
-                      Selecione uma área de conhecimento para explorar os módulos interativos e aprofundar seus estudos.
+                    <p className="text-gray-400 text-sm sm:text-xl max-w-3xl mx-auto px-4 font-light leading-relaxed">
+                      Substitua slides tradicionais por uma experiência imersiva com código em tempo real, analogias criativas e layouts dinâmicos. Escolha uma trilha para começar.
                     </p>
                   </header>
 
