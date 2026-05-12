@@ -3,7 +3,10 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   Network, Settings2, Search, FileEdit, Palette, ShieldCheck, PlaySquare, Globe, Fingerprint, CheckCircle2,
   ChevronLeft, ChevronRight, Zap, MousePointer2, Keyboard, Loader2, Clock, Ear, ArrowUpCircle, Sun, Moon,
-  ZoomIn, ZoomOut, Lightbulb, X, Play, Layout, Power, Eye, BookOpen
+  ZoomIn, ZoomOut, Lightbulb, X, Play, Layout, Power, Eye, BookOpen, BarChart3, BrainCircuit,
+  Smartphone, Monitor, ShoppingCart, Database, Box, FileText, Target, Download, HardDrive, Calculator, Image, Mic, Compass, Trash2,
+  History, Cpu, Layers, Bot, UserCheck, Link, Wrench, Calendar, StickyNote, Stethoscope, Users, Briefcase, RefreshCw, Rocket, Terminal, TableProperties, Construction, Package, Star, Cloud, TrendingUp,
+  AlertTriangle, Ghost, Lock, Music, FlaskConical, Flag, Phone, DollarSign, MessageCircle, Folder, Mail
 } from 'lucide-react';
 
 type AnalogyData = { items: string[]; images: string[] };
@@ -1218,7 +1221,7 @@ const analogies: Record<string, AnalogyData> = {
     items: [
       "Na corte luxuosa silenciosa esnobe implacável mágica das microtasks moram os Deuses Reais sagrados nascidos das brilhantes resoluções douradas incontestáveis de Promises validadas puras das chamas eternas.",
       "Enquanto os macrotasks sujos gélidos tristes mendigam calados no relento das esquinas congelantes esperando o setTimeout lerdo, as Microtasks puxam majestosamente sua carteira e crachá dourado de sangue limpo.",
-      "Elas rasgam e furam cruelmente a humilde fila dos plebeus amontoados sujos ignorados, pois são donos abençoados pelo coração VIP do sagrado Event Loop e sempre andam e voam na frente limpos purificados.",
+      "Elas rasgam e furam cruelmente a humilde fila dos plebeus amontoados sujos ignorados, pois são donos abençoados pelo coração VIP do sagrado Event Loop e sempre passam na frente limpos purificados.",
       "Sempre passarão na linha síncrona real cortando a fumaça ruidosa do caos da Engine em prioridades elitistas mágicas das quais nenhum humilde click mortal mundano sonha ter jamais no inferno."
     ],
     images: ["https://image.pollinations.ai/prompt/vip%20door%20bouncers%20letting%20glowing%20elites%20bypass%20massive%20crowd?width=600&height=400&nologo=true"]
@@ -1253,15 +1256,15 @@ const analogies: Record<string, AnalogyData> = {
 };
 
 const vueContentGroups = [
-  { id: "vue-g1", title: "Introdução ao Vue (Guia Inicial)", start: 0, end: 4, color: "bg-emerald-500" },
-  { id: "vue-g2", title: "Introdução Rápida (Quick Start)", start: 4, end: 8, color: "bg-blue-500" },
-  { id: "vue-g3", title: "Fundamentos I (Aplicação e Sintaxe)", start: 8, end: 14, color: "bg-indigo-500" },
-  { id: "vue-g4", title: "Fundamentos II (Reatividade e Lógica)", start: 14, end: 20, color: "bg-purple-500" },
-  { id: "vue-g5", title: "Fundamentos III (Estilos e Condicionais)", start: 20, end: 26, color: "bg-pink-500" },
-  { id: "vue-g6", title: "Fundamentos IV (Listas e Eventos)", start: 26, end: 32, color: "bg-orange-500" },
-  { id: "vue-g7", title: "Fundamentos V (Forms e Formulários)", start: 32, end: 35, color: "bg-teal-500" },
-  { id: "vue-g8", title: "Fundamentos VI (Ciclo de Vida e Watchers)", start: 35, end: 41, color: "bg-rose-500" },
-  { id: "vue-g9", title: "Fundamentos VII (Refs e Componentização)", start: 41, end: 47, color: "bg-violet-500" }
+  { id: "vue-g1", title: "Introdução e Arquitetura", start: 0, end: 4, color: "bg-emerald-500" },
+  { id: "vue-g2", title: "Ambiente e Estrutura", start: 4, end: 8, color: "bg-blue-500" },
+  { id: "vue-g3", title: "Templates e Data Binding", start: 8, end: 14, color: "bg-indigo-500" },
+  { id: "vue-g4", title: "Estado e Reatividade", start: 14, end: 20, color: "bg-purple-500" },
+  { id: "vue-g5", title: "Estilo e Condicionais", start: 20, end: 26, color: "bg-pink-500" },
+  { id: "vue-g6", title: "Listas e Manipulação", start: 26, end: 32, color: "bg-orange-500" },
+  { id: "vue-g7", title: "Formulários e Inputs", start: 32, end: 35, color: "bg-teal-500" },
+  { id: "vue-g8", title: "Ciclo de Vida e Watchers", start: 35, end: 41, color: "bg-rose-500" },
+  { id: "vue-g9", title: "Componentes e Comunicação", start: 41, end: 47, color: "bg-violet-500" }
 ];
 
 const reactContentGroups = [
@@ -1272,17 +1275,535 @@ const angularContentGroups = [
   { id: "angular-g1", title: "Introdução ao Angular", start: 0, end: 5, color: "bg-red-500" }
 ];
 
+// DATA STRUCTURES FOR NEW DISCIPLINE: Inteligência Artificial & Análise de dados
+const analysisDataDetailedTopics = [
+  {
+    id: "ad01", label: "O VOLUME", title: "O Rastro Digital", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Smartphone,
+    description: "Toda interação digital gera um rastro. O volume de dados gerados dobra a cada ano e forma a base da economia moderna.",
+    points: ["Volume Massivo", "Rastros Constantes", "Base da Economia"],
+    details: ["Smartphones", "Navegação Web", "Transações"],
+    code: "// Exemplo de rastro digital\nconst interaction = {\n  device: 'Smartphone',\n  action: 'Add to Cart',\n  timestamp: new Date()\n};",
+    article: "Vivemos em uma era onde quase todas as nossas ações cotidianas são mediadas por dispositivos digitais. Ao acordar e checar o celular, ao pagar um café com aproximação, ou ao navegar por uma rede social, estamos constantemente emitindo sinais. Esses sinais, quando capturados, formam o que chamamos de 'Rastro Digital'.\n\nO volume desses dados é tão massivo que se estima que a quantidade total de informação no mundo dobre a cada ano. Essa avalanche de dados não é apenas ruído; ela é o alicerce da economia digital moderna, permitindo que empresas entendam comportamentos em uma escala nunca antes vista na história humana.\n\nCompreender o rastro digital é o primeiro passo para qualquer analista. Não se trata apenas de 'números', mas de pegadas que revelam intenções, hábitos e necessidades latentes que podem ser transformadas em oportunidades de negócio.\n\n**Caso Prático:** Imagine um usuário que clica em um anúncio de tênis, navega por três modelos diferentes em uma landing page, adiciona um ao carrinho, mas abandona a compra no último segundo. Para o usuário, foi apenas um 'quase'. Para o sistema, foram geradas dezenas de linhas de dados (tempo de tela, cliques, origem do tráfego) que permitem que a empresa envie um lembrete personalizado com um desconto minutos depois."
+  },
+  {
+    id: "ad02", label: "O VALOR", title: "Dados como Ativo", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Database,
+    description: "Ter dados não é vantagem; a vantagem é saber extrair valor deles. O dado é o petróleo, o refino é a estratégia.",
+    points: ["Valor Estratégico", "Refino de Dados", "Decisões Lucrativas"],
+    details: ["Petróleo Digital", "Estratégia", "Lucratividade"],
+    code: "// Decisão baseada em dados\nif (peakHourTraffic > threshold) {\n  increaseAdBid('18h-20h');\n}",
+    article: "A analogia clássica de que 'dados são o novo petróleo' é poderosa, mas incompleta. O petróleo bruto, em seu estado natural, tem pouco uso prático; ele precisa ser extraído, transportado e, crucialmente, refinado em combustível para mover motores. Com os dados, o processo é idêntico.\n\nAcumular petabytes de informação sem uma estratégia de análise é apenas um custo de armazenamento. O verdadeiro valor surge quando esses dados são processados para gerar 'insights' que orientam decisões estratégicas. É a diferença entre 'achar' que algo funciona e 'saber' que algo funciona com base em evidências.\n\nEmpresas que tratam dados como ativos investem na qualidade da coleta e na inteligência do processamento. Elas entendem que uma decisão 1% mais eficiente, quando replicada em milhares de transações, pode significar a diferença entre o lucro e o prejuízo no final do mês.\n\n**Caso Prático:** Uma empresa de serviços locais em Recife percebeu, ao cruzar dados de atendimento com horários de fechamento, que 70% dos seus contratos eram fechados por clientes que enviavam mensagens entre 18h e 20h. No entanto, o orçamento de anúncios era gasto igualmente durante o dia. Ao redirecionar o investimento apenas para essa janela de 'ouro', a empresa triplicou suas vendas sem gastar um centavo a mais."
+  },
+  {
+    id: "ad03", label: "DA-INF", title: "Do Dado à Informação", colorText: "text-blue-300", colorDot: "bg-blue-300", icon: Box,
+    description: "O Dado é um fato isolado, sem significado. A Informação é o dado com contexto (quem, quando, onde).",
+    points: ["Fatos Isolados", "Contextualização", "Atribuição de Significado"],
+    details: ["Dados Brutos", "Contexto", "Estrutura"],
+    code: "const rawData = 81; // O que é isso?\nconst info = { areaCode: rawData, region: 'Pernambuco' };",
+    article: "Na hierarquia da inteligência, o 'Dado' é a matéria-prima mais pura e crua. Ele é um fato isolado, um símbolo ou um número que, sozinho, não possui significado intrínseco. Por exemplo, o número '81' ou a palavra 'Vermelho' são apenas dados.\n\nPara que esse dado se torne útil, precisamos aplicar a ele um contexto. Quando dizemos que '81' é um DDD telefônico ou que 'Vermelho' é o status de um estoque crítico, estamos transformando o dado em 'Informação'. A informação responde a perguntas como 'Quem?', 'O quê?', 'Onde?' e 'Quando?'.\n\nEssa distinção é fundamental no desenvolvimento de software e análise de dados. Enquanto o banco de dados armazena os fatos brutos, a interface e os relatórios devem apresentar a informação contextualizada para que o usuário final possa compreendê-la rapidamente.\n\n**Caso Prático:**\n* **Dado:** O sistema recebe o número '81' em um campo de cadastro. Ele isoladamente pode ser uma idade, um andar ou um ano.\n* **Informação:** Ao ser processado como prefixo telefônico, o sistema identifica que se trata do 'DDD 81 - Pernambuco'. Com essa informação, o software de vendas pode priorizar o lead para um consultor que fala o dialeto local ou aplicar uma promoção específica para a região nordeste."
+  },
+  {
+    id: "ad04", label: "INF-CON", title: "Da Informação ao Conhecimento", colorText: "text-yellow-400", colorDot: "bg-yellow-400", icon: Target,
+    description: "O Conhecimento é a aplicação da informação para resolver um problema ou tomar uma ação.",
+    points: ["Ação Direcionada", "Resolução de Problemas", "Inteligência Aplicada"],
+    details: ["Experiência", "Processo", "Decisão"],
+    code: "// Conhecimento em código\nif (customer.overduePayments > 3) {\n  blockCredit(customer.id);\n}",
+    article: "Se a informação é o dado com contexto, o 'Conhecimento' é a informação com propósito e aplicação. Ter a informação de que um cliente não pagou uma fatura é importante, mas saber o que fazer com essa informação para proteger o negócio é o que define o conhecimento.\n\nO conhecimento envolve a compreensão de padrões e a capacidade de prever consequências. Ele é construído através da experiênca e da análise repetida de informações, permitindo que indivíduos ou sistemas automatizados tomem decisões assertivas para resolver problemas específicos.\n\nEm sistemas modernos de IA e análise, buscamos automatizar a aplicação desse conhecimento. Criamos regras de negócio e modelos preditivos que não apenas reportam o que aconteceu, mas 'conhecem' a melhor ação a ser tomada a partir daqueles fatos.\n\n**Caso Prático:** Em um cenário de análise de crédito bancário, a **informação** diz que 'O cliente atrasou 3 parcelas nos últimos 6 meses'. O **conhecimento aplicado** pelo sistema é identificar que este padrão representa um alto risco de inadimplência. Resultado: o software bloqueia automaticamente novas linhas de crédito e dispara um alerta para o setor de renegociação antes mesmo de o humano analisar o caso."
+  },
+  {
+    id: "ad05", label: "ENTRADA", title: "Coleta e Armazenamento", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Download,
+    description: "Como os sistemas capturam a realidade e onde guardam isso de forma segura no cofre digital.",
+    points: ["Captura de Realidade", "Cofre de Dados", "Sistemas de Entrada"],
+    details: ["Webhooks", "Formulários", "Banco de Dados"],
+    code: "// Fluxo de entrada\napp.post('/webhook', (req, res) => {\n  const lead = req.body;\n  db.save('leads', lead);\n});",
+    article: "A coleta de dados é a ponte entre o mundo físico (ou digital externo) e a sua infraestrutura. É o momento em que a realidade é 'traduzida' em bits e bytes. Uma coleta mal feita é a causa número um de análises erradas no futuro, por isso a precisão aqui é vital.\n\nUma vez coletados, os dados precisam de um 'cofre'. O armazenamento deve garantir não apenas a segurança contra acessos não autorizados, mas também a integridade e a disponibilidade. Escolher entre um banco de dados SQL (para dados estruturados) ou NoSQL (para flexibilidade) é uma das decisões mais críticas dessa etapa.\n\nHoje, usamos tecnologias como Webhooks e APIs para capturar dados em tempo real. Isso permite que sistemas sejam proativos, reagindo instantaneamente a um formulário preenchido ou a um sensor de temperatura que disparou em uma fábrica.\n\n**Caso Prático:** Imagine um fluxo de automação onde um potencial cliente (lead) preenche um formulário de interesse em uma rede social. O sistema de anúncios envia o 'payload' via **webhook** para o seu servidor. O seu sistema coleta esses dados crus, valida se o e-mail é real e armazena tudo em um banco de dados seguro, permitindo que a equipe de vendas tenha o histórico completo do interesse do cliente em segundos."
+  },
+  {
+    id: "ad06", label: "SAÍDA", title: "Processamento e Análise", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: Settings2,
+    description: "A transformação da massa de dados crua em algo legível por humanos ou IAs através de dashboards.",
+    points: ["Transformação", "Visualização", "Legibilidade"],
+    details: ["Engrenagens", "Scripts", "Dashboards"],
+    code: "// Processamento noturno\nconst dailyReport = await db.leads\n  .filter(l => l.date === yesterday)\n  .calculateConversion();",
+    article: "O processamento é a 'fábrica' onde os dados crus são limpos, agregados e formatados. Sem esta etapa, teríamos apenas uma massa confusa de registros. É aqui que scripts (muitas vezes em Python ou JavaScript) removem duplicatas e calculam métricas fundamentais como médias e somatórios.\n\nA análise é a etapa final onde transformamos o resultado do processamento em algo que humanos podem ler: Dashboards, relatórios ou gatilhos de automação. O objetivo é reduzir a complexidade e destacar o que realmente importa para a tomada de decisão.\n\nA boa análise deve ser visual e intuitiva. Um gráfico bem construído pode revelar tendências que seriam impossíveis de notar em uma planilha com 10 mil linhas. É o fechamento do ciclo, onde o dado bruto finalmente se torna valor para o negócio.\n\n**Caso Prático:** Uma empresa de e-commerce possui uma rotina escrita em Node.js que roda toda madrugada. O script puxa milhares de pedidos do banco de dados, filtra apenas os pagos, remove cancelamentos e calcula o ticket médio por região. Pela manhã, o gerente de marketing não vê o banco de dados sujo; ele recebe um painel limpo mostrando a 'taxa de conversão da semana', permitindo ajustar a estratégia de frete grátis antes da reunião matinal."
+  },
+  {
+    id: "ad07", label: "ESTRUTURADO", title: "O Mundo Estruturado", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Calculator,
+    description: "Dados organizados em linhas e colunas. Têm tipagem forte e são altamente previsíveis.",
+    points: ["Tabelas SQL", "Tipagem Forte", "Previsibilidade"],
+    details: ["Excel", "Linhas/Colunas", "Modelagem"],
+    code: "SELECT \n  nome, nota \nFROM alunos \nWHERE nota > 7;",
+    article: "O mundo estruturado é o território das planilhas e dos bancos de dados relacionais. Aqui, a ordem é a regra: os dados são organizados em tabelas com colunas fixas e tipos de dados rigorosos (como data, número inteiro ou texto curto). É o ambiente ideal para cálculos matemáticos e operações de agregação.\n\nNeste modelo, cada registro possui um lugar específico e segue um esquema (schema) pré-definido. Isso torna as consultas extremamente rápidas e eficientes, permitindo que sistemas computacionais processem milhões de linhas com precisão matemática absoluta. É a base de sistemas financeiros, ERPs e cadastros acadêmicos.\n\nA grande vantagem dos dados estruturados é a sua previsibilidade. Como sabemos exatamente o que esperar de cada coluna, podemos criar lógicas de automação complexas que funcionam de forma consistente, garantindo que a integridade da informação seja mantida através de chaves primárias e relacionamentos.\n\n**Caso Prático:** O banco de dados de um sistema escolar é o exemplo perfeito. Temos a tabela 'Alunos' com colunas como 'ID', 'Nome' e 'Data de Nascimento'. Ao cruzar com a tabela 'Notas', um script SQL pode calcular instantaneamente a média exata de uma turma de 500 alunos filtrando apenas por aqueles que tiveram nota acima de 7, permitindo gerar o boletim final sem erros humanos."
+  },
+  {
+    id: "ad08", label: "CAOS-IA", title: "O Mundo Não Estruturado", colorText: "text-rose-400", colorDot: "bg-rose-400", icon: Image,
+    description: "Dados que não cabem em tabelas: áudio, imagem e texto livre. Representam 80% dos dados globais.",
+    points: ["Nuvem de Caos", "Mídia e Texto Livre", "Alvo da IA Generativa"],
+    details: ["Áudios", "Imagens", "Transcrições"],
+    code: "// IA analisando caos\nconst sentiment = await ia.analyzeAudio(audioFile);\nconsole.log(sentiment.intent); // 'Reclamação'",
+    article: "Se os dados estruturados são a ordem, os dados não estruturados são o caos criativo do mundo real. Eles englobam tudo o que não cabe em uma planilha: e-mails, postagens em redes sociais, áudios de WhatsApp, vídeos e documentos PDF. Estima-se que 80% de toda a informação gerada hoje seja deste tipo.\n\nAté pouco tempo atrás, esse montante de dados era invisível para o processamento automático. Computadores tinham dificuldade em 'entender' o sentimento de um texto ou o conteúdo de uma foto. Foi exatamente para domar esse caos que a Inteligência Artificial Moderna e os Modelos de Linguagem foram criados.\n\nA análise de dados não estruturados permite que empresas extraiam inteligência de feedbacks subjetivos. Não analisamos mais apenas 'quantas estrelas' o cliente deu, mas 'por que' ele está frustrado, lendo as entrelinhas de um comentário longo ou ouvindo o tom de voz em um chamado de suporte.\n\n**Caso Prático:** Um cliente envia um áudio de 2 minutos no WhatsApp de uma empresa reclamando de um atraso na entrega. Uma ferramenta tradicional de banco de dados só conseguiria salvar o arquivo .mp3. No entanto, uma IA moderna transcreve o áudio, identifica a intenção principal ('Reclamação'), extrai as entidades críticas ('Atraso' e 'Pedido #123') e classifica o sentimento como 'Bravo'. Isso permite que o sistema Priorize o atendimento desse cliente automaticamente."
+  },
+  {
+    id: "ad09", label: "RETROVISOR", title: "Descritiva e Diagnóstica", colorText: "text-slate-400", colorDot: "bg-slate-400", icon: Eye,
+    description: "O foco no passado. A Descritiva mostra o fato (o quê?), a Diagnóstica cruza variáveis (por quê?).",
+    points: ["Análise do Passado", "Causalidade", "Painel de Controle"],
+    details: ["O Quê?", "Por Quê?", "Histórico"],
+    code: "// Diagnóstico de queda\nif (salesDrop && gatewayDown) {\n  setSourceOfTruth('Payment Failure');\n}",
+    article: "A Análise Descritiva é o primeiro nível de maturidade analítica: ela olha para o que já aconteceu. É o relatório de vendas do mês passado ou o gráfico de acessos ao site de ontem. Ela responde à pergunta fundamental: 'O que houve?'.\n\nA Análise Diagnóstica vai um passo além e busca a causalidade. Ela não apenas nota que um evento ocorreu, mas tenta entender o motivo por trás dele, cruzando diferentes variáveis para encontrar correlações. Ela responde à pergunta: 'Por que houve?'.\n\nEsses dois níveis são como o retrovisor de um carro. Eles nos dão uma visão clara do caminho percorrido e dos erros cometidos. Sem essa base histórica sólida, é impossível tentar prever o futuro com qualquer grau de precisão, pois não entenderíamos os mecanismos que regem o negócio.\n\n**Caso Prático:**\n* **Descritiva:** O dashboard de uma loja online mostra que as vendas caíram 20% na última terça-feira em comparação com a média das terças anteriores.\n* **Diagnóstica:** Ao cruzar os dados de vendas com os logs do servidor, descobre-se que a queda ocorreu especificamente entre 14h e 18h, exatamente no período em que o gateway de pagamento retornou erro 500 para 40% das tentativas. O diagnóstico está feito: o problema foi infraestrutura, não falta de interesse dos clientes."
+  },
+  {
+    id: "ad10", label: "PARA-BRISA", title: "Preditiva e Prescritiva", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Compass,
+    description: "O foco no futuro. Antecipar cenários e sugerir as melhores rotas para o negócio.",
+    points: ["Previsão de Futuro", "Sugestão de Rota", "Brilho dos Agentes IA"],
+    details: ["Preditiva", "Prescritiva", "Proatividade"],
+    code: "// Prescrição automática\nif (churnRisk > 0.8) {\n  sendDiscountCoupon(user.id);\n}",
+    article: "A Análise Preditiva usa o passado para tentar antecipar o futuro. Através de modelos estatísticos e aprendizado de máquina, ela identifica padrões que sugerem o que é mais provável que aconteça a seguir. Ela responde à pergunta: 'O que haverá?'.\n\nA Análise Prescritiva é o nível mais avançado e autônomo. Ela não apenas prevê um cenário, mas sugere (ou executa) a melhor ação para aproveitar uma oportunidade ou mitigar um risco. É o território onde os Agentes de IA brilham, atuando como consultores em tempo real. Ela responde: 'O que devemos fazer?'.\n\nEstes níveis são o para-brisa do carro. Eles permitem que o motorista (ou o gestor) veja os obstáculos antes de bater e tome decisões proativas, mudando o curso dos eventos antes que eles se tornem problemas irreversíveis.\n\n**Caso Prático:**\n* **Preditiva:** Um modelo de aprendizado de máquina avalia o comportamento de um usuário na plataforma EAD (tempo de login, conclusão de vídeos) e prevê que há 85% de chance de ele abandonar o curso no próximo mês (Churn).\n* **Prescritiva:** O sistema, ao notar essa probabilidade alta, não apenas avisa o professor, mas envia automaticamente um e-mail personalizado com um cupom para uma mentoria individual ou um material extra, agindo para engajar o aluno antes que a desistência ocorra."
+  },
+  {
+    id: "ad11", label: "GIGO", title: "Efeito GIGO", colorText: "text-red-500", colorDot: "bg-red-500", icon: Trash2,
+    description: "Garbage In, Garbage Out. Nenhuma tecnologia de ponta salva uma base de dados ruim.",
+    points: ["Lixo Entra, Lixo Sai", "Erro de Origem", "Credibilidade em Risco"],
+    details: ["Dados Sujos", "IA Confusa", "Falha Sistêmica"],
+    code: "// O perigo do lixo\nconst name = 'Teste da Silva';\nsendWhatsApp(`Olá ${name}, promoção!`); // Erro de amador",
+    article: "O acrônimo GIGO (Garbage In, Garbage Out) é uma lei universal da computação: se a entrada é lixo, a saída será lixo. Nenhuma Inteligência Artificial, por mais avançada que seja, conseguirá extrair uma verdade de uma base de dados mentirosa, incompleta ou mal formatada.\n\nO erro mais comum em novos projetos é investir pesado em algoritmos complexos enquanto a coleta de dados está 'suja'. Resultados baseados em dados ruins não são apenas inúteis, eles são perigosos, pois podem levar a decisões erradas tomadas com uma falsa sensação de segurança tecnológica.\n\nManter a higiene dos dados exige disciplina. Significa garantir que nomes sejam nomes, que datas sejam válidas e que não existam registros duplicados que inflem os números artificialmente. A integridade da base é o que dá credibilidade a todo o trabalho do analista ou do desenvolvedor.\n\n**Caso Prático:** Um formulário de captação de clientes sem validação permite que o usuário digite qualquer coisa no campo 'Nome'. Um usuário digita 'Teste da Silva'. Uma semana depois, o script de automação de marketing lê esse registro e dispara um WhatsApp personalizado: 'Olá Teste da Silva, temos uma oferta exclusiva para você!'. O cliente percebe o erro robótico imediatamente, e a credibilidade da marca é destruída por um dado mal coletado na origem."
+  },
+  {
+    id: "ad12", label: "HIGIENE", title: "Limpeza e Governança", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: ShieldCheck,
+    description: "A importância de higienizar dados e criar barreiras de validação na entrada (front-end).",
+    points: ["Barreiras de Entrada", "Higienização", "Integridade"],
+    details: ["Filtros", "Validações", "Máscaras"],
+    code: "// Validação no Front-end (React/Vue)\nconst isValidCPF = (val) => /^\\d{11}$/.test(val);\nif (!isValidCPF(input)) alert('Lixo barrado!');",
+    article: "Governança de dados é o conjunto de processos que garante que a informação seja tratada como um bem precioso. A limpeza (data cleansing) envolve processos que rodam periodicamente para corrigir erros em dados antigos, padronizar formatos e remover ruídos que se acumulam com o tempo.\n\nNo entanto, a melhor estratégia de limpeza é a prevenção. Como desenvolvedores de front-end (usando React ou Vue.js), somos os 'porteiros' do banco de dados. Implementar máscaras, validações de tipos e campos obrigatórios é a primeira e mais eficaz linha de defesa contra o efeito GIGO.\n\nUma base de dados higienizada permite que a empresa escale suas operações de IA com confiança. Quando sabemos que os dados seguem um padrão rígido, os algoritmos de machine learning podem aprender de forma muito mais rápida e precisa, gerando resultados que realmente impactam o mundo real.\n\n**Caso Prático:** Em um sistema corporativo, ao criar o formulário de cadastro, o desenvolvedor utiliza máscaras que obrigam o usuário a digitar o CPF exatamente com 11 dígitos numéricos e valida o formato do e-mail em tempo real. Se o usuário tentar inserir 'lixo', a interface barra a entrada antes mesmo de chegar ao servidor. Essa barreira garante que, daqui a um ano, quando a IA for analisar a base de clientes, ela não encontrará 'perfis fantasmas' que prejudicariam a precisão da análise."
+  },
+  {
+    id: "ad13", label: "EVOLUÇÃO", title: "Business Intelligence vs. Self-Service BI", colorText: "text-amber-400", colorDot: "bg-amber-400", icon: Lightbulb,
+    description: "A transição da dependência técnica para a autonomia do usuário de negócio.",
+    points: ["Democratização do Acesso", "Autonomia do Usuário", "Foco na Decisão"],
+    details: ["BI Tradicional (TI)", "Self-Service BI", "Agilidade"],
+    code: "// Do dado à visão em minutos\nConnect(Source) -> Transform() -> Visualize();",
+    article: "O Business Intelligence (BI) tradicional era um processo centralizado no departamento de TI, onde a geração de um relatório poderia levar semanas. O advento do Self-Service BI, liderado pelo Power BI, democratizou o acesso. Agora, o usuário final tem autonomia para consumir, tratar e analisar dados.\n\nO foco sai da 'extração' e vai para a 'decisão', permitindo que analistas de negócios criem suas próprias visões sem depender de scripts complexos de banco de dados para cada consulta nova. Essa autonomia reduz o gargalo no setor de tecnologia e permite que as decisões estratégicas acompanhem a velocidade do mercado em tempo real.\n\n**Aplicação Prática:** Explora a evolução do BI, destacando a transição da dependência técnica para a autonomia do usuário de negócio. Ideal para uma abertura de curso ou palestra estratégica."
+  },
+  {
+    id: "ad14", label: "ENGENHARIA", title: "ETL com Power Query", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Wrench,
+    description: "A fundação de qualquer projeto sério. O motor de transformação de dados.",
+    points: ["Extract, Transform, Load", "Linguagem M", "Remoção de Duplicatas"],
+    details: ["Limpeza", "Preparação", "Consultas Dinâmicas"],
+    code: "// Linguagem M: O código por trás da interface\nlet\n    Fonte = Excel.Workbook(...),\n    Filtrado = Table.SelectRows(Fonte, each ([Valor] > 0))\nin\n    Filtrado",
+    article: "O Power Query é a fundação de qualquer projeto sério. ETL significa Extract, Transform, Load (Extrair, Transformar e Carregar). No Power BI, isso acontece através de uma interface funcional que gera código na linguagem M por trás de cada clique.\n\nAprofundar aqui significa falar sobre a importância de tipos de dados corretos, a remoção de duplicatas, a pivotação de colunas e a criação de consultas dinâmicas. Um bom ETL garante que o modelo de dados seja leve, que o consumo de memória seja otimizado e que os erros de atualização sejam minimizados.\n\n**Aplicação Prática:** Detalhamento técnico sobre a limpeza e preparação de dados. Foco no 'motor' de transformação que precede a criação de visuais."
+  },
+  {
+    id: "ad15", label: "ESTRUTURA", title: "Modelagem de Dados e Star Schema", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Star,
+    description: "Conectando os dados para máxima performance e clareza analítica.",
+    points: ["Esquema Estrela (Star Schema)", "Tabelas de Fatos e Dimensões", "Motor VertiPaq"],
+    details: ["Performance", "Ambiguidade", "Escalabilidade"],
+    code: "// Relacionamento Ouro (1 para Muitos)\nd_Calendario[DataKey] -> f_Vendas[DataVenda]",
+    article: "Ter os dados limpos não é o bastante; eles precisam estar conectados da forma correta. O esquema estrela (Star Schema) é o padrão ouro da modelagem: uma tabela de fatos centralizada (ex: Vendas) conectada a várias tabelas de dimensões (ex: Calendário, Produtos, Clientes).\n\nEssa estrutura otimiza o motor VertiPaq do Power BI, garantindo performance em milhões de linhas e evitando ambiguidade nos relacionamentos. Uma boa modelagem evita o uso excessivo de relacionamentos muitos-para-muitos ou bi-direcionais, que costumam causar lentidão e erros matemáticos em relatórios complexos.\n\n**Aplicação Prática:** Explicação lógica sobre como estruturar tabelas para máxima performance. Essencial para evitar lentidão em relatórios complexos."
+  },
+  {
+    id: "ad16", label: "INTELIGÊNCIA", title: "Linguagem DAX: Medidas vs. Colunas", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: Calculator,
+    description: "Dando inteligência e dinamismo ao modelo através de expressões analíticas.",
+    points: ["Contexto de Filtro", "Função CALCULATE", "Medidas vs Colunas"],
+    details: ["Eficiência", "Memória", "Precisão"],
+    code: "// CALCULATE: O divisor de águas no BI\nVendas_Meta = CALCULATE([Total Vendas], d_Produtos[Categoria] = \"Premium\")",
+    article: "DAX (Data Analysis Expressions) é o que dá inteligência ao modelo. A grande diferença reside no contexto: colunas calculadas são processadas na carga e ocupam memória RAM permanentemente; medidas são calculadas no tempo de execução, baseadas nos filtros aplicados no dashboard pelo usuário.\n\nDominar a função CALCULATE é o divisor de águas entre o iniciante e o especialista, pois ela permite modificar o contexto de filtro original para realizar cálculos complexos de participação ou metas. A escolha correta entre medidas e colunas define se seu relatório será rápido ou se ele irá travar o computador do gestor.\n\n**Aplicação Prática:** Imersão nas fórmulas e na lógica de cálculo. Foco em eficiência de memória e precisão analítica."
+  },
+  {
+    id: "ad17", label: "TEMPO", title: "Inteligência de Tempo (Time Intelligence)", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Clock,
+    description: "Comparando períodos para entender o crescimento e a sazonalidade do negócio.",
+    points: ["Acumulados (YTD)", "Variação Percentual", "Tabela Calendário Robusta"],
+    details: ["Crescimento", "Sazonalidade", "Projeções"],
+    code: "// Inteligência de Tempo YoY\nVendas_Ano_Anterior = CALCULATE([Vendas], SAMEPERIODLASTYEAR(d_Calendario[Data]))",
+    article: "Análises de negócio raramente são estáticas; elas ganham valor quando comparamos períodos. Funções de inteligência de tempo permitem calcular acumulados anuais (YTD), médias móveis e crescimentos percentuais de forma automática e dinâmica.\n\nO segredo aqui é o uso de uma Tabela Calendário (dCalendario) robusta, que serve como eixo central para todas as medidas temporais do relatório. Isso garante que feriados e fins de semana não distorçam a análise e que o contexto temporal seja sempre coerente entre differentes tabelas de fatos.\n\n**Aplicação Prática:** Aplicações práticas de comparação temporal. Como mostrar crescimento, sazonalidade e projeções de datas."
+  },
+  {
+    id: "ad18", label: "VISUAL", title: "Storytelling e Design de Dashboards", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: Palette,
+    description: "Transformando números brutos em uma jornada visual persuasiva e clara.",
+    points: ["Hierarquia Visual", "UX/UI para Dados", "Menos é Mais"],
+    details: ["Ação", "Contraste", "Legibilidade"],
+    code: "// Design focado na Decisão\nMain_KPI = \"Vendas Hoje\";\nPrimary_View = TopLeft;",
+    article: "Um dashboard é uma narrativa visual. O aprofundamento aqui envolve entender que 'menos é mais'. Utilizar a hierarquia visual (o que é mais importante deve ser maior e estar no topo à esquerda) e o contraste de cores para destacar outliers (anomalias) é o que diferencia um gráfico comum de uma ferramenta de gestão poderosa.\n\nStorytelling com dados é sobre transformar números brutos em uma jornada que termina em uma ação clara para o tomador de decisão. Cada visual deve ser escolhido com base no tipo de dado que ele representa, evitando poluição visual e garantindo que o usuário encontre a resposta em poucos segundos.\n\n**Aplicação Prática:** Foco na interface e experiência do usuário (UX/UI). Técnicas para tornar os dados legíveis e persuasivos."
+  },
+  {
+    id: "ad19", label: "NUVEM", title: "Power BI Service e Governança", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Cloud,
+    description: "Colaboração segura, compartilhamento e a única versão da verdade na nuvem.",
+    points: ["Workspaces e Apps", "Segurança RLS", "Governança de Dados"],
+    details: ["Fatos", "Colaboração", "Publicação"],
+    code: "// Segurança de Nível de Linha (RLS)\n[Email_Usuario] = USERPRINCIPALNAME()",
+    article: "O valor real aparece quando o relatório sai da máquina do desenvolvedor e vai para a nuvem. O Power BI Service permite o gerenciamento de workspaces, a configuração de segurança em nível de linha (RLS) — onde cada gerente só vê os dados da sua própria região — e a colaboração em tempo real.\n\nA governança de dados garante que a 'única versão da verdade' seja mantida dentro da organização, evitando que diferentes setores usem métricas conflitantes para o mesmo indicador. Publicar e compartilhar de forma segura é vital para qualquer implementação corporativa de sucesso.\n\n**Aplicação Prática:** Explicação sobre compartilhamento, segurança e publicação. Vital para implementações corporativas."
+  },
+  {
+    id: "ad20", label: "SIMULAÇÃO", title: "Parâmetros 'What-if' e Simulações", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: TrendingUp,
+    description: "Análise de sensibilidade para prever o impacto de mudanças no futuro do negócio.",
+    points: ["Cenários Futuros", "Análise de Sensibilidade", "Interatividade Preditiva"],
+    details: ["Variáveis", "Impacto", "Estratégia"],
+    code: "// Simulação de preço\nPreco_Simulado = [Preco Base] * (1 + [Parametro %])",
+    article: "Os parâmetros de campo e numéricos permitem que o usuário interaja com o relatório para simular cenários futuros. É a ferramenta perfeita para análise de sensibilidade: 'Se a inflação subir 2%, qual o impacto na nossa margem líquida?'.\n\nIsso transforma o relatório de uma ferramenta de 'o que aconteceu' para 'o que pode acontecer', aumentando drasticamente o valor estratégico da entrega. O usuário deixa de ser um espectador passivo dos dados e passa a ser um simulador ativo de estratégias vencedoras.\n\n**Aplicação Prática:** Demonstração de interatividade avançada para simulações de negócios e tomada de decisão preditiva."
+  },
+  {
+    id: "ad21", label: "CONEXÃO", title: "Integração com a Power Platform", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Zap,
+    description: "Automação e ação: conectando o BI a fluxos de trabalho e aplicativos.",
+    points: ["Power Automate", "Power Apps no Dashboard", "Ciclo de Feedback"],
+    details: ["Automação", "Apps", "Ecossistema"],
+    code: "// Fluxo: Gatilho no BI -> Ação no Automate\nif (Alerta) { SendNotification(); }",
+    article: "O Power BI não está isolado. Integrá-lo ao Power Automate permite criar fluxos de trabalho automáticos (ex: enviar um e-mail para o vendedor quando o estoque de um item estiver baixo). Com o Power Apps, é possível criar campos de entrada dentro do próprio dashboard para que o usuário governe dados ou insira comentários que serão salvos no banco de dados.\n\nIsso cria um ciclo fechado de feedback, onde a análise gera uma ação e a ação é registrada de volta no sistema. Entender a Power Platform de forma sistêmica é o que permite construir soluções de ponta a ponta que resolvem problemas de negócio complexos de forma elegante e automática.\n\n**Aplicação Prática:** Visão sistêmica de automação. Como conectar o BI a aplicativos e fluxos de trabalho automáticos."
+  },
+  {
+    id: "ad22", label: "FUTURO", title: "IA Nativa e Análise de Raiz", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: BrainCircuit,
+    description: "Machine Learning oculto para identificar causas, tendências e influenciadores.",
+    points: ["Principais Influenciadores", "Narrativa Inteligente", "Descoberta de Padrões"],
+    details: ["Análise de Raiz", "Tendências", "IA Sem Código"],
+    code: "// IA Nativa: Decomposição de variações\nAnalyze_Difference(2023, 2024);",
+    article: "O Power BI embutiu recursos de machine learning que facilitam a descoberta de padrões ocultos sem a necessidade de escrever uma linha de código Python or R. O visual de 'Principais Influenciadores' analisa automaticamente quais variáveis mais impactam uma métrica (ex: 'O que faz um cliente cancelar a assinatura?').\n\nO recurso de narrativa inteligente gera textos explicativos automáticos, traduzindo gráficos complexos em frases simples para quem não tem tempo de analisar visualmente cada detalhe. O uso desses recursos avançados de IA permite identificar causas e tendências que passariam despercebidas em uma análise manual tradicional.\n\n**Aplicação Prática:** Uso de recursos avançados de Inteligência Artificial para identificar causas e tendências sem necessidade de codificação complexa."
+  }
+];
+
+const analysisDataContentGroups = [
+  { id: "ad-g1", title: "A Era da Informação", start: 0, end: 2, color: "bg-blue-500" },
+  { id: "ad-g2", title: "Pirâmide DIKW", start: 2, end: 4, color: "bg-indigo-500" },
+  { id: "ad-g3", title: "Ciclo de Vida", start: 4, end: 6, color: "bg-purple-500" },
+  { id: "ad-g4", title: "Tipos de Dados", start: 6, end: 8, color: "bg-pink-500" },
+  { id: "ad-g5", title: "Níveis de Análise", start: 8, end: 10, color: "bg-orange-500" },
+  { id: "ad-g6", title: "Qualidade de Dados", start: 10, end: 12, color: "bg-red-500" },
+  { id: "ad-g7", title: "Power BI: Fundamentos", start: 12, end: 15, color: "bg-amber-500" },
+  { id: "ad-g8", title: "Power BI: Inteligência", start: 15, end: 18, color: "bg-rose-500" },
+  { id: "ad-g9", title: "Power BI: Ecossistema", start: 18, end: 22, color: "bg-cyan-500" }
+];
+
+const iaModelsDetailedTopics = [
+  // Módulo 1: O Combustível – Fundamentos de Dados
+  {
+    id: "ia01", label: "O VOLUME", title: "A Era da Informação", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Globe,
+    description: "O volume de dados gerados dobra a cada ano. Dados são o novo petróleo: têm muito valor, mas precisam ser refinados.",
+    points: ["Volume Exponencial", "Dados como Petróleo", "Necessidade de Refino"],
+    details: ["Mundo Hiperconectado", "Economia de Dados", "Dados Brutos"],
+    code: "// Escala de dados\nconst dataVolumeGrowth = (year) => Math.pow(2, year);\nconsole.log('O valor está no refino.');",
+    article: "Na última década, a humanidade passou a gerar mais dados em um único dia do que em séculos inteiros de história escrita. De sensores IoT em fábricas a transações financeiras globais, vivemos mergulhados no que chamamos de 'Oceano de Dados'. O volume global de informação dobra a cada ano, criando um reservatório inesgotável de matéria-prima para a inteligência.\n\nContudo, assim como o petróleo bruto, os dados em seu estado natural têm valor apenas potencial. Eles são densos, barulhentos e muitas vezes desorganizados. Para que se tornem o 'combustível' que move os motores da IA, eles precisam ser coletados, saneados e estruturados. Sem esse refino, os modelos de IA seriam como máquinas tentando rodar com lama em vez de gasolina.\n\nEntender o volume é entender a escala do desafio. Analistas modernos não lidam mais com gigabytes, mas com terabytes de fluxo contínuo. Dominar essa escala é o que permite a criação de modelos preditivos que realmente refletem a complexidade do comportamento humano no mundo digital.\n\n**Caso Prático:** Uma plataforma de streaming coleta bilhões de 'eventos' por dia (cada play, pause ou busca). Esse volume massivo permite que a IA identifique que usuários de Recife tendem a ouvir mais frevo às sextas-feiras de sol, permitindo que o sistema antecipe recomendações e ajuste o cache dos servidores locais antes mesmo do pico de acessos começar."
+  },
+  {
+    id: "ia02", label: "A PIRÂMIDE", title: "O que é Análise de Dados?", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Layers,
+    description: "A transição lógica: do dado isolado ao conhecimento prático para tomada de decisão.",
+    points: ["Dado (Fato Isolado)", "Informação (Contexto)", "Conhecimento (Decisão)"],
+    details: ["Pirâmide DIKW", "Hierarquia Logica", "Valor Agregado"],
+    code: "const dado = 81;\nconst informacao = 'DDD 81 (Pernambuco)';\nconst conhecimento = 'Focar vendas em PE';",
+    article: "A transição entre um número solto e uma decisão de milhões de reais segue uma hierarquia lógica conhecida como Pirâmide DIKW (Dado, Informação, Conhecimento, Sabedoria). No nível mais baixo, temos o **Dado**, um símbolo isolado como '38'. Sem contexto, ele é inútil para a máquina e para o homem.\n\nAo adicionarmos contexto (unidade, tempo, local), o dado sobe um degrau e se torna **Informação**: '38 graus Celsius em um paciente na UTI'. Aqui, o valor começa a emergir, mas a inteligência plena ocorre no próximo nível: o **Conhecimento**. O conhecimento é a interpretação dessa informação para tomar uma ação: 'O paciente está com febre alta e precisa de medicação imediata'.\n\nNo topo da pirâmide está a **Sabedoria**, que envolve o discernimento sobre quando e como aplicar as decisões. Para a IA, nosso foco principal é automatizar a subida dessa pirâmide de forma rápida e precisa, garantindo que o sistema não apenas 'leia' dados, mas 'compreenda' o que deve ser feito com eles.\n\n**Caso Prático:**\n* **Dado:** O sistema lê '150'.\n* **Informação:** O dado representa '150 batimentos por minuto' em um atleta durante repouso.\n* **Conhecimento:** O conhecimento aplicado identifica que este é um sinal de arritmia grave. Resultado: O relógio inteligente dispara um alerta de emergência para os contatos de confiança do usuário instantaneamente."
+  },
+  {
+    id: "ia03", label: "O CICLO", title: "O Ciclo de Vida dos Dados", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: RefreshCw,
+    description: "O fluxo de como o dado entra cru no sistema e sai pronto para leitura e análise.",
+    points: ["Coleta e Armazenamento", "Processamento", "Análise e Visualização"],
+    details: ["Webhooks", "ETL", "Dashboards"],
+    code: "Coleta() -> Armazena() -> Processa() -> Analisa();",
+    article: "Os dados não surgem por mágica; eles percorrem um fluxo vital dentro de qualquer ecossistema tecnológico. O ciclo começa na **Coleta**, onde sensores ou interfaces capturam a realidade. Segue para o **Armazenamento**, onde o dado é guardado no cofre digital, garantindo que sua história não seja perdida.\n\nA etapa mais crítica é o **Processamento**, onde o dado cru é transformado, limpo e preparado. É aqui que as ferramentas de ETL (Extração, Transformação e Carga) brilham. Por fim, chegamos à **Análise e Visualização**, onde o dado processado se torna um dashboard legível que conta uma história clara para o gestor.\n\nGarantir a integridade de cada etapa deste fluxo é o que separa sistemas profissionais de amadores. Se o ciclo quebra na coleta, a análise final será uma miragem. Por isso, enxergamos os dados não como estáticos, mas como fluidos que alimentam a inteligência do negócio continuamente.\n\n**Caso Prático:** Uma fábrica de automóveis usa sensores em braços robóticos. A **coleta** captura vibrações a cada milissegundo. O **armazenamento** guarda bilhões de registros históricos. O **processamento** filtra ruídos e calcula a média de desgaste. A **análise** final mostra um gráfico indicando que o braço 'A' tem 90% de chance de falhar nas próximas 48 horas, permitindo uma manutenção preventiva barata."
+  },
+  {
+    id: "ia04", label: "TIPOS", title: "Tipos de Dados", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: FileText,
+    description: "A diferença entre o mundo previsível das tabelas e o caos rico das mídias e textos livres.",
+    points: ["Estruturados (SQL/Excel)", "Não Estruturados (Áudio/Imagem)", "O Desafio da IA"],
+    details: ["Tipagem Forte", "Mídia Social", "Big Data"],
+    code: "// Estruturado: { nome: 'João' }\n// Não Estruturado: 'Áudio de 2min reclamando...'",
+    article: "No universo da tecnologia, os dados se dividem em dois grandes mundos. O primeiro é o **Estruturado**, o paraíso da ordem: tabelas SQL, planilhas de Excel e cadastros com campos fixos. Eles são fáceis de processar matematicamente, altamente previsíveis e foram a base da computação por décadas.\n\nO segundo mundo é o **Não Estruturado**, e é aqui que a IA moderna realmente mostra seu poder. Estamos falando de áudios, imagens, PDFs manuscritos e postagens em redes sociais. Esse tipo de dado representa 80% do que é gerado no mundo, mas até recentemente era 'invisível' para os computadores tradicionais por não caber em colunas rígidas.\n\nA revolução da IA Generativa e do Deep Learning permitiu que finalmente conseguíssemos extrair estrutura do caos. Hoje, podemos 'perguntar' a um vídeo qual é o seu assunto ou 'pedir' para um sistema resumir milhares de e-mails, unindo esses dois mundos em uma única fonte de inteligência.\n\n**Caso Prático:** Uma seguradora de carros recebe o aviso de um acidente via app. O dado **estruturado** é o número da apólice. O dado **não estruturado** são as fotos do parachoque amassado e um áudio do cliente explicando o ocorrido. Antigamente, um humano teria que olhar tudo. Hoje, uma IA 'vê' a foto, 'ouve' o áudio e gera um relatório automático de danos em segundos."
+  },
+  {
+    id: "ia05", label: "NÍVEIS", title: "Os 4 Níveis da Análise", colorText: "text-orange-400", colorDot: "bg-orange-400", icon: BarChart3,
+    description: "Da análise do que aconteceu até a automação do que deve ser feito a seguir.",
+    points: ["Descritiva & Diagnóstica", "Preditiva (Futuro)", "Prescritiva (Ação)"],
+    details: ["Retrovisor", "Para-brisa", "Dificuldade vs Valor"],
+    code: "if (risk > 0.8) prescricao = 'Enviar Cupom';",
+    article: "A jornada analítica possui quatro níveis de profundidade que levam do passado ao futuro. O primeiro é a **Descritiva** (O que houve?), que mostra o histórico. O segundo é a **Diagnóstica** (Por que houve?), que cruza dados para achar a raiz do problema. Ambos funcionam como o 'retrovisor' do negócio.\n\nOs níveis avançados olham para o 'para-brisa': a **Preditiva** (O que haverá?) usa estatística para antecipar cenários de futuro. Finalmente, a **Prescritiva** (O que fazer?) é o auge da autonomia, sugerindo ou executando a melhor ação para maximizar resultados ou evitar desastres.\n\nQuanto mais avançamos nesses níveis, maior é o valor agregado para a empresa, mas também maior é a dificuldade técnica e a dependência de dados de alta qualidade. Iniciar com uma base descritiva sólida é o pré-requisito para qualquer salto em direção à prescrição automática via agentes de IA.\n\n**Caso Prático:** Uma loja de roupas nota que o estoque de jaquetas está sobrando (**Descritiva**). O sistema descobre que as vendas caíram porque as temperaturas subiram 3 graus acima da média (**Diagnóstica**). O modelo meteorológico prevê uma frente fria severa para a próxima semana (**Preditiva**). O sistema sugere aumentar o preço em 5% e disparar anúncios de jaquetas agora (**Prescritiva**)."
+  },
+  {
+    id: "ia06", label: "GIGO", title: "Qualidade e Higiene", colorText: "text-red-500", colorDot: "bg-red-500", icon: Trash2,
+    description: "Garbage In, Garbage Out. Nenhuma IA salva uma base de dados corrompida ou mal alimentada.",
+    points: ["Lixo Entra, Lixo Sai", "Integridade de Dados", "Erros com Convicção"],
+    details: ["Higiene de Dados", "Governança", "Validação"],
+    code: "Input(Lixo) -> IA -> Output(Lixo);",
+    article: "A lei fundamental da ciência de dados é o acrônimo GIGO: *Garbage In, Garbage Out* (Lixo Entra, Lixo Sai). Nenhuma infraestrutura de servidores caros ou algoritmos de última geração pode salvar um resultado vindo de uma base de dados poluída, incompleta ou enviesada.\n\nA qualidade dos dados é o que define a confiança no sistema. Dados 'sujos' geram o que chamamos de 'alucinações' em modelos de IA e decisões desastrosas em desktops de gestão. Garantir a higienização, a governança e a validação na entrada é o dever mais nobre de qualquer desenvolvedor que se diz 'data-driven'.\n\nInvestir em inteligência sem investir em higiene é como tentar construir um arranha-céu sobre areia movediça. A qualidade não é um 'detalhe'; ela é o alicerce que permite que sistemas de IA ajam com precisão cirúrgica e credibilidade inquestionável perante o usuário final.\n\n**Caso Prático:** Um sistema de IA para recrutamento é alimentado com currículos de uma empresa que historicamente só contratava homens para cargos de liderança (**Lixo/Viés na entrada**). A IA aprende esse padrão e passa a descartar mulheres talentosas automaticamente para novas vagas (**Lixo na saída**). O erro não foi da IA, mas da qualidade e do viés dos dados usados para ensiná-la."
+  },
+
+  // Módulo 2: O Motor – Inteligência Artificial e Modelos de Base
+  {
+    id: "ia07", label: "REALIDADE", title: "Desmistificando a IA", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Bot,
+    description: "IA não é consciência mágica de cinema, é matemática avançada e reconhecimento de padrões em alta escala.",
+    points: ["Mito vs Realidade", "Reconhecimento de Padrão", "Estatística Aplicada"],
+    details: ["Sem Vontade Própria", "Poder Computacional", "Algoritmos"],
+    code: "Probability(Pattern) > Threshold => Detected;",
+    article: "A Inteligência Artificial muitas vezes é retratada no cinema como uma consciência mágica, com sentimentos e objetivos próprios. Na realidade técnica, a IA é um ramo sofisticado da matemática e da estatística aplicada. Ela não 'pensa'; ela reconhece padrões complexos em grandes volumes de dados e usa probabilidades para sugerir resultados.\n\nDesmistificar a IA é entender que o 'milagre' ocorre no poder computacional. Modelos modernos processam bilhões de parâmetros para identificar correlações que seriam invisíveis ao olho humano. Quando uma IA reconhece um gato em uma foto, ela está detectando um arranjo específico de pixels que seu treinamento associou ao rótulo 'gato', sem ter a menor ideia do que é um animal de verdade.\n\nEssa visão pragmática é essencial para quem constrói software. Ao perder o medo da 'mágica', o desenvolvedor começa a enxergar a IA como uma ferramenta poderosa de automação e análise, capaz de resolver problemas reais de forma incrivelmente eficiente, desde que seja bem alimentada e orientada.\n\n**Caso Prático:** Um sistema de segurança de aeroporto usa IA para detectar objetos proibidos em malas de raio-X. A IA não está 'vigiando' com malícia; ela apenas compara a imagem atual com milhões de imagens de armas e facas que 'viu' no treinamento. Se o padrão de pixels da mala atual bate com o padrão de uma faca com 98% de certeza, ela dispara o alerta."
+  },
+  {
+    id: "ia08", label: "LINHA DO TEMPO", title: "Evolução da IA", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: History,
+    description: "Dos sistemas rígidos baseados em regras dos anos 80 até a explosão da era generativa atual.",
+    points: ["Sistemas de Regras", "Machine Learning", "Deep Learning & Generativa"],
+    details: ["Anos 90", "Redes Neurais", "Transformadores"],
+    code: "Regras -> ML -> Deep Learning -> GenAI",
+    article: "A jornada da IA começou com os **Sistemas Baseados em Regras** (Anos 80 e 90), onde programadores escreviam milhares de linhas de 'se-então' (if-else). Eram sistemas rígidos: se ocorresse algo fora das regras, o sistema travava. Eram bons para lógica pura, mas péssimos para a sutileza do mundo real.\n\nA grande virada veio com o **Machine Learning** (Anos 2000), onde paramos de dar as regras e passamos a dar os dados para que a máquina as descobrisse. Com o aumento do poder de processamento, chegamos ao **Deep Learning** e às Redes Neurais, permitindo que computadores processem imagens e sons com precisão humana.\n\nHoje, vivemos a explosão da **IA Generativa**. Não estamos mais apenas classificando o que existe; estamos criando o que não existia. Saímos do sistema que 'notava' uma fraude para o sistema que 'redige' um contrato, 'compõe' uma música ou 'escreve' o código de um aplicativo inteiro em segundos.\n\n**Caso Prático:** Nos anos 90, um sistema de xadrez como o Deep Blue vencia por força bruta calculando trilhões de jogadas por regras frias. Hoje, o AlphaZero (uma IA moderna) aprendeu a jogar xadrez sozinha em 4 horas apenas jogando contra si mesma, descobrindo estratégias criativas que os humanos levaram séculos para notar."
+  },
+  {
+    id: "ia09", label: "PARADIGMA", title: "Machine Learning", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: BrainCircuit,
+    description: "A grande mudança: em vez de programar regras, fornecemos dados para que o sistema aprenda as regras.",
+    points: ["Programação Clássica", "Aprendizado de Máquina", "Inversão da Lógica"],
+    details: ["Treinamento", "Modelagem", "Generalização"],
+    code: "// ML: Dados + Respostas = Regras\nmodel.fit(data, labels);",
+    article: "O Aprendizado de Máquina (Machine Learning) representa uma inversão total do paradigma da programação clássica. Na programação tradicional, você fornece as regras (o código) e os dados, e o computador te dá a resposta. Se você esquecer uma regra, o resultado sai errado.\n\nNo Machine Learning, nós fornecemos os **Dados** e as **Respostas**, e o computador nos devolve o **Modelo** (as regras). É como ensinar uma criança: você mostra 100 fotos de maçãs e diz 'isso é uma maçã'. Eventualmente, a criança (o modelo) cria seu próprio conjunto interno de regras para identificar uma maçã que ela nunca viu antes.\n\nEssa capacidade de generalização é o que torna o ML tão poderoso. Em vez de prever cada cenário possível, criamos sistemas que 'aprendem a aprender', tornando-se mais inteligentes conforme recebem mais informações e corrigem seus próprios erros ao longo do tempo.\n\n**Caso Prático:** Uma plataforma de streaming não programa a regra 'Se o usuário gosta de ação e de Tom Cruise, recomende Missão Impossível'. Ela usa ML para observar milhões de usuários. Ela nota que quem assiste 'A' geralmente assiste 'B'. O sistema aprende a regra silenciosa dos gostos musicais ou de vídeo dos usuários e faz a recomendação baseada nessa aprendizagem, sem que um humano tenha escrito a regra."
+  },
+  {
+    id: "ia10", label: "CATEGORIAS", title: "Categorias de Aprendizado", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: UserCheck,
+    description: "Diferentes formas de treinar um modelo: com auxílio humano, por conta própria ou por recompensas.",
+    points: ["Supervisionado (Gabarito)", "Não Supervisionado (Padrões)", "Reforço (Recompensas)"],
+    details: ["Labels", "Clustering", "Trial and Error"],
+    code: "method = findOptimalCategory('Task');",
+    article: "Existem três formas principais de ensinar uma máquina. O **Aprendizado Supervisionado** é como ter um professor com gabarito: você entrega dados 'rotulados' (ex: fotos com a etiqueta 'Gato' ou 'Cachorro'). A IA treina até conseguir acertar a etiqueta sozinha em fotos novas.\n\nO **Aprendizado Não Supervisionado** ocorre quando não há gabarito. A IA recebe uma massa de dados e deve encontrar padrões ou grupos por conta própria (Clustering). É excelente para descobrir segmentos de clientes que a empresa nem sabia que existiam, agrupando-os por comportamentos sutis de compra.\n\nPor fim, o **Aprendizado por Reforço** é o método da 'tentativa e erro'. A IA interage com um ambiente e recebe punições ou recompensas (pontos). É como treinar um cachorro ou ensinar uma IA a vencer um videogame: ela joga milhões de vezes até descobrir a rota que maximiza a sua pontuação final.\n\n**Caso Prático:**\n* **Supervisionado:** Um banco treina uma IA com 1 milhão de transações marcadas como 'Fraude' ou 'Legítima'.\n* **Não Supervisionado:** Uma loja de roupas coloca seus 100 mil clientes no sistema; a IA descobre sozinha que existem 4 grupos distintos de compradores baseados em horário e ticket médio.\n* **Reforço:** Uma IA de logística simula trilhões de rotas de entrega em uma cidade digital até descobrir o caminho exato que economiza mais combustível e tempo."
+  },
+  {
+    id: "ia11", label: "TRAD-VS-GEN", title: "IA Tradicional vs. IA Generativa", colorText: "text-yellow-400", colorDot: "bg-yellow-400", icon: Zap,
+    description: "Um analisa e classifica o que existe; o outro cria conteúdos inéditos do zero.",
+    points: ["Classificar vs Criar", "Previsão Numérica", "Criação de Conteúdo"],
+    details: ["Análise de Fraude", "Geração de Texto", "Automação Criativa"],
+    code: "Traditional: Classify(Email)\nGenerative: Draft(Reply)",
+    article: "A IA Tradicional (ou discriminativa) é excelente em analisar e classificar o que já existe. Ela olha para um e-mail e diz se é spam; olha para um raio-X e diz se há uma fratura; olha para o seu histórico e prevê se você vai pagar um empréstimo. Ela foca em **categorizar e prever**.\n\nA IA Generativa é um salto evolutivo: ela foca em **criar**. Usando tudo o que aprendeu sobre a estrutura dos dados, ela é capaz de gerar novos conteúdos que parecem ter sido feitos por humanos. Ela não diz apenas 'isto é um poema'; ela escreve um novo poema. Ela não classifica um código; ela redige o código para você.\n\nEnquanto a tradicional é o nosso 'Cérebro Analítico' que encontra erros e padrões, a generativa é o nosso 'Cérebro Criativo' que produz rascunhos, designs e soluções inéditas. Ambas são complementares: muitas vezes usamos uma IA generativa para criar um texto e uma tradicional para validar se ele é seguro ou correto.\n\n**Caso Prático:**\n* **Tradicional:** O sistema antifraude do cartão de crédito analisa sua compra em milissegundos e decide se bloqueia ou aprova com base em padrões passados.\n* **Generativa:** Você pede para um assistente de IA criar um e-mail de desculpas para um cliente cujo cartão foi bloqueado indevidamente. A IA redige um texto empático, profissional e personalizado em segundos."
+  },
+  {
+    id: "ia12", label: "LLMS", title: "O Coração da Geração (LLMs)", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: MessageCircle,
+    description: "Modelos de Linguagem de Larga Escala que prevêem a próxima palavra mais provável com base no contexto.",
+    points: ["Preenchimento Automático", "Biliões de Parâmetros", "Cálculo de Probabilidade"],
+    details: ["GPT", "Context Window", "Tokens"],
+    code: "predictedText = LLM.nextWord(context);",
+    article: "As LLMs (*Large Language Models*) são as mentes por trás da revolução atual. Elas são treinadas com volumes astronômicos de texto (livros, internet, códigos) para entender a estrutura profunda da linguagem humana. A magia por trás de uma LLM é, na verdade, uma previsão estatística de altíssima precisão.\n\nImagine um preenchimento automático de teclado, mas com bilhões de conexões neurais. A LLM não 'sabe' o que está dizendo no sentido humano; ela calcula, com base no contexto, qual é a **próxima palavra mais provável** para completar a sua frase. O resultado é tão fluido e coerente que parece vir de uma mente consciente.\n\nO que mudou recentemente foi a escala: quanto mais dados e 'parâmetros' (conexões) esses modelos têm, mais eles apresentam 'propriedades emergentes', como a capacidade de raciocinar, traduzir idiomas complexos e até resolver problemas de lógica e programação que nunca viram antes.\n\n**Caso Prático:** Quando você digita no ChatGPT 'O céu hoje está...', o modelo não está pensando no clima. Ele está calculando que, estatisticamente, após essas palavras em um contexto poético, a palavra 'azul' ou 'estrelado' tem 95% de chance de ser a continuação correta. Ele repete esse processo palavra por palavra, construindo frases inteiras que fazem sentido absoluto para nós."
+  },
+
+  // Módulo 3: A Autonomia – A Era dos Agentes de IA
+  {
+    id: "ia13", label: "AGENTE", title: "Chatbot vs. Agente de IA", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Monitor,
+    description: "O Chatbot responde e para; o Agente planeja, age e executa até atingir o objetivo.",
+    points: ["Reativo vs Proativo", "Planejamento de Passos", "Execução Autônoma"],
+    details: ["Chat vs Task", "Paredão vs Atleta", "Loop de Ação"],
+    code: "Agent.setGoal('Vender Produto');\nAgent.run();",
+    article: "Chatbot é reativo (você pergunta, ele responde e para). Agente é proativo (você dá um objetivo, ele planeja os passos e executa até terminar)."
+  },
+  {
+    id: "ia14", label: "ANATOMIA", title: "Anatomia de um Agente", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: BrainCircuit,
+    description: "Os quatro pilares que dão vida a um agente autônomo em volta do cérebro (LLM).",
+    points: ["Persona (Quem sou?)", "Raciocínio & Memória", "Uso de Ferramentas (Ação)"],
+    details: ["System Prompt", "Bancos Vetoriais", "Tool Calling"],
+    code: "AgentStructure = {\n  Brain: LLM,\n  Memory: VectorDB,\n  Tools: [Email, Search]\n};",
+    article: "O círculo central é o 'Cérebro' (LLM). Os quadrantes (Persona, Raciocínio, Memória, Ação) definem quem ele é e o que ele pode acessar."
+  },
+  {
+    id: "ia15", label: "PERCEPÇÃO", title: "Percepção e Ambiente", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Eye,
+    description: "Como o agente 'enxerga' o mundo recebendo entradas de diferentes fontes antes de decidir.",
+    points: ["Entradas Diversas", "Visão de Contexto", "Leitura de Ambiente"],
+    details: ["E-mails", "Sites", "Arquivos"],
+    code: "Agent.observe(['Inbox', 'MarketPrices']);",
+    article: "Mostrar como o agente 'enxerga' o problema recebendo os dados do ambiente (e-mails, sites, arquivos) antes de agir."
+  },
+  {
+    id: "ia16", label: "RACIOCÍNIO", title: "Chain of Thought", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Link,
+    description: "O processo de quebrar problemas complexos em cadeias de pensamento lógicas.",
+    points: ["Passo a Passo", "Verificação Interna", "Estratégia de Resposta"],
+    details: ["Cadeia de Pensamento", "Lógica Sequencial", "Auto-correção"],
+    code: "1. Meta -> 2. Ferramentas -> 3. Execução -> 4. Final",
+    article: "Mostrar como a IA resolve problemas complexos: Passo 1 (Entender a meta) ➡️ Passo 2 (Listar ferramentas) ➡️ Passo 3 (Executar e verificar) ➡️ Passo 4 (Resposta final)."
+  },
+  {
+    id: "ia17", label: "FERRAMENTAS", title: "Tool Use (Uso de Ferramentas)", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Wrench,
+    description: "O segredo da ação real: conectar a IA com APIs para realizar tarefas de verdade.",
+    points: ["Conexão com Realidade", "APIs & Webhooks", "Braços Mecânicos da IA"],
+    details: ["Busca Web", "Calculadora", "Integração CRM"],
+    code: "IA.callTool('SendEmail', { to: '...', body: '...' });",
+    article: "O LLM sozinho só gera texto. Com 'tools' (APIs, webhooks), ele se torna um sistema que altera o mundo real (ex: manda e-mail, faz compra)."
+  },
+  {
+    id: "ia18", label: "MEMÓRIA", title: "Gestão da Memória", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: StickyNote,
+    description: "Curto prazo para a conversa técnica e longo prazo para lembrança histórica e personalização.",
+    points: ["Memória de Trabalho", "Bancos Vetoriais", "Histórico de Contexto"],
+    details: ["Post-it", "Arquivo Morto", "Longo Prazo"],
+    code: "Memory.saveContext('Usuário prefere tons azuis.');",
+    article: "Curto prazo: o histórico da conversa atual. Longo prazo: uso de bancos de dados vetoriais para o agente 'lembrar' de você amanhã ou daqui a um ano."
+  },
+
+  // Módulo 4: A Engrenagem – Arquitetura e Integração
+  {
+    id: "ia19", label: "ESTILO", title: "Especialistas vs. Generalistas", colorText: "text-slate-400", colorDot: "bg-slate-400", icon: Stethoscope,
+    description: "O equilíbrio entre o canivete suíço que sabe tudo e o bisturi focado em um domínio.",
+    points: ["Generalistas (ChatGPT)", "Especialistas (Domínio)", "Menos Erros de Domínio"],
+    details: ["Bisturi vs Canivete", "Treinamento RAG", "Precisão"],
+    code: "if (domain === 'Legal') useAgent('Lawyer');",
+    article: "Generalista sabe um pouco de tudo. Especialista (ex: Agente treinado só com regras do Banco do Brasil) é focado e comete menos erros no seu domínio."
+  },
+  {
+    id: "ia20", label: "MAS", title: "Sistemas Multi-Agentes (MAS)", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Users,
+    description: "A colaboração entre diferentes IAs especialistas para resolver tarefas complexas.",
+    points: ["Equipe de IAs", "Revisão e Diálogo", "Soma das Partes"],
+    details: ["Orquestração", "Fluxo de Trabalho", "Delegar"],
+    code: "AgentCreator.write(code) && AgentReviewer.check(code);",
+    article: "Um agente escreve o código, o outro revisa procurando bugs, o terceiro escreve a documentação. A soma é maior que as partes."
+  },
+  {
+    id: "ia21", label: "GERENTE", title: "Delegação e Roteamento", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Briefcase,
+    description: "A arquitetura de comando: um agente gerente entende a intenção e delega para o executor correto.",
+    points: ["Agente Gerente", "Executores na Base", "Roteamento Inteligente"],
+    details: ["Hierarquia", "Organograma", "Organização"],
+    code: "Manager.route(task) -> Specialist.execute();",
+    article: "O usuário fala com o Agente Gerente. Este entende a intenção e envia a tarefa (roteamento) para o Agente Especialista correto."
+  },
+  {
+    id: "ia22", label: "INTELIGENTE", title: "Inteligência em Fluxos", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: RefreshCw,
+    description: "Injetando poder de decisão em processos tradicionais para torná-los autônomos.",
+    points: ["Processos Contínuos", "Ponto de Inserção GenAI", "Workflow Inteligente"],
+    details: ["Automação", "Pipeline", "Integração"],
+    code: "Process.step('Entry') -> IA.classify() -> Human.reply();",
+    article: "Como colocar agentes no meio de processos tradicionais (ex: Cliente envia WhatsApp ➡️ IA classifica e resume ➡️ Atendente humano responde)."
+  },
+  {
+    id: "ia23", label: "HUMAN", title: "Paradigma Human-in-the-Loop", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: UserCheck,
+    description: "A IA prepara a maior parte, mas a decisão final e a revisão são responsabilidades humanas.",
+    points: ["Revisão Humana", "Segurança em Ação", "Curadoria Final"],
+    details: ["Aprovação", "Controle", "Ética"],
+    code: "Action.wait(HumanApproval) -> Deploy();",
+    article: "Sistemas críticos não devem ser 100% autônomos ainda. O papel da IA é preparar 90% do trabalho; o humano revisa, ajusta e aperta o botão final."
+  },
+
+  // Módulo 5: A Bússola – Limitações, Ética e Aplicação Prática
+  {
+    id: "ia24", label: "ALERTA", title: "Alucinações da IA", colorText: "text-red-400", colorDot: "bg-red-400", icon: AlertTriangle,
+    description: "Quando a IA cria fatos falsos com total convicção por erro probabilístico.",
+    points: ["Fatos Inventados", "Ilusão Estatística", "Necessidade de Contexto"],
+    details: ["Alucinação", "Verificação", "Grounding"],
+    code: "if (FACTS.has(response)) proceed();",
+    article: "Modelos não 'pensam', eles calculam probabilidades. Às vezes, a palavra mais provável forma uma frase factualmente falsa. Solução: fornecer contexto rígido."
+  },
+  {
+    id: "ia25", label: "VIESES", title: "Vieses em Dados", colorText: "text-slate-500", colorDot: "bg-slate-500", icon: RefreshCw,
+    description: "IA aprende preconceitos presentes nos dados históricos e pode perpetuá-los se não houver cuidado.",
+    points: ["Preconceito Algorítmico", "Dados Históricos", "Equilíbrio na Base"],
+    details: ["Bias", "Discriminação", "Diversidade"],
+    code: "model.auditForBias();",
+    article: "Se os dados históricos têm preconceito (ex: só homens no banco de dados de gerentes), a IA vai reproduzir e automatizar esse preconceito."
+  },
+  {
+    id: "ia26", label: "TRADE-OFF", title: "Desafios e Custos", colorText: "text-orange-400", colorDot: "bg-orange-400", icon: DollarSign,
+    description: "A escolha difícil entre inteligência, velocidade e custo operacional.",
+    points: ["Modelos Caros vs Baratos", "Velocidade de Resposta", "Escalabilidade"],
+    details: ["Tokens por Segundo", "Orçamento", "Latency"],
+    code: "chooseModel({ task: 'Simple', price: 'Low' });",
+    article: "Escolher o modelo certo. Um modelo muito inteligente é caro e lento. Um modelo rápido e barato pode não ser bom para raciocínios complexos."
+  },
+  {
+    id: "ia27", label: "PRIVACIDADE", title: "Privacidade e Segurança", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Lock,
+    description: "Cuidado com dados sensíveis: o que você envia para a nuvem pública pode ser usado para treinamento.",
+    points: ["Dados Sensíveis", "Bases Públicas", "Segurança Corporativa"],
+    details: ["GDPR/LGPD", "Environment Isolado", "Cadeado"],
+    code: "export const IS_SAFE_ENVIRONMENT = true;",
+    article: "Nunca colar dados sensíveis de clientes ou segredos industriais em IAs públicas. Necessidade de usar ambientes seguros/empresariais."
+  },
+  {
+    id: "ia28", label: "MAESTRO", title: "O Novo Papel Profissional", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Music,
+    description: "A mudança de papel: de quem aperta o parafuso para quem rege a orquestra de sistemas.",
+    points: ["Curadoria de IA", "Desenho de Soluções", "De Executor a Reitor"],
+    details: ["Liderança Técnica", "Prompt Engineering", "Visão"],
+    code: "Professional.role = 'Maestro';\nEngineers.role = 'Creators';",
+    article: "Deixar de ser quem aperta os parafusos (executor braçal) para ser quem desenha a planta e rege a orquestra (curador, revisor, engenheiro de vendas e soluções)."
+  },
+  {
+    id: "ia29", label: "PRÁTICA", title: "Casos de Uso", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Layout,
+    description: "Aplicações reais em atendimento, vendas, análise e operações no mundo corporativo.",
+    points: ["Atendimento Proativo", "Vendas Inteligentes", "Operações Autônomas"],
+    details: ["Health", "Finance", "Retail"],
+    code: "// Exemplo real aplicado\nconst UseCases = ['Atendimento', 'Vendas', 'Análise'];",
+    article: "Listar de forma em tópicos (bullet points) um exemplo real para cada um dos 4 pilares, mostrando que a teoria funciona na rua."
+  },
+  {
+    id: "ia30", label: "CONCLUSÃO", title: "Próximos Passos", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Flag,
+    description: "Um resumo da jornada e a preparação para montar o seu primeiro motor no laboratório.",
+    points: ["Resumo dos Módulos", "Preparação Mental", "Para o Laboratório!"],
+    details: ["Aula Final", "Checklist", "Próxima Fase"],
+    code: "// Rumo à prática\ngotoLab();",
+    article: "Resumo de uma frase de cada módulo. Preparação mental para a próxima aula: 'Agora que conhecemos as peças do motor, vamos montar um no laboratório.'"
+  }
+];
+const iaModelsContentGroups = [
+  { id: "ia-g1", title: "O Combustível (Dados)", start: 0, end: 6, color: "bg-blue-500" },
+  { id: "ia-g2", title: "O Motor (Modelos)", start: 6, end: 12, color: "bg-purple-500" },
+  { id: "ia-g3", title: "A Autonomia (Agentes)", start: 12, end: 18, color: "bg-indigo-500" },
+  { id: "ia-g4", title: "A Engrenagem (Arq.)", start: 18, end: 23, color: "bg-cyan-500" },
+  { id: "ia-g5", title: "A Bússola (Ética)", start: 23, end: 30, color: "bg-emerald-500" }
+];
+
+const toolsIADetailedTopics = [
+  {
+    id: "tool01", label: "PYTHON", title: "Python: A Língua Franca", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Terminal,
+    description: "Python se tornou a linguagem padrão para IA devido à sua sintaxe simples e ao ecossistema riquíssimo de bibliotecas.",
+    points: ["Linguagem Universal", "Comunidade Gigante", "Legibilidade"],
+    details: ["Scripting", "Automação", "Integração"],
+    code: "print('Python é o combustível da IA')",
+    article: "Se a IA é o motor, o Python é o combustível que a faz rodar. Diferente de linguagens mais complexas e rígidas, o Python foi desenhado para ser lido por humanos, permitindo que cientistas e desenvolvedores foquem na lógica do algoritmo, e não na sintaxe do código.\n\nSua dominância não é por acaso: o Python possui bibliotecas para absolutamente tudo, desde cálculos matemáticos pesados até a criação de interfaces de chat. É a linguagem que une o mundo da pesquisa acadêmica com a produção industrial, permitindo que um protótipo feito em poucas horas seja escalado para milhões de usuários.\n\n**Caso Prático:** Um pesquisador desenvolve um novo modelo de detecção de doenças usando Python no hospital. Graças à versatilidade da linguagem, o mesmo código que processa as imagens médicas pode ser rapidamente integrado a uma API web que envia os resultados para o tablet do médico em tempo real."
+  },
+  {
+    id: "tool02", label: "CADERNOS", title: "Jupyter Notebooks", colorText: "text-orange-400", colorDot: "bg-orange-400", icon: BookOpen,
+    description: "Ambientes interativos onde você mistura código, texto e gráficos em uma única narrativa visual.",
+    points: ["Iteração Rápida", "Narrativa de Dados", "Visualização Live"],
+    details: ["Google Colab", "Exploração", "Prototipagem"],
+    code: "# No Jupyter, o resultado sai na hora\ndf.head()",
+    article: "O Jupyter Notebook revolucionou a forma como trabalhamos com dados. Imagine um documento Word que, em vez de apenas texto, permite que você execute blocos de código e veja o resultado (um gráfico, uma tabela ou um texto) imediatamente abaixo. É o laboratório perfeito para o cientista de dados.\n\nEssa abordagem permite a 'Contação de Histórias com Dados' (Data Storytelling). Você pode explicar o porquê de uma limpeza, mostrar o gráfico antes e depois e ainda deixar o código lá para qualquer um reproduzir. Ferramentas como o Google Colab levaram isso para a nuvem, permitindo usar GPUs potentes de graça direto no navegador.\n\n**Caso Prático:** Uma equipe de marketing quer entender o comportamento dos clientes na Black Friday. Em vez de entregar um arquivo PDF estático, o analista entrega um caderno Jupyter. O gerente pode mudar uma variável no código e ver o gráfico de vendas se ajustar automaticamente, explorando diferentes cenários sem precisar de um novo relatório."
+  },
+  {
+    id: "tool03", label: "PLANILHAS", title: "Pandas: Planilha em Código", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: TableProperties,
+    description: "A biblioteca que permite manipular tabelas gigantes com a mesma facilidade do Excel, mas com o poder do Python.",
+    points: ["DataFrames", "Limpeza Turbo", "Fusão de Arquivos"],
+    details: ["CSV/Excel", "Agregação", "Filtragem"],
+    code: "import pandas as pd\ndf = pd.read_csv('vendas.csv')\ndf.groupby('categoria').sum()",
+    article: "O Pandas é o equivalente ao motor de cálculos do Excel, mas em esteroides. Ele introduz o conceito de 'DataFrame', uma estrutura de tabela extremamente poderosa que reside na memória do computador. Com poucas linhas de código, você pode limpar milhares de registros duplicados, preencher lacunas e cruzar dados de fontes diferentes.\n\nO grande trunfo do Pandas é a reprodutibilidade. No Excel, se você comete um erro num clique, é difícil rastrear. No Pandas, cada passo da sua análise está escrito em código, permitindo que você rode o mesmo processo para 1 milhão de linhas com a mesma segurança de 10 linhas.\n\n**Caso Prático:** Uma rede de farmácias quer unificar o estoque de 50 lojas. Cada loja envia um arquivo Excel em um formato ligeiramente diferente. Usando Pandas, o desenvolvedor cria um pequeno script que lê todos os 50 arquivos, padroniza as colunas de 'Preço' e 'Qtd', soma tudo e gera um inventário nacional único em menos de 2 segundos."
+  },
+  {
+    id: "tool04", label: "TRADICIONAL", title: "Scikit-Learn: O Canivete Suíço", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Construction,
+    description: "A biblioteca padrão para Machine Learning tradicional: classificação, regressão e agrupamento.",
+    points: ["Algoritmos Prontos", "Simplicidade", "Foco no Resultado"],
+    details: ["Regressão Linear", "Árvores de Decisão", "K-Means"],
+    code: "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression().fit(X, y)",
+    article: "Antes de falarmos de robôs que conversam, precisamos falar de algoritmos que prevêem. O Scikit-Learn é a biblioteca que democratizou o acesso a modelos clássicos de aprendizado de máquina. Ele oferece ferramentas prontas para prever preços de imóveis, identificar e-mails de spam ou agrupar clientes por comportamento.\n\nA beleza do Scikit-Learn está na sua padronização. Quase todos os modelos usam o mesmo comando `.fit()` para aprender e `.predict()` para prever. Isso permite que um desenvolvedor troque facilmente de um algoritmo simples para um complexo sem precisar reescrever todo o projeto, facilitando a experimentação.\n\n**Caso Prático:** Uma imobiliária quer criar um avaliador de preços automático. Usando Scikit-Learn, o desenvolvedor treina um modelo de Regressão Linear com o histórico de 10 mil vendas passadas. Agora, quando um corretor insere o 'Bairro' e a 'Metragem', o sistema sugere um valor de venda baseado em fatos reais, reduzindo em 40% o tempo de avaliação manual."
+  },
+  {
+    id: "tool05", label: "REDES", title: "TensorFlow & PyTorch", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: Cpu,
+    description: "As ferramentas pesadas para criar Redes Neurais e Deep Learning. Onde nasce a visão computacional e a fala.",
+    points: ["Processamento em GPU", "Redes Neurais Profundas", "Escala Industrial"],
+    details: ["Google (TF)", "Meta (PyTorch)", "Autograd"],
+    code: "import torch.nn as nn\n# Definindo uma rede neural complexa...",
+    article: "Quando entramos no território do Deep Learning (Aprendizado Profundo), o Scikit-Learn dá lugar aos gigantes: TensorFlow (do Google) e PyTorch (da Meta). Essas ferramentas são projetadas para lidar com bilhões de cálculos matemáticos simultâneos, aproveitando o poder das placas de vídeo (GPUs).\n\nElas são usadas para criar redes neurais que imitam, de forma simplificada, o funcionamento dos neurônios humanos. É através delas que criamos sistemas que reconhecem rostos em fotos, traduzem idiomas em tempo real ou dirigem carros autônomos. São ferramentas de alta performance para problemas de alta complexidade.\n\n**Caso Prático:** Uma fábrica de tecido quer detectar defeitos minúsculos em tempo real. Usando PyTorch, a equipe treina uma Rede Neural Convolucional que analisa 30 fotos por segundo vindas de uma câmera na linha de produção. Se a IA detecta um fio solto, ela para a máquina instantaneamente, economizando quilômetros de material desperdiçado."
+  },
+  {
+    id: "tool06", label: "MODELOS-HUB", title: "Hugging Face: O Hub da IA", colorText: "text-yellow-500", colorDot: "bg-yellow-500", icon: Package,
+    description: "O 'GitHub da IA'. Milhares de modelos prontos para uso que você pode baixar e usar em minutos.",
+    points: ["Comunidade Open Source", "Transformers", "Transfer Learning"],
+    details: ["Datasets", "Model Hub", "Spaces"],
+    code: "from transformers import pipeline\nclassifier = pipeline('sentiment-analysis')",
+    article: "O Hugging Face mudou a regra do jogo. Antigamente, se você quisesse uma IA que entendesse texto, teria que gastar milhões treinando do zero. Hoje, você entra no Hugging Face e encontra milhares de modelos pré-treinados pelas maiores empresas do mundo (Google, Meta, OpenAI) prontos para baixar.\n\nAtravés da biblioteca 'Transformers', você pode pegar um modelo que já leu toda a internet e 'ensiná-lo' a entender as gírias específicas da sua empresa em poucos minutos. É o maior repositório de inteligência coletiva da história da computação, permitindo que uma pequena startup tenha o mesmo poder de processamento de linguagem de um gigante do Vale do Silício.\n\n**Caso Prático:** Um site de notícias quer criar um sistema de 'tags' automáticas para seus artigos. Em vez de contratar 20 estagiários, o desenvolvedor usa o Hugging Face para baixar um modelo especialista em classificação de notícias. Em 10 linhas de código, o sistema passa a categorizar 500 matérias por dia com precisão de 95%."
+  },
+  {
+    id: "tool07", label: "AI-VIA-API", title: "APIs: IA Pronta para Uso", colorText: "text-cyan-400", colorDot: "bg-cyan-400", icon: Zap,
+    description: "Não quer treinar nada? Conecte-se a serviços prontos via API e use a inteligência de terceiros.",
+    points: ["Baixa Barreira de Entrada", "Escalabilidade", "Sem Servidores Pesados"],
+    details: ["OpenAI (GPT)", "Gemini API", "Claude API"],
+    code: "const response = await ai.generate(prompt);",
+    article: "Para muitos projetos, você não precisa de um cientista de dados; você só precisa de uma API. Serviços como o da OpenAI (ChatGPT) ou o Gemini do Google permitem que você 'alugue' uma inteligência artificial poderosíssima através de uma chamada de código simples.\n\nEsta é a via mais rápida para adicionar inteligência a um aplicativo. Você envia um texto ou imagem via internet e recebe a resposta processada em milissegundos. É ideal para chatbots, geradores de conteúdo, tradutores e qualquer funcionalidade que exija raciocínio lógico sem a necessidade de gerenciar infraestrutura pesada internamente.\n\n**Caso Prático:** Uma imobiliária adiciona um 'Assistente Virtual' ao seu site. O desenvolvedor conecta a interface ao Gemini via API. Agora, o cliente pode perguntar: 'Quais apartamentos em Boa Viagem têm 3 quartos e aceitam pet?'. A IA lê o banco de dados da imobiliária (enviado via contexto), processa a pergunta e responde educadamente em linguagem natural, agendando a visita sozinha."
+  }
+];
+
+const toolsIAContentGroups = [
+  { id: "tool-g1", title: "Fundamentos (Python/Jupyter)", start: 0, end: 2, color: "bg-blue-500" },
+  { id: "tool-g2", title: "Ciência de Dados (Pandas/SkLearn)", start: 2, end: 4, color: "bg-emerald-500" },
+  { id: "tool-g3", title: "Deep Learning (TF/PT/HF)", start: 4, end: 6, color: "bg-rose-500" },
+  { id: "tool-g4", title: "Pronto para Uso (APIs)", start: 6, end: 7, color: "bg-cyan-500" }
+];
+
 const vueDetailedTopics = [
   {
     id: "v01", label: "O QUE É VUE?", title: "O Framework Vue.js", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Globe,
-    description: "Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em padrões HTML, CSS e JavaScript e oferece um modelo de programação declarativo e baseado em componentes.",
+    description: "Vue (pronunciado /vjuː/, como view) é um framework JavaScript para construir interfaces de usuário. Ele se baseia em padrões HTML, CSS e JavaScript e oferece um modelo de programação declarativo e baseado em componentes.",
     points: [
       "Renderização Declarativa: Estende o HTML padrão para descrever saídas baseadas no estado JS.",
       "Reatividade: Rastreia automaticamente as alterações do estado JS e atualiza o DOM.",
       "Progressivo: Pode ser uma simples biblioteca ou um framework completo."
     ],
     details: ["Renderização Declarativa", "Sistema de Reatividade", "Focado na Camada View", "Facilidade de Integração"],
-    code: "// Exemplo de Reatividade básica no Vue\nimport { createApp, ref } from 'vue'\n\ncreateApp({\n  setup() {\n    const count = ref(0)\n    return { count }\n  }\n}).mount('#app')"
+    code: "// Exemplo de Reatividade básica no Vue\nimport { createApp, ref } from 'vue'\n\ncreateApp({\n  setup() {\n    const count = ref(0)\n    return { count }\n  }\n}).mount('#app')",
+    article: "O Vue é um framework progressivo focado em ser adotável de forma incremental. Seu núcleo se concentra na camada de visualização (view layer), facilitando a integração com outras bibliotecas ou projetos existentes. Diferente de outros frameworks monolíticos, o Vue foi projetado desde o início para ser adaptável.\n\nAs duas características principais que definem o Vue são a **Renderização Declarativa**, onde o Vue estende o HTML padrão com uma sintaxe de template que permite descrever declarativamente a saída baseada no estado do JavaScript, e a **Reatividade**, onde o Vue rastreia automaticamente as mudanças de estado e atualiza o DOM de forma eficiente quando ocorrem alterações."
   },
   {
     id: "v02", label: "PROGRESSIVO", title: "A Abstração Progressiva", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Zap,
@@ -1293,7 +1814,8 @@ const vueDetailedTopics = [
       "Ecossistema: Router, Pinia e ferramentas oficiais integradas."
     ],
     details: ["Melhoria Progressiva", "Single-Page Application", "Server-Side Rendering", "Mobile & Desktop"],
-    code: "<!-- Uso via CDN (Sem Build) -->\n<script src=\"https://unpkg.com/vue@3\"></script>\n\n<div id=\"app\">{{ message }}</div>\n\n<script>\n  Vue.createApp({ data() { return { message: 'Olá Vue!' } } }).mount('#app')\n</script>"
+    code: "<!-- Uso via CDN (Sem Build) -->\n<script src=\"https://unpkg.com/vue@3\"></script>\n\n<div id=\"app\">{{ message }}</div>\n\n<script>\n  Vue.createApp({ data() { return { message: 'Olá Vue!' } } }).mount('#app')\n</script>",
+    article: "A natureza 'progressiva' do Vue significa que ele pode crescer com as suas necessidades. Você pode começar usando o Vue apenas para adicionar pequenas interações em uma página HTML estática (via CDN), ou pode expandir para gerenciar toda a lógica do front-end com ferramentas de build modernas, roteamento oficial (Vue Router) e gerenciamento de estado (Pinia).\n\nEssa flexibilidade permite que o Vue suporte diversos casos de uso: aprimoramento de HTML sem build, construção de poderosas Single-Page Applications (SPAs), renderização no lado do servidor (SSR) para SEO e performance, ou até mesmo a criação de aplicações móveis e desktop usando frameworks complementares."
   },
   {
     id: "v03", label: "SFC", title: "Single-File Components", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: FileEdit,
@@ -1304,7 +1826,8 @@ const vueDetailedTopics = [
       "Style: O CSS (com suporte a escopo local)."
     ],
     details: ["Arquivos .vue", "Encapsulamento", "Pré-processamento", "Escopo de Estilo"],
-    code: "<script setup>\nimport { ref } from 'vue'\nconst greeting = ref('Hello World!')\n</script>\n\n<template>\n  <p class=\"greeting\">{{ greeting }}</p>\n</template>\n\n<style scoped>\n.greeting { color: red; }\n</style>"
+    code: "<script setup>\nimport { ref } from 'vue'\nconst greeting = ref('Hello World!')\n</script>\n\n<template>\n  <p class=\"greeting\">{{ greeting }}</p>\n</template>\n\n<style scoped>\n.greeting { color: red; }\n</style>",
+    article: "Os Single-File Components (*.vue) permitem que desenvolvedores mantenham a estrutura (template), a lógica (script) e o estilo (style) de um componente em um único arquivo. Isso promove um desenvolvimento modular e organizado, facilitando a manutenção e a reutilização de código.\n\nAs principais vantagens incluem a sintaxe familiar de HTML/CSS/JS, o suporte a escopo de estilo (scoped CSS) que evita conflitos de classes, e a compatibilidade com pré-processadores como Sass, Less ou TypeScript. No ambiente de build (Vite), esses arquivos são compilados em código JavaScript altamente otimizado para o navegador."
   },
   {
     id: "v04", label: "API STYLES", title: "Options vs Composition API", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Layout,
@@ -1315,7 +1838,8 @@ const vueDetailedTopics = [
       "Intercambiável: Você pode usar ambos no mesmo projeto ou até no mesmo componente."
     ],
     details: ["Options API (Clássico)", "Composition API (Moderno)", "<script setup>", "Reutilização de Lógica"],
-    code: "// Composition API (Moderno)\n<script setup>\nimport { ref, onMounted } from 'vue'\n\nconst count = ref(0)\nfunction increment() { count.value++ }\n\nonMounted(() => console.log('Pronto!'))\n</script>"
+    code: "// Composition API (Moderno)\n<script setup>\nimport { ref, onMounted } from 'vue'\n\nconst count = ref(0)\nfunction increment() { count.value++ }\n\nonMounted(() => console.log('Pronto!'))\n</script>",
+    article: "O Vue oferece dois estilos de API para construir componentes: a **Options API** e a **Composition API**. A Options API é o estilo clássico, onde as propriedades do componente são organizadas em um objeto (data, methods, computed, etc.). É excelente para iniciantes pela sua estrutura clara e intuitiva.\n\nA Composition API, introduzida no Vue 3, permite organizar a lógica do componente usando funções importadas. Isso facilita drasticamente a reutilização de lógica (através de Composables), fornece melhor suporte ao TypeScript e permite agrupar códigos relacionados por funcionalidade em vez de por tipo de opção. Importante notar que ambas as APIs compartilham o mesmo motor reativo subjacente; a escolha é puramente uma questão de organização de código e preferência da equipe."
   },
   {
     id: "v05", label: "CRIANDO PROJETO", title: "O Comando create-vue", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Zap,
@@ -2966,6 +3490,9 @@ export default function App() {
       case 'Vue JS': return vueDetailedTopics;
       case 'React JS': return reactDetailedTopics;
       case 'Angular': return angularDetailedTopics;
+      case 'Análise de Dados': return analysisDataDetailedTopics;
+      case 'Inteligência Artificial e Modelos de Base': return iaModelsDetailedTopics;
+      case 'Ferramentas': return toolsIADetailedTopics;
       default: return detailedTopics;
     }
   };
@@ -2975,6 +3502,9 @@ export default function App() {
       case 'Vue JS': return vueContentGroups;
       case 'React JS': return reactContentGroups;
       case 'Angular': return angularContentGroups;
+      case 'Análise de Dados': return analysisDataContentGroups;
+      case 'Inteligência Artificial e Modelos de Base': return iaModelsContentGroups;
+      case 'Ferramentas': return toolsIAContentGroups;
       default: return contentGroups;
     }
   };
@@ -3167,8 +3697,31 @@ export default function App() {
                       </div>
                     </button>
 
+                    <button 
+                      onClick={() => setSelectedDisciplina("Inteligência Artificial & Análise de dados")}
+                      className="group relative bg-[#0d091a] border-2 border-purple-500/30 rounded-3xl p-6 sm:p-8 text-left hover:border-purple-500 transition-all hover:scale-[1.02] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-600/20 relative z-10">
+                        <Zap className="w-6 h-6 sm:w-10 sm:h-10 text-white" />
+                      </div>
+                      <h2 className="text-xl sm:text-3xl font-black text-white mb-2 italic tracking-tight group-hover:text-purple-400 transition-colors relative z-10 uppercase">IA & Análise de dados</h2>
+                      <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 line-clamp-3 relative z-10">
+                        Explore o futuro com Modelos de Base (IA Generativa), Engenharia de Dados e ferramentas avançadas do ecossistema moderno.
+                      </p>
+                      <div className="flex items-center justify-between relative z-10">
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-mono text-purple-500 uppercase tracking-widest">DISCIPLINA ATIVA</span>
+                          <span className="text-xs font-bold text-white">3 MÓDULOS</span>
+                        </div>
+                        <div className="bg-purple-600 text-white px-4 py-2 rounded-xl text-xs font-bold group-hover:px-6 transition-all shadow-lg shadow-purple-600/30">
+                          EXPLORAR &rarr;
+                        </div>
+                      </div>
+                    </button>
+
                     {/* Placeholders */}
-                    {["Estrutura de Dados", "Banco de Dados", "UX/UI Design", "Redes & Cloud", "IA Aplicada"].map((disc) => (
+                    {["Estrutura de Dados", "Banco de Dados", "UX/UI Design", "Redes & Cloud"].map((disc) => (
                       <div key={disc} className="bg-white/[0.02] border border-white/5 rounded-3xl p-6 sm:p-8 grayscale opacity-20 cursor-not-allowed flex flex-col justify-between">
                         <div>
                           <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-800 flex items-center justify-center mb-6">
@@ -3209,76 +3762,138 @@ export default function App() {
                   </header>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl">
-                    <button 
-                      onClick={() => setSelectedTecnologia("Javascript")}
-                      className="group relative bg-gradient-to-br from-[#f7df1e]/20 to-black border border-[#f7df1e]/40 rounded-3xl p-8 text-left hover:border-[#f7df1e] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
-                    >
-                      <div className="absolute top-0 right-0 w-40 h-40 bg-[#f7df1e]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
-                      <div className="w-16 h-16 rounded-2xl bg-[#f7df1e] flex items-center justify-center mb-6 shadow-lg shadow-[#f7df1e]/20 relative z-10">
-                        <Zap className="w-10 h-10 text-black fill-black" />
-                      </div>
-                      <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#f7df1e] transition-colors relative z-10 uppercase">Javascript</h2>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
-                        O motor fundamental do web moderno. Explore desde manipulação básica até operações complexas de baixo nível.
-                      </p>
-                      <div className="flex items-center justify-between relative z-10">
-                        <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">73 SLIDES</span>
-                        <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
-                      </div>
-                    </button>
+                    {selectedDisciplina === "Programação Front-End Web" && (
+                      <>
+                        <button 
+                          onClick={() => setSelectedTecnologia("Javascript")}
+                          className="group relative bg-gradient-to-br from-[#f7df1e]/20 to-black border border-[#f7df1e]/40 rounded-3xl p-8 text-left hover:border-[#f7df1e] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-[#f7df1e]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                          <div className="w-16 h-16 rounded-2xl bg-[#f7df1e] flex items-center justify-center mb-6 shadow-lg shadow-[#f7df1e]/20 relative z-10">
+                            <Zap className="w-10 h-10 text-black fill-black" />
+                          </div>
+                          <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#f7df1e] transition-colors relative z-10 uppercase">Javascript</h2>
+                          <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                            O motor fundamental do web moderno. Explore desde manipulação básica até operações complexas de baixo nível.
+                          </p>
+                          <div className="flex items-center justify-between relative z-10">
+                            <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">73 SLIDES</span>
+                            <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                          </div>
+                        </button>
 
-                    <button 
-                      onClick={() => setSelectedTecnologia("Vue JS")}
-                      className="group relative bg-gradient-to-br from-[#42b883]/20 to-black border border-[#42b883]/40 rounded-3xl p-8 text-left hover:border-[#42b883] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
-                    >
-                      <div className="absolute top-0 right-0 w-40 h-40 bg-[#42b883]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
-                      <div className="w-16 h-16 rounded-2xl bg-[#42b883] flex items-center justify-center mb-6 shadow-lg shadow-[#42b883]/20 relative z-10">
-                        <Globe className="w-10 h-10 text-white" />
-                      </div>
-                      <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#42b883] transition-colors relative z-10 uppercase">Vue JS</h2>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
-                        A Abstração Progressiva do JavaScript. Construa aplicações escaláveis com templates intuitivos e um ecossistema robusto.
-                      </p>
-                      <div className="flex items-center justify-between relative z-10">
-                        <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">4 SLIDES</span>
-                        <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
-                      </div>
-                    </button>
+                        <button 
+                          onClick={() => setSelectedTecnologia("Vue JS")}
+                          className="group relative bg-gradient-to-br from-[#42b883]/20 to-black border border-[#42b883]/40 rounded-3xl p-8 text-left hover:border-[#42b883] transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-[#42b883]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                          <div className="w-16 h-16 rounded-2xl bg-[#42b883] flex items-center justify-center mb-6 shadow-lg shadow-[#42b883]/20 relative z-10">
+                            <Globe className="w-10 h-10 text-white" />
+                          </div>
+                          <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-[#42b883] transition-colors relative z-10 uppercase">Vue JS</h2>
+                          <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                            A Abstração Progressiva do JavaScript. Construa aplicações escaláveis com templates intuitivos e um ecossistema robusto.
+                          </p>
+                          <div className="flex items-center justify-between relative z-10">
+                            <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">4 SLIDES</span>
+                            <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                          </div>
+                        </button>
 
-                    <button 
-                      onClick={() => setSelectedTecnologia("React JS")}
-                      className="group relative bg-[#61dafb]/10 border border-[#61dafb]/30 rounded-3xl p-8 text-left hover:border-[#61dafb]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
-                    >
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#61dafb]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
-                      <div className="w-14 h-14 rounded-2xl bg-[#61dafb]/20 border border-[#61dafb]/40 flex items-center justify-center mb-6">
-                        <Zap className="w-8 h-8 text-[#61dafb] fill-[#61dafb]/20" />
-                      </div>
-                      <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#61dafb] transition-colors uppercase">React JS</h2>
-                      <p className="text-gray-400 text-xs leading-relaxed mb-8">Biblioteca líder da Meta. Focada em componentes reativos, JSX e Virtual DOM. A queridinha do mercado.</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-bold text-[#61dafb] bg-[#61dafb]/10 px-3 py-1 rounded-full border border-[#61dafb]/20">5 SLIDES</span>
-                        <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
-                      </div>
-                    </button>
+                        <button 
+                          onClick={() => setSelectedTecnologia("React JS")}
+                          className="group relative bg-[#61dafb]/10 border border-[#61dafb]/30 rounded-3xl p-8 text-left hover:border-[#61dafb]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-[#61dafb]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
+                          <div className="w-14 h-14 rounded-2xl bg-[#61dafb]/20 border border-[#61dafb]/40 flex items-center justify-center mb-6">
+                            <Zap className="w-8 h-8 text-[#61dafb] fill-[#61dafb]/20" />
+                          </div>
+                          <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#61dafb] transition-colors uppercase">React JS</h2>
+                          <p className="text-gray-400 text-xs leading-relaxed mb-8">Biblioteca líder da Meta. Focada em componentes reativos, JSX e Virtual DOM. A queridinha do mercado.</p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-bold text-[#61dafb] bg-[#61dafb]/10 px-3 py-1 rounded-full border border-[#61dafb]/20">5 SLIDES</span>
+                            <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
+                          </div>
+                        </button>
 
-                    <button 
-                      onClick={() => setSelectedTecnologia("Angular")}
-                      className="group relative bg-[#dd0031]/10 border border-[#dd0031]/30 rounded-3xl p-8 text-left hover:border-[#dd0031]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
-                    >
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#dd0031]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
-                      <div className="w-14 h-14 rounded-2xl bg-[#dd0031]/20 border border-[#dd0031]/40 flex items-center justify-center mb-6">
-                        <ShieldCheck className="w-8 h-8 text-[#dd0031]" />
-                      </div>
-                      <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#dd0031] transition-colors uppercase">Angular</h2>
-                      <p className="text-gray-400 text-xs leading-relaxed mb-8">Framework completo e altamente estruturado do Google. TypeScript nativo e ideal para grandes sistemas.</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-bold text-[#dd0031] bg-[#dd0031]/10 px-3 py-1 rounded-full border border-[#dd0031]/20">5 SLIDES</span>
-                        <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
-                      </div>
-                    </button>
+                        <button 
+                          onClick={() => setSelectedTecnologia("Angular")}
+                          className="group relative bg-[#dd0031]/10 border border-[#dd0031]/30 rounded-3xl p-8 text-left hover:border-[#dd0031]/60 transition-all hover:scale-[1.05] shadow-xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-[#dd0031]/5 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-700"></div>
+                          <div className="w-14 h-14 rounded-2xl bg-[#dd0031]/20 border border-[#dd0031]/40 flex items-center justify-center mb-6">
+                            <ShieldCheck className="w-8 h-8 text-[#dd0031]" />
+                          </div>
+                          <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-[#dd0031] transition-colors uppercase">Angular</h2>
+                          <p className="text-gray-400 text-xs leading-relaxed mb-8">Framework completo e altamente estruturado do Google. TypeScript nativo e ideal para grandes sistemas.</p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-bold text-[#dd0031] bg-[#dd0031]/10 px-3 py-1 rounded-full border border-[#dd0031]/20">5 SLIDES</span>
+                            <div className="bg-white text-black px-4 py-1.5 rounded-xl text-[10px] font-bold">INICIAR</div>
+                          </div>
+                        </button>
+                      </>
+                    )}
+
+                    {selectedDisciplina === "Inteligência Artificial & Análise de dados" && (
+                      <>
+                        <button 
+                          onClick={() => setSelectedTecnologia("Análise de Dados")}
+                          className="group relative bg-blue-500/10 border border-blue-500/30 rounded-3xl p-8 text-left hover:border-blue-500 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                          <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20 relative z-10">
+                            <BarChart3 className="w-10 h-10 text-white" />
+                          </div>
+                          <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-blue-400 transition-colors relative z-10 uppercase">Análise de Dados</h2>
+                          <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                            Decifre o valor oculto nos números. De estatística básica a visualizações complexas e engenharia de dados.
+                          </p>
+                          <div className="flex items-center justify-between relative z-10">
+                            <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">1 SLIDES</span>
+                            <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                          </div>
+                        </button>
+
+                        <button 
+                          onClick={() => setSelectedTecnologia("Inteligência Artificial e Modelos de Base")}
+                          className="group relative bg-purple-500/10 border border-purple-500/30 rounded-3xl p-8 text-left hover:border-purple-500 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                          <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-600/20 relative z-10">
+                            <BrainCircuit className="w-10 h-10 text-white" />
+                          </div>
+                          <h2 className="text-2xl font-black text-white mb-2 italic group-hover:text-purple-400 transition-colors relative z-10 uppercase">IA & Modelos de Base</h2>
+                          <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                            A revolução da IA Generativa. LLMs, Transformers e como integrar inteligência real em seus produtos.
+                          </p>
+                          <div className="flex items-center justify-between relative z-10">
+                            <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">1 SLIDES</span>
+                            <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                          </div>
+                        </button>
+
+                        <button 
+                          onClick={() => setSelectedTecnologia("Ferramentas")}
+                          className="group relative bg-emerald-500/10 border border-emerald-500/30 rounded-3xl p-8 text-left hover:border-emerald-500 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl cursor-pointer overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
+                          <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center mb-6 shadow-lg shadow-emerald-600/20 relative z-10">
+                            <Settings2 className="w-10 h-10 text-white" />
+                          </div>
+                          <h2 className="text-3xl font-black text-white mb-2 italic group-hover:text-emerald-400 transition-colors relative z-10 uppercase">Ferramentas</h2>
+                          <p className="text-gray-400 text-sm leading-relaxed mb-8 relative z-10">
+                            O ecossistema que faz tudo acontecer. Jupyter, Python, Hugging Face e bibliotecas essenciais de IA.
+                          </p>
+                          <div className="flex items-center justify-between relative z-10">
+                            <span className="text-xs font-bold text-white bg-black/50 px-3 py-1 rounded-full border border-white/10">1 SLIDES</span>
+                            <div className="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:px-7 transition-all">INICIAR</div>
+                          </div>
+                        </button>
+                      </>
+                    )}
 
                     {/* Future Placeholders */}
-                    {["HTML5 & CSS3", "Node.js", "Docker"].map((tech) => (
+                    {selectedDisciplina === "Programação Front-End Web" && ["HTML5 & CSS3", "Node.js", "Docker"].map((tech) => (
                       <div key={tech} className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 grayscale opacity-20 cursor-not-allowed flex flex-col justify-between">
                         <div>
                           <div className="w-16 h-16 rounded-2xl bg-gray-800 flex items-center justify-center mb-6">
@@ -3540,27 +4155,29 @@ export default function App() {
 
                   {/* Text Content */}
                   <div className="flex-[1.2] w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
-                    <div className={`font-mono text-[9px] sm:text-xs mb-2 sm:mb-4 font-semibold tracking-widest flex items-center gap-2 sm:gap-3 ${topic.colorText} flex-shrink-0`}>
-                      <div className={`relative p-1.5 sm:p-2 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
+                    <div className={`font-mono text-[10px] sm:text-sm mb-3 sm:mb-5 font-semibold tracking-widest flex items-center gap-2 sm:gap-4 ${topic.colorText} flex-shrink-0 uppercase`}>
+                      <div className={`relative p-1.5 sm:p-2.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
                          <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
-                         <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
+                         <IconComponent className={`w-4 h-4 sm:w-6 sm:h-6 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
                       </div>
-                      <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-base">{topic.id}. {topic.label}</span>
+                      <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-xl">{topic.id}. {topic.label}</span>
                     </div>
                     
-                    <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 tracking-tight text-white flex-shrink-0 drop-shadow-lg">{topic.title}</h3>
+                    <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-8 tracking-tight text-white flex-shrink-0 drop-shadow-2xl leading-[1.1]">{topic.title}</h3>
                     
-                    <p className="text-gray-300 text-sm sm:text-base lg:text-xl leading-relaxed mb-4 sm:mb-6 flex-shrink-0 font-medium">
+                    <p className="text-gray-300 text-base sm:text-xl lg:text-3xl leading-relaxed mb-6 sm:mb-10 flex-shrink-0 font-light max-w-4xl">
                       {topic.description}
                     </p>
                     
+                    <div className="w-16 h-1.5 rounded-full bg-gradient-to-r from-white/20 to-transparent mb-8"></div>
+                    
                     {/* Points Container with Auto Scroll if needed */}
                     <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px]">
-                      <ul className="space-y-3 sm:space-y-5">
+                      <ul className="space-y-4 sm:space-y-6">
                         {topic.points.map((point, idx) => (
-                          <li key={idx} className="flex flex-row items-start gap-3 sm:gap-4 bg-white/[0.04] p-4 sm:p-5 rounded-xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.02] transition-all cursor-pointer group">
-                            <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-0.5 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
-                            <span className="text-white text-lg sm:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed font-medium tracking-wide drop-shadow-md">{point}</span>
+                          <li key={idx} className="flex flex-row items-start gap-4 sm:gap-6 bg-white/[0.04] p-5 sm:p-6 rounded-2xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.01] transition-all cursor-pointer group">
+                            <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
+                            <span className="text-white text-base sm:text-xl lg:text-2xl leading-relaxed font-normal tracking-wide drop-shadow-md">{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -3683,39 +4300,53 @@ export default function App() {
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            <div className="flex flex-col h-full bg-gradient-to-b from-transparent to-black/20">
+            <div className="flex flex-col flex-1 min-h-0 bg-gradient-to-b from-transparent to-black/20">
               <div className="flex items-center gap-3 mb-6 sm:mb-8 flex-shrink-0">
                 <BookOpen className="w-8 h-8 text-blue-400" />
                 <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
                   Aprofundamento: {filteredTopics[currentSlide - 1].title}
                 </h2>
               </div>
-              <div className="flex-grow overflow-y-auto pr-4 custom-scrollbar space-y-6 sm:space-y-8 pb-4">
+              <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar space-y-6 sm:space-y-8 pb-4">
                 <div className="space-y-6 text-lg sm:text-xl text-gray-300 leading-relaxed font-light font-sans">
-                  <p>
-                    O conceito de <strong className="text-white font-semibold">{filteredTopics[currentSlide - 1].title}</strong> é um pilar fundamental neste ecossistema. 
-                    {' '}{filteredTopics[currentSlide - 1].description} Compreender essa base nos permite escrever aplicações estruturadas e de fácil manutenção, 
-                    elevando o padrão da nossa arquitetura de software de maneira assertiva.
-                  </p>
-                  
-                  <p>
-                    Se dissecarmos seu funcionamento de perto, notaremos comportamentos essenciais que guiam essa tecnologia. 
-                    Primeiramente, notamos que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[0]}</strong>. 
-                    {filteredTopics[currentSlide - 1].points.length > 1 && (
-                      <> Em seguida, outro fator crucial é que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[1]}</strong>.</>
-                    )}
-                    {filteredTopics[currentSlide - 1].points.length > 2 && (
-                      <> Por fim, a natureza dessa estrutura dita que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[2]}</strong>.</>
-                    )}
-                    {' '}Estes pontos atuam em conjunto de forma harmônica para resolver gargalos críticos que encontraríamos em abordagens e cenários tradicionais do desenvolvimento.
-                  </p>
+                  {(filteredTopics[currentSlide - 1] as any).article ? (
+                    <div className="space-y-6">
+                      {(filteredTopics[currentSlide - 1] as any).article.split('\n\n').map((paragraph: string, pIdx: number) => (
+                        <p key={pIdx}>
+                          {paragraph.split('**').map((part, partIdx) => 
+                            partIdx % 2 === 1 ? <strong key={partIdx} className="text-white font-semibold">{part}</strong> : part
+                          )}
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    <>
+                      <p>
+                        O conceito de <strong className="text-white font-semibold">{filteredTopics[currentSlide - 1].title}</strong> é um pilar fundamental neste ecossistema. 
+                        {' '}{filteredTopics[currentSlide - 1].description} Compreender essa base nos permite escrever aplicações estruturadas e de fácil manutenção, 
+                        elevando o padrão da nossa arquitetura de software de maneira assertiva.
+                      </p>
+                      
+                      <p>
+                        Se dissecarmos seu funcionamento de perto, notaremos comportamentos essenciais que guiam essa tecnologia. 
+                        Primeiramente, notamos que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[0]}</strong>. 
+                        {filteredTopics[currentSlide - 1].points.length > 1 && (
+                          <> Em seguida, outro fator crucial é que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[1]}</strong>.</>
+                        )}
+                        {filteredTopics[currentSlide - 1].points.length > 2 && (
+                          <> Por fim, a natureza dessa estrutura dita que <strong className="text-blue-300 font-medium">{filteredTopics[currentSlide - 1].points[2]}</strong>.</>
+                        )}
+                        {' '}Estes pontos atuam em conjunto de forma harmônica para resolver gargalos críticos que encontraríamos em abordagens e cenários tradicionais do desenvolvimento.
+                      </p>
 
-                  <p>
-                    Para aplicar esses maravilhosos conceitos de forma robusta e plena, deve-se voltar a atenção aos detalhes técnicos envolvidos, 
-                    como <strong className="text-emerald-400 font-medium">{filteredTopics[currentSlide - 1].details.join(', ')}</strong>.
-                    Dominar esses aspectos separa drasticamente o código amador de um código resiliente e pronto e flexível para escalar em produção. 
-                    Acompanhe abaixo o <strong className="text-fuchsia-400 font-medium">código demonstrativo</strong> ilustrando a aplicação real na prática:
-                  </p>
+                      <p>
+                        Para aplicar esses maravilhosos conceitos de forma robusta e plena, deve-se voltar a atenção aos detalhes técnicos envolvidos, 
+                        como <strong className="text-emerald-400 font-medium">{filteredTopics[currentSlide - 1].details.join(', ')}</strong>.
+                        Dominar esses aspectos separa drasticamente o código amador de um código resiliente e pronto e flexível para escalar em produção. 
+                        Acompanhe abaixo o <strong className="text-fuchsia-400 font-medium">código demonstrativo</strong> ilustrando a aplicação real na prática:
+                      </p>
+                    </>
+                  )}
                 </div>
                 
                 {filteredTopics[currentSlide - 1].code && (
