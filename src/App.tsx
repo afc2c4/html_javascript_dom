@@ -4069,6 +4069,10 @@ export default function App() {
         {/* SLIDES */}
         {filteredTopics.map((topic, index) => {
           const IconComponent = topic.icon;
+          const layoutType = selectedTecnologia === 'Análise de Dados' 
+            ? (index % 3 === 0 ? 'grid' : index % 3 === 1 ? 'columns' : 'standard')
+            : 'standard';
+            
           return (
             <div key={topic.id} className="w-screen h-screen flex-shrink-0 flex items-center justify-center p-3 sm:p-8 pb-14 sm:pb-20 box-border overflow-hidden">
               <div className="w-full h-full max-w-[1200px] z-10 flex flex-col justify-center max-h-full">
@@ -4137,85 +4141,218 @@ export default function App() {
                   )}
                 </div>
                 
-                <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
-                  
-                  {/* Article Open Button */}
-                  <button 
-                    onClick={() => setIsArticleOpen(true)}
-                    className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2 sm:p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-gray-400 hover:text-white transition-colors shadow-lg cursor-pointer flex items-center justify-center group"
-                    title="Ler aprofundamento"
-                  >
-                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                  </button>
+                {layoutType === 'standard' && (
+                  <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
+                    
+                    {/* Article Open Button */}
+                    <button 
+                      onClick={() => setIsArticleOpen(true)}
+                      className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2 sm:p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-gray-400 hover:text-white transition-colors shadow-lg cursor-pointer flex items-center justify-center group"
+                      title="Ler aprofundamento"
+                    >
+                      <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                    </button>
 
-                  {/* Huge Background Number */}
-                  <div className={`absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 text-[150px] sm:text-[250px] lg:text-[400px] font-bold opacity-[0.02] ${topic.colorText} pointer-events-none font-mono selection:bg-transparent z-0`}>
-                    {topic.id}
-                  </div>
-
-                  {/* Text Content */}
-                  <div className="flex-[1.2] w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
-                    <div className={`font-mono text-[10px] sm:text-sm mb-3 sm:mb-5 font-semibold tracking-widest flex items-center gap-2 sm:gap-4 ${topic.colorText} flex-shrink-0 uppercase`}>
-                      <div className={`relative p-1.5 sm:p-2.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
-                         <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
-                         <IconComponent className={`w-4 h-4 sm:w-6 sm:h-6 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
-                      </div>
-                      <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-xl">{topic.id}. {topic.label}</span>
+                    {/* Huge Background Number */}
+                    <div className={`absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 text-[150px] sm:text-[250px] lg:text-[400px] font-bold opacity-[0.02] ${topic.colorText} pointer-events-none font-mono selection:bg-transparent z-0`}>
+                      {topic.id}
                     </div>
-                    
-                    <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-8 tracking-tight text-white flex-shrink-0 drop-shadow-2xl leading-[1.1]">{topic.title}</h3>
-                    
-                    <p className="text-gray-300 text-base sm:text-xl lg:text-3xl leading-relaxed mb-6 sm:mb-10 flex-shrink-0 font-light max-w-4xl">
-                      {topic.description}
-                    </p>
-                    
-                    <div className="w-16 h-1.5 rounded-full bg-gradient-to-r from-white/20 to-transparent mb-8"></div>
-                    
-                    {/* Points Container with Auto Scroll if needed */}
-                    <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px]">
-                      <ul className="space-y-4 sm:space-y-6">
-                        {topic.points.map((point, idx) => (
-                          <li key={idx} className="flex flex-row items-start gap-4 sm:gap-6 bg-white/[0.04] p-5 sm:p-6 rounded-2xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.01] transition-all cursor-pointer group">
-                            <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
-                            <span className="text-white text-base sm:text-xl lg:text-2xl leading-relaxed font-normal tracking-wide drop-shadow-md">{point}</span>
-                          </li>
+
+                    {/* Text Content */}
+                    <div className="flex-[1.2] w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
+                      <div className={`font-mono text-[10px] sm:text-sm mb-3 sm:mb-5 font-semibold tracking-widest flex items-center gap-2 sm:gap-4 ${topic.colorText} flex-shrink-0 uppercase`}>
+                        <div className={`relative p-1.5 sm:p-2.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
+                           <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
+                           <IconComponent className={`w-4 h-4 sm:w-6 sm:h-6 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
+                        </div>
+                        <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-xl">{topic.id}. {topic.label}</span>
+                      </div>
+                      
+                      <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-8 tracking-tight text-white flex-shrink-0 drop-shadow-2xl leading-[1.1]">{topic.title}</h3>
+                      
+                      <p className="text-gray-300 text-base sm:text-xl lg:text-3xl leading-relaxed mb-6 sm:mb-10 flex-shrink-0 font-light max-w-4xl">
+                        {topic.description}
+                      </p>
+                      
+                      <div className="w-16 h-1.5 rounded-full bg-gradient-to-r from-white/20 to-transparent mb-8"></div>
+                      
+                      {/* Points Container with Auto Scroll if needed */}
+                      <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px]">
+                        <ul className="space-y-4 sm:space-y-6">
+                          {topic.points.map((point, idx) => (
+                            <li key={idx} className="flex flex-row items-start gap-4 sm:gap-6 bg-white/[0.04] p-5 sm:p-6 rounded-2xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.01] transition-all cursor-pointer group">
+                              <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
+                              <span className="text-white text-base sm:text-xl lg:text-2xl leading-relaxed font-normal tracking-wide drop-shadow-md">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 pt-3 border-t border-white/5 flex-shrink-0">
+                        {topic.details.map((detail, idx) => (
+                          <span key={idx} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-black/40 border border-white/5 rounded-full text-[9px] sm:text-xs text-gray-300 font-mono flex items-center gap-1.5 shadow-sm">
+                            <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${topic.colorDot}`}></div>
+                            {detail}
+                          </span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 pt-3 border-t border-white/5 flex-shrink-0">
-                      {topic.details.map((detail, idx) => (
-                        <span key={idx} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-black/40 border border-white/5 rounded-full text-[9px] sm:text-xs text-gray-300 font-mono flex items-center gap-1.5 shadow-sm">
-                          <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${topic.colorDot}`}></div>
-                          {detail}
-                        </span>
-                      ))}
+                    {/* Code Panel */}
+                    <div className="flex-[0.8] lg:w-[45%] relative z-10 shrink-0 flex flex-col h-[35%] lg:h-auto min-h-[160px] lg:min-h-0 bg-[#030408] rounded-xl overflow-hidden border border-white/10 shadow-xl lg:my-auto">
+                      <div className="flex px-3 sm:px-4 py-2 sm:py-2.5 bg-white/[0.03] border-b border-white/5 items-center justify-between flex-shrink-0">
+                        <div className="flex space-x-1.5 sm:space-x-2">
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500/80"></div>
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500/80"></div>
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div className="text-[8px] sm:text-[10px] text-gray-500 font-mono tracking-wider ml-auto flex items-center gap-2">
+                          <span>{topic.title.split(' ')[0].toLowerCase()}.js</span>
+                        </div>
+                      </div>
+                      <div className="p-3 sm:p-5 overflow-auto flex-grow custom-scrollbar relative">
+                        <div className="absolute top-0 right-0 p-2 opacity-15 pointer-events-none animate-pulse">
+                          <IconComponent className={`w-16 h-16 sm:w-24 sm:h-24 ${topic.colorText} drop-shadow-[0_0_15px_currentColor]`} style={{ filter: 'drop-shadow(0 0 15px currentColor)' }} />
+                        </div>
+                        <pre className={`text-[10px] sm:text-xs lg:text-[13px] font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
+                          <code>{topic.code}</code>
+                        </pre>
+                      </div>
                     </div>
                   </div>
+                )}
 
-                  {/* Code Panel */}
-                  <div className="flex-[0.8] lg:w-[45%] relative z-10 shrink-0 flex flex-col h-[35%] lg:h-auto min-h-[160px] lg:min-h-0 bg-[#030408] rounded-xl overflow-hidden border border-white/10 shadow-xl lg:my-auto">
-                    <div className="flex px-3 sm:px-4 py-2 sm:py-2.5 bg-white/[0.03] border-b border-white/5 items-center justify-between flex-shrink-0">
-                      <div className="flex space-x-1.5 sm:space-x-2">
-                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500/80"></div>
-                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500/80"></div>
-                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500/80"></div>
+                {layoutType === 'columns' && (
+                  <div className="relative group bg-[#080b12]/90 border border-white/5 sm:border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 backdrop-blur-2xl flex flex-col shadow-2xl h-[calc(100%-3rem)] max-h-[800px] overflow-hidden">
+                    
+                    <button 
+                      onClick={() => setIsArticleOpen(true)}
+                      className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2 sm:p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-gray-400 hover:text-white transition-colors shadow-lg cursor-pointer flex items-center justify-center group"
+                      title="Ler aprofundamento"
+                    >
+                      <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                    </button>
+
+                    <div className="text-center mb-6 sm:mb-8 flex-shrink-0 relative z-10 w-full pt-4">
+                      <div className={`font-mono text-[10px] sm:text-sm mb-3 font-semibold tracking-widest flex items-center justify-center gap-2 sm:gap-4 ${topic.colorText} uppercase`}>
+                         <div className={`relative p-1.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20`}>
+                           <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+                         </div>
+                         <span>{topic.id}. {topic.label}</span>
                       </div>
-                      <div className="text-[8px] sm:text-[10px] text-gray-500 font-mono tracking-wider ml-auto flex items-center gap-2">
-                        <span>{topic.title.split(' ')[0].toLowerCase()}.js</span>
-                      </div>
+                      <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight text-white drop-shadow-2xl">{topic.title}</h3>
+                      <p className="text-gray-300 text-lg sm:text-2xl font-light max-w-4xl mx-auto">{topic.description}</p>
                     </div>
-                    <div className="p-3 sm:p-5 overflow-auto flex-grow custom-scrollbar relative">
-                      <div className="absolute top-0 right-0 p-2 opacity-15 pointer-events-none animate-pulse">
-                        <IconComponent className={`w-16 h-16 sm:w-24 sm:h-24 ${topic.colorText} drop-shadow-[0_0_15px_currentColor]`} style={{ filter: 'drop-shadow(0 0 15px currentColor)' }} />
-                      </div>
-                      <pre className={`text-[10px] sm:text-xs lg:text-[13px] font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
-                        <code>{topic.code}</code>
-                      </pre>
+
+                    <div className={`grid grid-cols-1 md:grid-cols-${Math.min(topic.points.length, 4)} gap-4 sm:gap-6 flex-1 w-full relative z-10 min-h-0 overflow-y-auto custom-scrollbar`}>
+                      {topic.points.map((point, idx) => {
+                        const paragraph = (topic as any).article ? ((topic as any).article.split('\n\n')[idx] || topic.description) : topic.description;
+                        const cleanText = paragraph.replace(/\*\*/g, '').replace(/\*/g, '');
+                        const firstSentenceMatch = cleanText.match(/^[^.!?]+[.!?]/);
+                        const supportText = firstSentenceMatch ? firstSentenceMatch[0] : cleanText;
+                        
+                        return (
+                        <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col items-center text-center hover:bg-white/10 transition-colors">
+                           <CheckCircle2 className={`w-8 h-8 sm:w-12 sm:h-12 mb-4 ${topic.colorText}`} />
+                           <h4 className="text-lg sm:text-2xl font-bold text-white mb-4 leading-tight">{point}</h4>
+                           <p className="text-sm sm:text-base text-gray-400 mb-6 font-light leading-relaxed max-w-[250px]">
+                             {supportText}
+                           </p>
+                           {(topic.details[idx] || topic.details[0]) && (
+                             <span className="px-3 py-1 bg-black/40 border border-white/5 rounded-full text-xs text-gray-300 font-mono mt-auto">
+                                {topic.details[idx] || topic.details[0]}
+                             </span>
+                           )}
+                        </div>
+                      )})}
                     </div>
+
+                    {topic.code && (
+                      <div className="mt-6 w-full relative z-10 flex-shrink-0 bg-[#030408] rounded-xl overflow-hidden border border-white/10 flex flex-col h-auto max-h-[150px]">
+                        <div className="flex px-3 py-2 bg-white/[0.03] border-b border-white/5 items-center">
+                          <div className="flex space-x-1.5">
+                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                          </div>
+                        </div>
+                        <div className="p-3 overflow-auto custom-scrollbar">
+                          <pre className={`text-[10px] sm:text-xs font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
+                            <code>{topic.code}</code>
+                          </pre>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  
-                </div>
+                )}
+
+                {layoutType === 'grid' && (
+                   <div className="relative group flex flex-col h-[calc(100%-3rem)] max-h-[800px] overflow-hidden w-full z-10">
+                     <button 
+                        onClick={() => setIsArticleOpen(true)}
+                        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2 sm:p-3 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full text-gray-400 hover:text-white transition-colors shadow-lg cursor-pointer flex items-center justify-center group"
+                        title="Ler aprofundamento"
+                     >
+                        <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                     </button>
+                     
+                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 h-full w-full overflow-y-auto custom-scrollbar">
+                       
+                       {/* Box 1: Title & Description */}
+                       <div className="bg-[#080b12]/90 border border-white/5 rounded-2xl p-6 sm:p-10 flex flex-col justify-center relative overflow-hidden backdrop-blur-md">
+                          <div className={`absolute -right-10 -bottom-10 opacity-10`}><IconComponent className={`w-64 h-64 ${topic.colorText}`} /></div>
+                          <div className={`font-mono text-[10px] sm:text-sm mb-4 font-semibold tracking-widest flex items-center gap-2 ${topic.colorText} uppercase relative z-10`}>
+                             <IconComponent className="w-5 h-5" /> <span>{topic.id}. {topic.label}</span>
+                          </div>
+                          <h3 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 tracking-tight text-white relative z-10">{topic.title}</h3>
+                          <p className="text-gray-300 text-lg sm:text-2xl font-light relative z-10">{topic.description}</p>
+                       </div>
+                       
+                       {/* Box 2: Points */}
+                       <div className="bg-[#080b12]/90 border border-white/5 rounded-2xl p-6 sm:p-8 flex flex-col overflow-auto backdrop-blur-md">
+                          <h4 className="text-white/50 uppercase tracking-widest font-mono text-xs sm:text-sm mb-4 sm:mb-6">Pontos Chave</h4>
+                          <div className="space-y-3 sm:space-y-4">
+                            {topic.points.map((pt, i) => (
+                               <div key={i} className="flex gap-3 items-center bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                  <CheckCircle2 className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 ${topic.colorText}`} />
+                                  <span className="text-white font-medium text-base sm:text-xl">{pt}</span>
+                               </div>
+                            ))}
+                          </div>
+                       </div>
+                       
+                       {/* Box 3: Details */}
+                       <div className="bg-[#080b12]/90 border border-white/5 rounded-2xl p-6 sm:p-8 flex flex-col justify-center items-center text-center backdrop-blur-md">
+                          <h4 className="text-white/50 uppercase tracking-widest font-mono text-xs sm:text-sm mb-4 sm:mb-6 w-full text-left">Detalhes</h4>
+                          <div className="flex flex-wrap justify-center gap-3">
+                            {topic.details.map((dt, i) => (
+                               <span key={i} className={`px-4 py-2 border border-white/10 rounded-xl text-white font-mono bg-white/5 text-sm sm:text-lg whitespace-nowrap`}>
+                                 {dt}
+                               </span>
+                            ))}
+                          </div>
+                       </div>
+
+                       {/* Box 4: Code Panel */}
+                       <div className="bg-[#030408] border border-white/10 rounded-2xl overflow-hidden flex flex-col">
+                         <div className="flex px-4 py-3 bg-white/5 border-b border-white/5 items-center justify-between">
+                           <div className="flex space-x-2">
+                              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                           </div>
+                           <span className="text-xs text-gray-500 font-mono">snippet.ts</span>
+                         </div>
+                         <div className="p-4 sm:p-6 overflow-auto custom-scrollbar flex-1 relative flex items-center">
+                           <pre className={`text-[11px] sm:text-sm font-mono leading-[1.6] ${topic.colorText} brightness-125`}>
+                              <code>{topic.code}</code>
+                           </pre>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                )}
+                
               </div>
             </div>
           );
