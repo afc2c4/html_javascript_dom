@@ -1794,524 +1794,521 @@ const toolsIAContentGroups = [
 
 const vueDetailedTopics = [
   {
-    id: "v01", label: "O QUE É VUE?", title: "O Framework Vue.js", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Globe,
-    description: "Vue (pronunciado /vjuː/, como view) é um framework JavaScript para construir interfaces de usuário. Ele se baseia em padrões HTML, CSS e JavaScript e oferece um modelo de programação declarativo e baseado em componentes.",
+    id: "v01", label: "O QUE É VUE?", title: "O que é o Vue.js?", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Globe,
+    description: "O Vue é um framework JavaScript progressivo para construção de interfaces. Ele funciona através de um modelo declarativo baseado em componentes, utilizando os padrões web tradicionais (HTML, CSS e JS).",
     points: [
-      "Renderização Declarativa: Estende o HTML padrão para descrever saídas baseadas no estado JS.",
-      "Reatividade: Rastreia automaticamente as alterações do estado JS e atualiza o DOM.",
-      "Progressivo: Pode ser uma simples biblioteca ou um framework completo."
+      "Renderização Declarativa: Vincula o estado do JavaScript diretamente ao HTML de forma simples.",
+      "Sistema de Reatividade: Monitora mudanças nas variáveis e atualiza a tela de forma automática e eficiente."
     ],
+    pointsIcons: [Monitor, Zap],
     details: ["Renderização Declarativa", "Sistema de Reatividade", "Focado na Camada View", "Facilidade de Integração"],
     code: "// Exemplo de Reatividade básica no Vue\nimport { createApp, ref } from 'vue'\n\ncreateApp({\n  setup() {\n    const count = ref(0)\n    return { count }\n  }\n}).mount('#app')",
     article: "O Vue é um framework progressivo focado em ser adotável de forma incremental. Seu núcleo se concentra na camada de visualização (view layer), facilitando a integração com outras bibliotecas ou projetos existentes. Diferente de outros frameworks monolíticos, o Vue foi projetado desde o início para ser adaptável.\n\nAs duas características principais que definem o Vue são a **Renderização Declarativa**, onde o Vue estende o HTML padrão com uma sintaxe de template que permite descrever declarativamente a saída baseada no estado do JavaScript, e a **Reatividade**, onde o Vue rastreia automaticamente as mudanças de estado e atualiza o DOM de forma eficiente quando ocorrem alterações."
   },
   {
-    id: "v02", label: "PROGRESSIVO", title: "A Abstração Progressiva", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Zap,
-    description: "Vue foi projetado para ser adaptável. Ele pode ser usado de várias maneiras, dependendo da complexidade do projeto, desde o aprimoramento de HTML estático até Single Page Applications (SPAs).",
+    id: "v02", label: "PROGRESSIVO", title: "A Abstração Progressiva no Vue.js", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Zap,
+    description: "O Vue foi projetado para ser um framework extremamente adaptável. Ele escala de acordo com a complexidade do seu projeto, funcionando desde a melhoria de um HTML estático simples até a criação de Single Page Applications robustas.\n\nAssim, o Vue oferece suporte para SSR, SEO, aplicativos móveis e desktop, crescendo exatamente no ritmo das suas necessidades.",
     points: [
-      "Sem Build: Pode ser usado diretamente via CDN como um roteiro de melhoria progressiva.",
-      "Com Build: Automação completa com Vite e componentes SFC.",
-      "Ecossistema: Router, Pinia e ferramentas oficiais integradas."
+      "Sem Build: Você pode usar o Vue direto via CDN para pequenas melhorias progressivas na página.",
+      "Com Build: Para projetos maiores, ele oferece automação completa usando o Vite e componentes de arquivo único.",
+      "Ecossistema: Conforme sua aplicação cresce, você conta com ferramentas oficiais integradas, como Router e Pinia."
     ],
-    details: ["Melhoria Progressiva", "Single-Page Application", "Server-Side Rendering", "Mobile & Desktop"],
+    details: [],
     code: "<!-- Uso via CDN (Sem Build) -->\n<script src=\"https://unpkg.com/vue@3\"></script>\n\n<div id=\"app\">{{ message }}</div>\n\n<script>\n  Vue.createApp({ data() { return { message: 'Olá Vue!' } } }).mount('#app')\n</script>",
     article: "A natureza 'progressiva' do Vue significa que ele pode crescer com as suas necessidades. Você pode começar usando o Vue apenas para adicionar pequenas interações em uma página HTML estática (via CDN), ou pode expandir para gerenciar toda a lógica do front-end com ferramentas de build modernas, roteamento oficial (Vue Router) e gerenciamento de estado (Pinia).\n\nEssa flexibilidade permite que o Vue suporte diversos casos de uso: aprimoramento de HTML sem build, construção de poderosas Single-Page Applications (SPAs), renderização no lado do servidor (SSR) para SEO e performance, ou até mesmo a criação de aplicações móveis e desktop usando frameworks complementares."
   },
   {
-    id: "v03", label: "SFC", title: "Single-File Components", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: FileEdit,
-    description: "Componentes de Ficheiro Único (SFCs, ou arquivos *.vue) são a forma recomendada de escrever componentes Vue. Eles encapsulam a lógica, o modelo e os estilos em um só lugar.",
+    id: "v03", label: "SFC", title: "Os Single-File Components (SFCs)", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: FileEdit,
+    description: "A forma recomendada de construir no Vue é utilizando os Componentes de Ficheiro Único, conhecidos como arquivos .vue. Eles trazem uma grande vantagem: encapsulam toda a lógica, o modelo visual e a estilização em um único lugar.\n\nTrabalhar com SFCs garante uma sintaxe familiar, isolamento de estilos e total compatibilidade com pré-processadores modernos como Sass e Less.",
     points: [
-      "Template: O HTML que define a estrutura visual.",
-      "Script: A lógica do componente (JS/TS).",
-      "Style: O CSS (com suporte a escopo local)."
+      "Template: Onde fica o código HTML que define a estrutura visual da tela.",
+      "Script: Onde inserimos a lógica do componente, utilizando JavaScript ou TypeScript.",
+      "Style: Onde aplicamos o CSS, contando com suporte nativo a escopo local para evitar conflitos de estilo entre componentes."
     ],
-    details: ["Arquivos .vue", "Encapsulamento", "Pré-processamento", "Escopo de Estilo"],
+    details: [],
     code: "<script setup>\nimport { ref } from 'vue'\nconst greeting = ref('Hello World!')\n</script>\n\n<template>\n  <p class=\"greeting\">{{ greeting }}</p>\n</template>\n\n<style scoped>\n.greeting { color: red; }\n</style>",
     article: "Os Single-File Components (*.vue) permitem que desenvolvedores mantenham a estrutura (template), a lógica (script) e o estilo (style) de um componente em um único arquivo. Isso promove um desenvolvimento modular e organizado, facilitando a manutenção e a reutilização de código.\n\nAs principais vantagens incluem a sintaxe familiar de HTML/CSS/JS, o suporte a escopo de estilo (scoped CSS) que evita conflitos de classes, e a compatibilidade com pré-processadores como Sass, Less ou TypeScript. No ambiente de build (Vite), esses arquivos são compilados em código JavaScript altamente otimizado para o navegador."
   },
   {
-    id: "v04", label: "API STYLES", title: "Options vs Composition API", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Layout,
-    description: "O Vue oferece dois estilos de API. Ambos resolvem os mesmos problemas, mas de maneiras organizacionais diferentes.",
+    id: "v04", label: "API STYLES", title: "Options API vs Composition API", colorText: "text-purple-500", colorDot: "bg-purple-500", icon: Layout,
+    description: "O Vue oferece duas maneiras diferentes de organizar o código: a Options API e a Composition API. Ambas resolvem os mesmos problemas, mas atendem a necessidades distintas de desenvolvimento.\n\nA escolha depende do estilo do seu projeto:",
     points: [
-      "Options API: Organiza por propriedades de objeto (data, methods, mounted). Ideal para iniciantes.",
-      "Composition API: Organiza por lógica usando funções (setup, ref, computed). Ideal para reutilização e Typescript.",
-      "Intercambiável: Você pode usar ambos no mesmo projeto ou até no mesmo componente."
+      "Options API: É o modelo clássico, ideal para iniciantes. Ela organiza o código por propriedades de objeto predefinidas, como data, methods e mounted.",
+      "Composition API: Introduzida no Vue 3, ela organiza o código diretamente por lógica de negócio usando funções como setup, ref e computed. É a escolha ideal para reaproveitamento de código e projetos robustos com TypeScript.",
+      "Intercambiável: O ponto mais forte é que você não precisa escolher apenas uma para sempre. Elas são totalmente compatíveis e podem coexistir no mesmo projeto ou até dentro do mesmo componente."
     ],
-    details: ["Options API (Clássico)", "Composition API (Moderno)", "<script setup>", "Reutilização de Lógica"],
+    details: [],
     code: "// Composition API (Moderno)\n<script setup>\nimport { ref, onMounted } from 'vue'\n\nconst count = ref(0)\nfunction increment() { count.value++ }\n\nonMounted(() => console.log('Pronto!'))\n</script>",
     article: "O Vue oferece dois estilos de API para construir componentes: a **Options API** e a **Composition API**. A Options API é o estilo clássico, onde as propriedades do componente são organizadas em um objeto (data, methods, computed, etc.). É excelente para iniciantes pela sua estrutura clara e intuitiva.\n\nA Composition API, introduzida no Vue 3, permite organizar a lógica do componente usando funções importadas. Isso facilita drasticamente a reutilização de lógica (através de Composables), fornece melhor suporte ao TypeScript e permite agrupar códigos relacionados por funcionalidade em vez de por tipo de opção. Importante notar que ambas as APIs compartilham o mesmo motor reativo subjacente; a escolha é puramente uma questão de organização de código e preferência da equipe."
   },
   {
     id: "v05", label: "CRIANDO PROJETO", title: "O Comando create-vue", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Zap,
-    description: "A forma oficial de começar um projeto Vue com ferramentas de construção (build tools) é através do scaffold create-vue.",
+    description: "A maneira mais prática e oficial de iniciar um projeto Vue moderno é utilizando a ferramenta create-vue. Ela funciona como um assistente inteligente que constrói a base do seu projeto em segundos.",
     points: [
-      "Comando: Execute 'npm create vue@latest' para iniciar o assistente interativo.",
-      "Ferramentas: Suporte nativo para TypeScript, JSX, Router, Pinia, Vitest, e ESLint.",
-      "Vite: Alimentado pelo motor Vite para um desenvolvimento extremamente rápido."
+      "Basta rodar 'npm create vue' no seu terminal. Um menu interativo vai guiá-lo com perguntas simples de sim ou não sobre as configurações desejadas.",
+      "O assistente já prepara tudo: de TypeScript e rotas a testes automáticos. Ele usa o Vite por baixo dos panos, o que garante um ambiente de desenvolvimento incrivelmente veloz."
     ],
-    details: ["Padrão da Indústria", "Assistente Interativo", "Configuração Modular", "Focado em DX"],
+    details: [],
     code: "# Criar aplicação Vue oficial\nnpm create vue@latest\n\n# Entrar na pasta e instalar\ncd <project-name>\nnpm install\nnpm run dev"
   },
   {
     id: "v06", label: "ESTRUTURA", title: "Arquivos e Pastas do Projeto", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Layout,
-    description: "Um projeto Vue moderno tem uma estrutura organizada para facilitar a escalabilidade e manutenção.",
+    description: "Ao criar um projeto Vue moderno, você encontrará uma estrutura organizada que foi pensada para manter seu código escalável e fácil de manter ao longo do tempo.",
     points: [
-      "src/main.ts: O ponto de entrada que cria e monta a instância da aplicação.",
-      "src/App.vue: O componente raiz da aplicação.",
-      "src/components/: Onde residem os componentes secundários e reutilizáveis."
+      "O coração da aplicação vive na pasta 'src'. Lá você encontra o arquivo 'main.ts', que é o ponto de partida que inicia tudo, e o 'App.vue', que serve como a raiz visual do seu projeto.",
+      "Dentro de 'src', a pasta 'components' é onde a mágica do reaproveitamento acontece: lá ficam todas as peças menores e reutilizáveis do seu quebra-cabeça visual, como botões, cartões e cabeçalhos."
     ],
-    details: ["main.js / main.ts", "Pastas assets/ e static/", "vite.config.ts", "package.json"],
+    details: [],
     code: "// src/main.ts\nimport { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
   },
   {
     id: "v07", label: "USO VIA CDN", title: "Vue sem Ferramentas de Build", colorText: "text-amber-400", colorDot: "bg-amber-400", icon: Globe,
-    description: "Vue pode ser usado sem um processo de build, ideal para aprimorar páginas web existentes de forma progressiva.",
+    description: "Você não precisa de um ambiente complexo para usar o Vue. Para adicionar interatividade rápida a uma página HTML existente, basta importar o script do Vue diretamente pelo navegador usando um link CDN.",
     points: [
-      "Global Build: Um único arquivo JS que expõe o objeto 'Vue' no escopo global.",
-      "ES Module Build: Aproveita o suporte nativo a módulos nos navegadores modernos.",
-      "Sem Compilação: Os templates são compilados direto no navegador (runtime)."
+      "Sem Complicação: Funciona direto no navegador, sem precisar instalar dependências ou rodar comandos de compilação. É só incluir o link e programar.",
+      "Moderno e Eficiente: Mesmo sem ferramentas de build, você pode usar o padrão moderno de módulos do JavaScript para importar exatamente o que precisa."
     ],
-    details: ["unpkg.com", "Melhoria Progressiva", "Rápido de configurar", "Sem Node_modules"],
+    details: [],
     code: "<!-- ES Module Build -->\n<div id=\"app\">{{ message }}</div>\n\n<script type=\"module\">\n  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'\n  createApp({ data() { return { message: 'Hello!' } } }).mount('#app')\n</script>"
   },
   {
     id: "v08", label: "IMPORT MAPS", title: "Mapas de Importação", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: Network,
     description: "Import Maps permitem que você use aliases para URLs de módulos longos, facilitando o uso de módulos ES via CDN.",
     points: [
-      "Aliases: Define 'vue' para apontar para uma URL específica da versão mais estável.",
-      "Organização: Mantém o código limpo ao usar imports simples como 'import { ref } from \"vue\"'.",
-      "Suporte: Funcionam nativamente em navegadores modernos sem ferramentas externas."
+      "Define 'vue' para apontar para uma URL específica da versão mais estável.",
+      "Mantém o código limpo ao usar imports simples como 'import { ref } from \"vue\"'.",
+      "Funcionam nativamente em navegadores modernos sem ferramentas externas."
     ],
-    details: ["script type='importmap'", "URLs amigáveis", "Gerenciamento de versões", "Native ESM"],
+    details: [],
     code: "<script type=\"importmap\">\n  {\n    \"imports\": {\n      \"vue\": \"https://unpkg.com/vue@3/dist/vue.esm-browser.js\"\n    }\n  }\n</script>\n\n<script type=\"module\">\n  import { createApp } from 'vue'\n  // 'vue' resolve para a URL acima!\n</script>"
   },
   {
     id: "v09", label: "A INSTÂNCIA", title: "Criando uma Aplicação", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Settings2,
     description: "Toda aplicação Vue começa com a criação de uma instância de aplicação usando a função createApp.",
     points: [
-      "Ponto de Entrada: A instância é onde você registra recursos globais (plugins, diretivas).",
-      "Encapsulamento: Múltiplas instâncias podem coexistir na mesma página sem conflitos.",
-      "Cadeia: Métodos de instância como .use() e .component() podem ser encadeados."
+      "A instância é onde você registra recursos globais (plugins, diretivas).",
+      "Múltiplas instâncias podem coexistir na mesma página sem conflitos.",
+      "Métodos de instância como .use() e .component() podem ser encadeados."
     ],
-    details: ["createApp", "Instância de App", "Root Component", "Plugins Globais"],
+    details: [],
     code: "import { createApp } from 'vue'\nconst app = createApp({ /* opções */ })\n\napp.use(myPlugin)\napp.mount('#app')"
   },
   {
     id: "v10", label: "RAIZ", title: "O Componente Raiz", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
     description: "A instância createApp requer um objeto de componente que servirá como o 'componente raiz' da árvore de componentes.",
     points: [
-      "Pai de Todos: É o componente de nível superior que contém todos os outros.",
-      "Single File Component: Geralmente é um arquivo App.vue importado no main.js.",
-      "Opções: Pode conter dados, métodos e gatilhos de ciclo de vida globais."
+      "É o componente de nível superior que contém todos os outros.",
+      "Geralmente é um arquivo App.vue importado no main.js.",
+      "Pode conter dados, métodos e gatilhos de ciclo de vida globais."
     ],
-    details: ["App.vue", "Component Tree", "Entry Point", "Root Instance"],
+    details: [],
     code: "// Importando o componente raiz\nimport App from './App.vue'\nconst app = createApp(App)\napp.mount('#app')"
   },
   {
     id: "v11", label: "MONTAGEM", title: "Montando no DOM", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
     description: "Uma instância de aplicação não renderizará nada até que seu método .mount() seja chamado no elemento do DOM desejado.",
     points: [
-      "Seletor CSS: Recebe uma string (ex: '#app') ou um elemento real do DOM.",
-      "Conteúdo Inicial: O Vue limpará o conteúdo do elemento e renderizará a app dentro dele.",
-      "Último Passo: A montagem deve ocorrer após todas as configurações da aplicação (plugins, etc)."
+      "Recebe uma string (ex: '#app') ou um elemento real do DOM.",
+      "O Vue limpará o conteúdo do elemento e renderizará a app dentro dele.",
+      "A montagem deve ocorrer após todas as configurações da aplicação (plugins, etc)."
     ],
-    details: ["app.mount()", "Container ID", "DOM Connection", "Initial Render"],
+    details: [],
     code: "<div id=\"app\"></div>\n\n<script>\n  app.mount('#app')\n</script>"
   },
   {
     id: "v12", label: "INTERPOLAÇÃO", title: "Sintaxe de Mustaches", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: FileEdit,
     description: "A forma mais básica de vinculação de dados é a interpolação de texto usando as 'chaves duplas' (Double Mustaches).",
     points: [
-      "Sincronização: O texto dentro das chaves será substituído pelo valor da propriedade correspondente.",
-      "Reatividade: Sempre que a propriedade muda, o texto no navegador é atualizado automaticamente.",
-      "Raw HTML: Mustache interpreta dados como texto puro, não HTML (use v-html para isso)."
+      "O texto dentro das chaves será substituído pelo valor da propriedade correspondente.",
+      "Sempre que a propriedade muda, o texto no navegador é atualizado automaticamente.",
+      "Mustache interpreta dados como texto puro, não HTML (use v-html para isso)."
     ],
-    details: ["{{ expressao }}", "Text Content", "Auto-update", "Reactive Bind"],
+    details: [],
     code: "<span>Mensagem: {{ msg }}</span>\n\n<!-- Atencão: v-html é perigoso (XSS) -->\n<p>HTML: <span v-html=\"rawHtml\"></span></p>"
   },
   {
     id: "v13", label: "ATRIBUTOS", title: "Vinculando com v-bind", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Palette,
     description: "Mustaches não funcionam em atributos HTML. Para vincular um atributo a uma expressão dinâmica, usamos a diretiva v-bind.",
     points: [
-      "Abreviação: Em vez de 'v-bind:id', podemos simplesmente usar ':id'.",
-      "Booleanos: Atributos como 'disabled' desaparecerão se o valor for 'falsy' (null, false, undefined).",
-      "Múltiplos Atributos: v-bind sem argumento pode vincular um objeto inteiro de atributos."
+      "Em vez de 'v-bind:id', podemos simplesmente usar ':id'.",
+      "Atributos como 'disabled' desaparecerão se o valor for 'falsy' (null, false, undefined).",
+      "v-bind sem argumento pode vincular um objeto inteiro de atributos."
     ],
-    details: ["v-bind:href", ":src", ":id", ":class"],
+    details: [],
     code: "<!-- Forma longa -->\n<div v-bind:id=\"dynamicId\"></div>\n\n<!-- Abreviação (Padrão) -->\n<button :disabled=\"isButtonDisabled\">Enviar</button>"
   },
   {
     id: "v14", label: "EXPRESSÕES", title: "Lógica no Template", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: Network,
     description: "O Vue suporta todo o poder das expressões JavaScript dentro de mustaches e diretivas, desde que seja apenas UMA expressão.",
     points: [
-      "Unitário: Deve ser uma expressão que possa retornar um valor (não declarações como 'var a = 1').",
-      "Acesso Global: Templates têm acesso limitado a globais permitidos (Math, Date).",
-      "Simplicidade: Evite lógica complexa no template; prefixe-a em propriedades computadas."
+      "Deve ser uma expressão que possa retornar um valor (não declarações como 'var a = 1').",
+      "Templates têm acesso limitado a globais permitidos (Math, Date).",
+      "Evite lógica complexa no template; prefixe-a em propriedades computadas."
     ],
-    details: ["JS Expressions", "Ternários", "Math & Date", "String Interpolation"],
+    details: [],
     code: "{{ number + 1 }}\n{{ ok ? 'SIM' : 'NÃO' }}\n{{ message.split('').reverse().join('') }}\n\n<div :id=\"`list-${id}`\"></div>"
   },
   {
     id: "v15", label: "REF", title: "Estado Reativo com ref()", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Zap,
     description: "Na Composition API, a forma recomendada de declarar um estado reativo é usando a função ref().",
     points: [
-      "Qualquer Tipo: Funciona com strings, números, booleanos ou objetos complexos.",
-      ".value: No Script, você acessa o valor via 'count.value'. No Template, ele é desembrulhado automaticamente.",
-      "Identidade: O objeto retornado por ref() mantém a reatividade mesmo quando passado para funções."
+      "Funciona com strings, números, booleanos ou objetos complexos.",
+      "No Script, você acessa o valor via 'count.value'. No Template, ele é desembrulhado automaticamente.",
+      "O objeto retornado por ref() mantém a reatividade mesmo quando passado para funções."
     ],
-    details: ["ref(initialValue)", ".value syntax", "Auto-unwrapping", "Reatividade forte"],
+    details: [],
     code: "import { ref } from 'vue'\n\nconst count = ref(0)\nconsole.log(count.value) // 0\n\ncount.value++"
   },
   {
     id: "v16", label: "REACTIVE", title: "Objetos com reactive()", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
     description: "A função reactive() cria uma versão reativa de um objeto (ou array) usando Proxies de JavaScript.",
     points: [
-      "Apenas Objetos: Ao contrário do ref(), reactive() funciona apenas com tipos de objeto (Object, Array, Map).",
-      "Sem .value: O acesso é direto nas propriedades do objeto como um objeto normal.",
-      "Limitação: Perde a reatividade se for desestruturado ou reatribuído inteiramente."
+      "Ao contrário do ref(), reactive() funciona apenas com tipos de objeto (Object, Array, Map).",
+      "O acesso é direto nas propriedades do objeto como um objeto normal.",
+      "Perde a reatividade se for desestruturado ou reatribuído inteiramente."
     ],
-    details: ["reactive({})", "Proxy based", "Deep reactivity", "State management"],
+    details: [],
     code: "import { reactive } from 'vue'\n\nconst state = reactive({ count: 0 })\nstate.count++ // Acesso direto!"
   },
   {
     id: "v17", label: "MUTAÇÃO", title: "Sistema de Reatividade", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Network,
     description: "O sistema de reatividade do Vue rastreia dependências e dispara atualizações do DOM instantaneamente após a mutação.",
     points: [
-      "DOM Assíncrono: O Vue não atualiza o DOM imediatamente após a mudança; ele espera o próximo 'tick'.",
-      "Deep: Por padrão, a reatividade é profunda; mudar um item em um sub-objeto dispara a atualização.",
-      "Proxies: No Vue 3, o sistema usa ES6 Proxies para interceptar get/set de forma transparente."
+      "O Vue não atualiza o DOM imediatamente após a mudança; ele espera o próximo 'tick'.",
+      "Por padrão, a reatividade é profunda; mudar um item em um sub-objeto dispara a atualização.",
+      "No Vue 3, o sistema usa ES6 Proxies para interceptar get/set de forma transparente."
     ],
-    details: ["nextTick()", "Dependency Tracking", "Proxy Interception", "Async Updates"],
+    details: [],
     code: "import { nextTick } from 'vue'\n\nasync function increment() {\n  count.value++\n  // DOM ainda nã mudou...\n  await nextTick()\n  // DOM agora está atualizado!\n}"
   },
   {
     id: "v18", label: "CONCEITO", title: "Propriedades Computadas", colorText: "text-purple-400", colorDot: "bg-purple-400", icon: FileEdit,
     description: "Para lógica complexa que depende de outros estados, usamos computed() para criar valores derivados reativos.",
     points: [
-      "Declarativo: Descreve o valor final baseado em outros refs ou objetos reactive.",
-      "Auto-Update: Se os dados base mudarem, a computada recalcula o valor automaticamente.",
-      "Limpo: Mantém o template focado em apresentação, movendo a lógica para o Script."
+      "Descreve o valor final baseado em outros refs ou objetos reactive.",
+      "Se os dados base mudarem, a computada recalcula o valor automaticamente.",
+      "Mantém o template focado em apresentação, movendo a lógica para o Script."
     ],
-    details: ["computed(() => ...)", "Derived State", "Reatividade Automática", "Clean Templates"],
+    details: [],
     code: "const count = ref(1)\nconst double = computed(() => count.value * 2)\n\n// double.value será 2"
   },
   {
     id: "v19", label: "CACHE", title: "Computada vs Métodos", colorText: "text-amber-400", colorDot: "bg-amber-400", icon: Clock,
     description: "A principal diferença entre uma computada e um método é o sistema de cache inteligente baseado em dependências.",
     points: [
-      "Cache: Computadas são armazenadas em cache. Elas SÓ recalculam se uma dependência reativa mudar.",
-      "Performance: Métodos executam toda vez que ocorre uma nova renderização, mesmo se nada mudou neles.",
-      "Imutável: Por padrão, computadas são apenas leitura (readonly)."
+      "Computadas são armazenadas em cache. Elas SÓ recalculam se uma dependência reativa mudar.",
+      "Métodos executam toda vez que ocorre uma nova renderização, mesmo se nada mudou neles.",
+      "Por padrão, computadas são apenas leitura (readonly)."
     ],
-    details: ["Caching", "Dependency tracking", "Efficiency", "Getter only"],
+    details: [],
     code: "// Computada (usa Cache)\nconst listSize = computed(() => items.length)\n\n// Método (executa sempre)\nfunction getListSize() { return items.length }"
   },
   {
     id: "v20", label: "WRITABLE", title: "Computed Gravável", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: MousePointer2,
     description: "Embora a maioria das computadas sejam 'getters', você pode criar uma computada que aceita valores (setter).",
     points: [
-      "Getter: Define como ler o valor.",
-      "Setter: Define o que acontece ao tentar atribuir um novo valor à propriedade computada.",
-      "Sincronização: Útil para vincular componentes de UI (como Inputs) a estados complexos."
+      "Define como ler o valor.",
+      "Define o que acontece ao tentar atribuir um novo valor à propriedade computada.",
+      "Útil para vincular componentes de UI (como Inputs) a estados complexos."
     ],
-    details: ["get()", "set()", "Two-way binding", "Custom Logic"],
+    details: [],
     code: "const fullName = computed({\n  get() { return firstName.value + ' ' + lastName.value },\n  set(newValue) {\n    [firstName.value, lastName.value] = newValue.split(' ')\n  }\n})"
   },
   {
     id: "v21", label: "CLASSES (OBJ)", title: "Classes Dinâmicas", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Palette,
     description: "Podemos passar um objeto para :class para alternar classes dinamicamente.",
     points: [
-      "Chave/Valor: A chave é o nome da classe, o valor é uma condição booleana.",
-      "Combinação: Classes dinâmicas coexistem com a classe estática normal.",
-      "Limpeza: Mantém a manipulação do DOM fora do JavaScript manual."
+      "A chave é o nome da classe, o valor é uma condição booleana.",
+      "Classes dinâmicas coexistem com a classe estática normal.",
+      "Mantém a manipulação do DOM fora do JavaScript manual."
     ],
-    details: [":class='{ active: isActive }'", "Inline Objects", "State driven visual", "Toggles"],
+    details: [],
     code: "<div \n  class=\"base-bullet\"\n  :class=\"{ active: isActive, 'text-danger': hasError }\"\n></div>"
   },
   {
     id: "v22", label: "CLASSES (ARRAY)", title: "Sintaxe de Array", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
     description: "Podemos vincular :class a um array para aplicar uma lista de classes.",
     points: [
-      "Multi-seleção: Ótimo para aplicar múltiplas classes baseadas em diferentes estados.",
-      "Ternários: Podemos usar expressões ternárias dentro do array.",
-      "Objetos em Arrays: Você pode misturar as duas sintaxes para flexibilidade total."
+      "Ótimo para aplicar múltiplas classes baseadas em diferentes estados.",
+      "Podemos usar expressões ternárias dentro do array.",
+      "Você pode misturar as duas sintaxes para flexibilidade total."
     ],
-    details: [":class='[ac1, ac2]'", "Conditional Arrays", "Class composition", "Dynamic list"],
+    details: [],
     code: "<div :class=\"[activeClass, errorClass]\"></div>\n\n<!-- Com ternário -->\n<div :class=\"[isActive ? activeClass : '', errorClass]\"></div>"
   },
   {
     id: "v23", label: "ESTILOS INLINE", title: "Vínculo de Estilo", colorText: "text-pink-500", colorDot: "bg-pink-500", icon: Palette,
     description: "A diretiva :style suporta valores de objeto que correspondem às propriedades CSS do elemento.",
     points: [
-      "CamelCase: Propriedades CSS podem usar nomes camelCase (fontSize) ou kebab-case ('font-size').",
-      "Objetos: Vincular a um objeto de estilo limpa o template e melhora a legibilidade.",
-      "Auto-prefixing: O Vue adiciona prefixos de navegador automaticamente quando necessário."
+      "Propriedades CSS podem usar nomes camelCase (fontSize) ou kebab-case ('font-size').",
+      "Vincular a um objeto de estilo limpa o template e melhora a legibilidade.",
+      "O Vue adiciona prefixos de navegador automaticamente quando necessário."
     ],
-    details: [":style='{ color: c }'", "Dynamic CSS", "Inline Overrides", "Vendor Prefixing"],
+    details: [],
     code: "<div :style=\"{ color: activeColor, fontSize: fontSize + 'px' }\"></div>\n\n<!-- Vincular a objeto -->\n<div :style=\"styleObject\"></div>"
   },
   {
     id: "v24", label: "V-IF", title: "Renderização Condicional", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Zap,
     description: "A diretiva v-if é usada para renderizar condicionalmente um bloco. O bloco só será renderizado se a expressão retornar um valor verdadeiro.",
     points: [
-      "Verdadeiro: Se falso, o elemento é removido completamente do DOM.",
-      "Blocos: Pode ser usado com v-else e v-else-if para condições complexas.",
-      "Custo: Maior custo ao alternar (lazy), menor custo inicial se for falso."
+      "Se falso, o elemento é removido completamente do DOM.",
+      "Pode ser usado com v-else e v-else-if para condições complexas.",
+      "Maior custo ao alternar (lazy), menor custo inicial se for falso."
     ],
-    details: ["v-if", "v-else-if", "v-else", "Lazy rendering"],
+    details: [],
     code: "<h1 v-if=\"awesome\">Vue is awesome!</h1>\n<h1 v-else>Oh no 😢</h1>"
   },
   {
     id: "v25", label: "V-SHOW", title: "Visibilidade do Elemento", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Globe,
     description: "Outra opção para exibir condicionalmente um elemento é a diretiva v-show.",
     points: [
-      "Sempre no DOM: O elemento permanece no DOM, apenas alterna 'display: none'.",
-      "Frequência: Melhor para elementos que alternam a visibilidade com muita frequência.",
-      "Simplicidade: Não suporta a tag <template> nem v-else."
+      "O elemento permanece no DOM, apenas alterna 'display: none'.",
+      "Melhor para elementos que alternam a visibilidade com muita frequência.",
+      "Não suporta a tag <template> nem v-else."
     ],
-    details: ["display: none", "Toggle efficiency", "Always mounted", "CSS based"],
+    details: [],
     code: "<h1 v-show=\"ok\">Hello!</h1>"
   },
   {
     id: "v26", label: "TEMPLATE", title: "v-if no <template>", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Layout,
     description: "Como v-if é uma diretiva, ela deve ser anexada a um único elemento. Mas e se quisermos alternar mais de um elemento?",
     points: [
-      "Invisível: <template> age como um wrapper invisível que não aparece no DOM final.",
-      "Agrupamento: Permite aplicar v-if a um conjunto de elementos sem adicionar tags extras.",
-      "Sintaxe: Funciona apenas com v-if, não com v-show."
+      "<template> age como um wrapper invisível que não aparece no DOM final.",
+      "Permite aplicar v-if a um conjunto de elementos sem adicionar tags extras.",
+      "Funciona apenas com v-if, não com v-show."
     ],
-    details: ["<template v-if>", "Invisible wrapper", "Logic grouping", "Clean DOM"],
+    details: [],
     code: "<template v-if=\"ok\">\n  <h1>Title</h1>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</template>"
   },
   {
     id: "v27", label: "V-FOR", title: "Renderização de Listas", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: FileEdit,
     description: "Usamos a diretiva v-for para renderizar uma lista de elementos com base em um array.",
     points: [
-      "Sintaxe: 'item in items', onde items é o array fonte e item é o apelido do elemento atual.",
-      "Índice: Suporta um segundo argumento opcional para o índice: '(item, index) in items'.",
-      "Escopo: O template dentro do v-for tem acesso total às propriedades do pai."
+      "'item in items', onde items é o array fonte e item é o apelido do elemento atual.",
+      "Suporta um segundo argumento opcional para o índice: '(item, index) in items'.",
+      "O template dentro do v-for tem acesso total às propriedades do pai."
     ],
-    details: ["item in items", "(item, index)", "Array rendering", "Sync UI"],
+    details: [],
     code: "<ul>\n  <li v-for=\"item in items\" :key=\"item.id\">\n    {{ item.message }}\n  </li>\n</ul>"
   },
   {
     id: "v28", label: "OBJETOS", title: "v-for com Objetos", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Layout,
     description: "Você também pode usar v-for para percorrer as propriedades de um objeto.",
     points: [
-      "Valor: '(value) in myObject' para pegar os valores.",
-      "Chave: '(value, key) in myObject' para pegar chave e valor.",
-      "Índice: '(value, key, index) in myObject' para ter também a posição."
+      "'(value) in myObject' para pegar os valores.",
+      "'(value, key) in myObject' para pegar chave e valor.",
+      "'(value, key, index) in myObject' para ter também a posição."
     ],
-    details: ["Object iteration", "Key/Value access", "Metadata lists", "Property loop"],
+    details: [],
     code: "<ul>\n  <li v-for=\"(value, key) in myObject\">\n    {{ key }}: {{ value }}\n  </li>\n</ul>"
   },
   {
     id: "v29", label: "IMPORTÂNCIA DA KEY", title: "Atributo :key", colorText: "text-red-500", colorDot: "bg-red-500", icon: Fingerprint,
     description: "Quando o Vue atualiza uma lista renderizada com v-for, ele usa uma estratégia de 'remendos no local' (patch in-place).",
     points: [
-      "Identidade: A key ajuda o Vue a rastrear a identidade de cada nó para reutilizar e reordenar elementos.",
-      "Performance: Sem keys, o Vue pode ter comportamentos inesperados em estados de componentes filhos.",
-      "Padrão: É altamente recomendado sempre fornecer uma key para v-for."
+      "A key ajuda o Vue a rastrear a identidade de cada nó para reutilizar e reordenar elementos.",
+      "Sem keys, o Vue pode ter comportamentos inesperados em estados de componentes filhos.",
+      "É altamente recomendado sempre fornecer uma key para v-for."
     ],
-    details: [":key='unique_id'", "DOM tracking", "Performance boost", "State preservation"],
+    details: [],
     code: "<div v-for=\"item in items\" :key=\"item.id\">\n  <!-- conteúdo -->\n</div>"
   },
   {
     id: "v30", label: "V-ON", title: "Manipulação de Eventos", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: MousePointer2,
     description: "Usamos a diretiva v-on, comumente abreviada como @, para ouvir eventos do DOM e executar JavaScript quando eles ocorrem.",
     points: [
-      "Abreviação: '@click' é o mesmo que 'v-on:click'.",
-      "Métodos: Pode chamar um nome de método ou executar código JavaScript diretamente (inline).",
-      "Nativos: Suporta todos os eventos nativos do navegador."
+      "'@click' é o mesmo que 'v-on:click'.",
+      "Pode chamar um nome de método ou executar código JavaScript diretamente (inline).",
+      "Suporta todos os eventos nativos do navegador."
     ],
-    details: ["@click", "v-on:submit", "Inline handlers", "Method handlers"],
+    details: [],
     code: "<button @click=\"count++\">Adicionar 1</button>\n<p>O contador é: {{ count }}</p>"
   },
   {
     id: "v31", label: "ARGUMENTOS", title: "Chamando Métodos", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Network,
     description: "Podemos passar argumentos personalizados para um método em um manipulador de eventos.",
     points: [
-      "Customizado: 'say(\"oi\")' passa a string para a função.",
-      "Evento Nativo: Se precisar do objeto de evento nativo, use a variável especial '$event'.",
-      "Arrow Functions: Também suporta passagem de múltiplos argumentos complexos."
+      "'say(\"oi\")' passa a string para a função.",
+      "Se precisar do objeto de evento nativo, use a variável especial '$event'.",
+      "Também suporta passagem de múltiplos argumentos complexos."
     ],
-    details: ["$event", "Method arguments", "Action payloads", "Event handling"],
+    details: [],
     code: "<button @click=\"warn('Form not submitted.', $event)\">\n  Submit\n</button>"
   },
   {
     id: "v32", label: "MODIFICADORES", title: "Modificadores de Eventos", colorText: "text-teal-500", colorDot: "bg-teal-500", icon: Settings2,
     description: "É muito comum chamar event.preventDefault() ou event.stopPropagation() dentro de manipuladores. O Vue oferece modificadores para isso.",
     points: [
-      ".stop: Interrompe a propagação do evento (bubbling).",
-      ".prevent: Impede o comportamento padrão do navegador (como recarregar no submit).",
-      "Encaixe: Os modificadores foram encadeados: '@click.stop.prevent'."
+      "Interrompe a propagação do evento (bubbling).",
+      "Impede o comportamento padrão do navegador (como recarregar no submit).",
+      "Os modificadores foram encadeados: '@click.stop.prevent'."
     ],
-    details: [".prevent", ".stop", ".once", ".capture"],
+    details: [],
     code: "<!-- impede o recarregamento da página -->\n<form @submit.prevent=\"onSubmit\"></form>\n\n<!-- o clique não vai propagar para o pai -->\n<a @click.stop=\"doThis\"></a>"
   },
   {
     id: "v33", label: "V-MODEL", title: "Entrada de Forms", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: FileEdit,
     description: "Ao lidar com formulários no frontend, precisamos sincronizar o estado dos elementos de entrada com o estado no JavaScript. O v-model simplifica isso.",
     points: [
-      "Bidirecional: O valor do input atualiza a variável e a variável atualiza o input.",
-      "Tipo de Input: Funciona com <input>, <textarea> e <select> automaticamente.",
-      "Abreviação: v-model é na verdade um 'açúcar sintático' para v-bind:value e v-on:input."
+      "O valor do input atualiza a variável e a variável atualiza o input.",
+      "Funciona com <input>, <textarea> e <select> automaticamente.",
+      "v-model é na verdade um 'açúcar sintático' para v-bind:value e v-on:input."
     ],
-    details: ["v-model", "Two-way bind", "Form state", "Input sync"],
+    details: [],
     code: "<input v-model=\"text\">\n<p>Editando: {{ text }}</p>"
   },
   {
     id: "v34", label: "TIPOS INPUT", title: "Texto e Área", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: Layout,
     description: "O v-model se adapta ao tipo do elemento. Para textos simples e áreas de texto, ele usa a propriedade value e ouvintes de entrada.",
     points: [
-      "Text: <input type='text'> padrão.",
-      "Textarea: Diferente da interpolação {{ }}, <textarea> usa v-model.",
-      "IME: v-model não atualiza durante a composição IME (ex: chinês) até que o caractere seja confirmado."
+      "<input type='text'> padrão.",
+      "Diferente da interpolação {{ }}, <textarea> usa v-model.",
+      "v-model não atualiza durante a composição IME (ex: chinês) até que o caractere seja confirmado."
     ],
-    details: ["<input>", "<textarea>", "IME support", "Value binding"],
+    details: [],
     code: "<span>Mensagem multilinha é:</span>\n<p style=\"white-space: pre-line;\">{{ message }}</p>\n<textarea v-model=\"message\" placeholder=\"add lines\"></textarea>"
   },
   {
     id: "v35", label: "CONTROLES", title: "Checkbox e Select", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
     description: "Para elementos de múltipla escolha como checkboxes e seletores, o v-model trabalha com valores booleanos ou arrays.",
     points: [
-      "Checkbox: Se único, é booleano. Se múltiplos, v-model aponta para um Array.",
-      "Radio: Atribui o valor do rádio selecionado à variável.",
-      "Select: Sincroniza a opção selecionada. Suporta valores únicos ou múltiplos (se multiple estiver presente)."
+      "Se único, é booleano. Se múltiplos, v-model aponta para um Array.",
+      "Atribui o valor do rádio selecionado à variável.",
+      "Sincroniza a opção selecionada. Suporta valores únicos ou múltiplos (se multiple estiver presente)."
     ],
-    details: ["Checkbox array", "Radio buttons", "Multi-select", "Dynamic options"],
+    details: [],
     code: "<input type=\"checkbox\" id=\"jack\" value=\"Jack\" v-model=\"checkedNames\">\n<input type=\"checkbox\" id=\"john\" value=\"John\" v-model=\"checkedNames\">\n\n<span>Nomes: {{ checkedNames }}</span>"
   },
   {
     id: "v36", label: "ONMOUNTED", title: "Gancho de Montagem", colorText: "text-rose-500", colorDot: "bg-rose-500", icon: PlaySquare,
     description: "Cada instância de componente Vue passa por uma série de etapas de inicialização e o onMounted é uma das mais importantes.",
     points: [
-      "Pronto: Executado após o componente ter sido montado no DOM.",
-      "DOM Access: É o lugar seguro para acessar elementos reais via 'refs'.",
-      "Side Effects: Ideal para iniciar chamadas de API ou configurar timers."
+      "Executado após o componente ter sido montado no DOM.",
+      "É o lugar seguro para acessar elementos reais via 'refs'.",
+      "Ideal para iniciar chamadas de API ou configurar timers."
     ],
-    details: ["onMounted()", "DOM Ready", "Initial Fetch", "Component Start"],
+    details: [],
     code: "import { onMounted } from 'vue'\n\nonMounted(() => {\n  console.log('O componente foi montado!')\n})"
   },
   {
     id: "v37", label: "ONUPDATED", title: "Gancho de Atualização", colorText: "text-orange-500", colorDot: "bg-orange-500", icon: Clock,
     description: "Chamado após o componente atualizar sua árvore DOM devido a uma mudança de estado reativo.",
     points: [
-      "Re-render: Disparado sempre que qualquer dado usado no template muda.",
-      "Precaução: Evite mudar o estado do componente dentro deste gancho (risco de loop infinito).",
-      "DOM Sync: Use se você precisar ler o novo estado do DOM pós-renderização."
+      "Disparado sempre que qualquer dado usado no template muda.",
+      "Evite mudar o estado do componente dentro deste gancho (risco de loop infinito).",
+      "Use se você precisar ler o novo estado do DOM pós-renderização."
     ],
-    details: ["onUpdated()", "DOM Re-render", "Post-render logic", "Sync state"],
+    details: [],
     code: "import { onUpdated } from 'vue'\n\nonUpdated(() => {\n  // DOM agora está sincronizado com o novo estado\n})"
   },
   {
     id: "v38", label: "ONUNMOUNTED", title: "Gancho de Desmontagem", colorText: "text-amber-500", colorDot: "bg-amber-500", icon: Power,
     description: "Chamado após o componente ter sido removido do DOM (destruído).",
     points: [
-      "Limpeza: O lugar essencial para remover event listeners manuais.",
-      "Recursos: Pare intervalos (setInterval) ou cancele assinaturas de dados.",
-      "Memória: Previne vazamentos de memória (Memory Leaks) na aplicação."
+      "O lugar essencial para remover event listeners manuais.",
+      "Pare intervalos (setInterval) ou cancele assinaturas de dados.",
+      "Previne vazamentos de memória (Memory Leaks) na aplicação."
     ],
-    details: ["onUnmounted()", "Cleanup", "Destroy", "Memory safe"],
+    details: [],
     code: "import { onUnmounted } from 'vue'\n\nonUnmounted(() => {\n  clearInterval(timer)\n  console.log('Componente removido!')\n})"
   },
   {
     id: "v39", label: "WATCH", title: "Observadores Reativos", colorText: "text-emerald-400", colorDot: "bg-emerald-400", icon: Eye,
     description: "Nem tudo pode ser resolvido com computadas. Às vezes precisamos reagir a uma mudança com 'efeitos colaterais' (API calls, etc).",
     points: [
-      "Vigilância: Observa uma fonte de dados específica e executa um callback quando ela muda.",
-      "Old/New: O callback recebe o novo valor e o valor antigo como argumentos.",
-      "Preciso: Ideal para salvar estados em LocalStorage ou disparar animações manuais."
+      "Observa uma fonte de dados específica e executa um callback quando ela muda.",
+      "O callback recebe o novo valor e o valor antigo como argumentos.",
+      "Ideal para salvar estados em LocalStorage ou disparar animações manuais."
     ],
-    details: ["watch(source, cb)", "Side effects", "Async reacting", "Old/New values"],
+    details: [],
     code: "watch(question, async (newQ, oldQ) => {\n  if (newQ.includes('?')) {\n    const res = await fetch(...)\n  }\n})"
   },
   {
     id: "v40", label: "DEEP WATCH", title: "Observação Profunda", colorText: "text-blue-400", colorDot: "bg-blue-400", icon: Search,
     description: "Por padrão, o watch em um objeto não dispara se uma propriedade interna mudar, apenas se o objeto for substituído.",
     points: [
-      "Sub-níveis: Ative 'deep: true' para monitorar todas as propriedades aninhadas.",
-      "Custo: Observações profundas em grandes estruturas podem ser lentas.",
-      "Reactive: Objetos criados com 'reactive()' são monitorados profundamente por padrão no watch."
+      "Ative 'deep: true' para monitorar todas as propriedades aninhadas.",
+      "Observações profundas em grandes estruturas podem ser lentas.",
+      "Objetos criados com 'reactive()' são monitorados profundamente por padrão no watch."
     ],
-    details: ["{ deep: true }", "Nested data", "Full sync", "Object tracking"],
+    details: [],
     code: "watch(settings, (newVal) => {\n  // Dispara se settings.theme mudar!\n}, { deep: true })"
   },
   {
     id: "v41", label: "WATCHEFFECT", title: "Observação de Efeito", colorText: "text-indigo-400", colorDot: "bg-indigo-400", icon: Zap,
     description: "Simplifica a observação ao rastrear automaticamente todas as dependências reativas usadas dentro do callback.",
     points: [
-      "Automático: Você não precisa listar o que observar; o Vue detecta o que você usou.",
-      "Imediato: Diferente do watch, o watchEffect roda uma vez imediatamente ao ser criado.",
-      "Injeção: Útil quando você tem múltiplos estados influenciando uma única ação."
+      "Você não precisa listar o que observar; o Vue detecta o que você usou.",
+      "Diferente do watch, o watchEffect roda uma vez imediatamente ao ser criado.",
+      "Útil quando você tem múltiplos estados influenciando uma única ação."
     ],
-    details: ["watchEffect()", "Auto-tracking", "Immediate start", "Effect sync"],
+    details: [],
     code: "watchEffect(() => {\n  // Roda sempre que 'userId' OU 'token' mudar\n  fetchData(userId.value, token.value)\n})"
   },
   {
     id: "v42", label: "TEMPL_REFS", title: "Referências de Template", colorText: "text-pink-400", colorDot: "bg-pink-400", icon: MousePointer2,
     description: "Embora o Vue prefira o modelo declarativo, às vezes você precisa de acesso direto ao elemento DOM subjacente.",
     points: [
-      "Atributo ref: Adicione 'ref=\"myInput\"' no elemento no template.",
-      "Ref JS: Crie uma constante com o mesmo nome usando 'ref(null)'.",
-      "Timing: A referência só é preenchida APÓS o componente ser montado."
+      "Adicione 'ref=\"myInput\"' no elemento no template.",
+      "Crie uma constante com o mesmo nome usando 'ref(null)'.",
+      "A referência só é preenchida APÓS o componente ser montado."
     ],
-    details: ["ref='nome'", "DOM access", "Focus control", "Direct touch"],
+    details: [],
     code: "<input ref=\"inputRef\">\n\n<script setup>\nconst inputRef = ref(null)\nonMounted(() => inputRef.value.focus())\n</script>"
   },
   {
     id: "v43", label: "COMP_REFS", title: "Refs em Componentes", colorText: "text-orange-400", colorDot: "bg-orange-400", icon: Layout,
     description: "As refs também podem ser usadas em componentes filhos para acessar suas instâncias públicas.",
     points: [
-      "Instância: Permite chamar métodos expostos pelo componente filho.",
-      "Encapsulamento: Por padrão, componentes SFC são fechados (private) para refs.",
-      "defineExpose: O filho deve usar defineExpose para escolher o que o pai pode ver."
+      "Permite chamar métodos expostos pelo componente filho.",
+      "Por padrão, componentes SFC são fechados (private) para refs.",
+      "O filho deve usar defineExpose para escolher o que o pai pode ver."
     ],
-    details: ["defineExpose", "Child access", "Public API", "Component control"],
+    details: [],
     code: "<!-- Pai -->\n<BaseModal ref=\"modal\" />\n\nconst modal = ref(null)\nmodal.value.open() // Chama método do filho"
   },
   {
     id: "v44", label: "V-FOR REFS", title: "Refs em Listas", colorText: "text-red-400", colorDot: "bg-red-400", icon: Network,
     description: "Quando uma ref é usada dentro de um v-for, ela se torna um array contendo todos os elementos da lista.",
     points: [
-      "Coleção: O valor da ref será um Array de elementos do DOM ou instâncias de componentes.",
-      "Ordem: A ordem do array de refs não é garantida para corresponder à ordem da lista.",
-      "Uso: Comumente usado para gerenciar focos dinâmicos ou medir dimensões de listas."
+      "O valor da ref será um Array de elementos do DOM ou instâncias de componentes.",
+      "A ordem do array de refs não é garantida para corresponder à ordem da lista.",
+      "Comumente usado para gerenciar focos dinâmicos ou medir dimensões de listas."
     ],
-    details: ["Array refs", "Dynamic collection", "Loop access", "Bulk refs"],
+    details: [],
     code: "<li v-for=\"i in list\" ref=\"itemRefs\">{{ i }}</li>\n\nconst itemRefs = ref([])"
   },
   {
     id: "v45", label: "MODULARIDADE", title: "Fundamentos de Componentes", colorText: "text-emerald-500", colorDot: "bg-emerald-500", icon: Layout,
     description: "Componentes permitem dividir a interface em peças independentes, reutilizáveis e isoladas.",
     points: [
-      "Abstração: Um componente encapsula seu próprio template, lógica e estilo.",
-      "Reutilização: O mesmo componente pode ser instanciado várias vezes com comportamentos diferentes.",
-      "Hierarquia: Aplicações são construídas como uma árvore de componentes aninhados."
+      "Um componente encapsula seu próprio template, lógica e estilo.",
+      "O mesmo componente pode ser instanciado várias vezes com comportamentos diferentes.",
+      "Aplicações são construídas como uma árvore de componentes aninhados."
     ],
-    details: ["Reusability", "Composition", "Isolamento", "Component Tree"],
+    details: [],
     code: "<!-- Reutilizando o mesmo componente -->\n<ButtonCounter />\n<ButtonCounter />\n<ButtonCounter />"
   },
   {
     id: "v46", label: "PROPS", title: "Passando Dados (Props)", colorText: "text-blue-500", colorDot: "bg-blue-500", icon: ArrowUpCircle,
     description: "Props são atributos customizados que você pode registrar em um componente para permitir que o pai passe dados para ele.",
     points: [
-      "Fluxo Unidirecional: Dados fluem de cima para baixo. Filhos nunca devem alterar props.",
-      "Validação: Você pode definir tipos, se é obrigatório e valores padrão.",
-      "Declarativo: O pai passa o dado como um atributo HTML comum ou via v-bind."
+      "Dados fluem de cima para baixo. Filhos nunca devem alterar props.",
+      "Você pode definir tipos, se é obrigatório e valores padrão.",
+      "O pai passa o dado como um atributo HTML comum ou via v-bind."
     ],
-    details: ["defineProps()", "One-way data flow", "Validation", "Read-only"],
+    details: [],
     code: "// Filho\ndefineProps(['title'])\n\n// Pai\n<BlogPost :title=\"post.title\" />"
   },
   {
     id: "v47", label: "EMITS", title: "Escutando Eventos (Emits)", colorText: "text-indigo-500", colorDot: "bg-indigo-500", icon: Zap,
     description: "Componentes filhos podem emitir seus próprios eventos para notificar o pai sobre alguma ação interna.",
     points: [
-      "Sinalização: O filho 'grita' um evento; o pai 'ouve' usando @nome-do-evento.",
-      "Payloads: Eventos podem carregar dados adicionais para o pai processar.",
-      "Contrato: Use defineEmits para documentar os eventos que o componente pode disparar."
+      "O filho 'grita' um evento; o pai 'ouve' usando @nome-do-evento.",
+      "Eventos podem carregar dados adicionais para o pai processar.",
+      "Use defineEmits para documentar os eventos que o componente pode disparar."
     ],
-    details: ["defineEmits()", "Event bubbling", "Child-to-parent", "Custom events"],
+    details: [],
     code: "// Filho\nconst emit = defineEmits(['enlarge-text'])\n<button @click=\"emit('enlarge-text')\">Aumentar</button>\n\n// Pai\n<BlogPost @enlarge-text=\"fontSize += 0.1\" />"
   }
 ];
@@ -4159,37 +4156,53 @@ export default function App() {
                     </div>
 
                     {/* Text Content */}
-                    <div className="w-full relative z-10 flex flex-col overflow-hidden justify-center min-h-0">
-                      <div className={`font-mono text-[10px] sm:text-sm mb-3 sm:mb-5 font-semibold tracking-widest flex items-center gap-2 sm:gap-4 ${topic.colorText} flex-shrink-0 uppercase`}>
-                        <div className={`relative p-1.5 sm:p-2.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
-                           <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
-                           <IconComponent className={`w-4 h-4 sm:w-6 sm:h-6 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
+                    <div className={`w-full relative z-10 flex ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'flex-col md:flex-row gap-8' : 'flex-col'} overflow-hidden justify-center min-h-0`}>
+                      
+                      {/* Left Column (or Top) */}
+                      <div className={`flex flex-col ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'w-full md:w-5/12 justify-center' : ''}`}>
+                        <div className={`font-mono text-[10px] sm:text-sm mb-3 sm:mb-5 font-semibold tracking-widest flex items-center gap-2 sm:gap-4 ${topic.colorText} flex-shrink-0 uppercase`}>
+                          <div className={`relative p-1.5 sm:p-2.5 rounded-lg ${topic.colorDot} bg-opacity-20 border border-white/20 group`}>
+                             <div className={`absolute inset-0 ${topic.colorDot} opacity-50 blur-md animate-pulse`}></div>
+                             <IconComponent className={`w-4 h-4 sm:w-6 sm:h-6 drop-shadow-[0_0_8px_currentColor] animate-bounce relative z-10`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
+                          </div>
+                          <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-xl">{topic.id}. {topic.label}</span>
                         </div>
-                        <span className="drop-shadow-[0_0_5px_currentColor] text-sm sm:text-xl">{topic.id}. {topic.label}</span>
+                        
+                        <h3 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 tracking-tight text-white flex-shrink-0 drop-shadow-2xl leading-[1.1]">{topic.title}</h3>
+                        
+                        <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-6 flex-shrink-0 font-light max-w-5xl whitespace-pre-wrap ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'text-left' : ''}`}>
+                          {topic.description}
+                        </p>
+                        
+                        <div className="w-16 h-1.5 rounded-full bg-gradient-to-r from-white/20 to-transparent mb-6"></div>
                       </div>
                       
-                      <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 tracking-tight text-white flex-shrink-0 drop-shadow-2xl leading-[1.1]">{topic.title}</h3>
-                      
-                      <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-base sm:text-lg lg:text-2xl leading-relaxed mb-6 flex-shrink-0 font-light max-w-5xl`}>
-                        {topic.description}
-                      </p>
-                      
-                      <div className="w-16 h-1.5 rounded-full bg-gradient-to-r from-white/20 to-transparent mb-6"></div>
-                      
-                      {/* Points Grid */}
-                      <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      {/* Points Grid (Right Column or Bottom) */}
+                      <div className={`flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[80px] ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'w-full md:w-7/12 flex flex-col justify-center' : ''}`}>
+                        <div className={`grid grid-cols-1 ${topic.id === 'v02' ? 'md:grid-cols-1' : topic.id === 'v03' ? 'md:grid-cols-3' : topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v04' ? 'md:grid-cols-1 gap-4' : 'md:grid-cols-2'} gap-4 sm:gap-6`}>
                           {topic.points.map((point, idx) => {
                             const paragraph = (topic as any).article ? ((topic as any).article.split('\n\n')[idx] || topic.description) : topic.description;
                             const cleanText = paragraph.replace(/\*\*/g, '').replace(/\*/g, '');
                             const firstSentenceMatch = cleanText.match(/^[^.!?]+[.!?]/);
                             const supportText = firstSentenceMatch ? firstSentenceMatch[0] : cleanText;
+                            const PointIcon = (topic as any).pointsIcons?.[idx] || CheckCircle2;
                             return (
-                              <div key={idx} className="flex flex-row items-start gap-4 sm:gap-6 bg-white/[0.04] p-5 rounded-2xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.01] transition-all cursor-pointer group">
-                                <CheckCircle2 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1 ${topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
-                                <div className="flex flex-col">
-                                  <span className="text-white text-base sm:text-xl lg:text-2xl leading-relaxed font-semibold tracking-wide drop-shadow-md mb-1">{point}</span>
-                                  <span className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} text-sm sm:text-base font-light leading-relaxed`}>{supportText}</span>
+                              <div key={idx} className={`flex flex-row gap-4 sm:gap-6 bg-white/[0.04] p-5 rounded-2xl border border-white/[0.05] hover:bg-white/[0.08] hover:scale-[1.01] transition-all cursor-pointer group ${topic.id === 'v04' && idx === 2 ? 'md:col-span-2 flex-col items-center text-center justify-center' : 'items-start'}`}>
+                                <PointIcon className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1 ${topic.id === 'v03' ? (idx === 0 ? 'text-emerald-400' : idx === 1 ? 'text-yellow-400' : 'text-blue-400') : topic.colorText} animate-pulse group-hover:animate-bounce`} style={{ filter: 'drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)' }} />
+                                <div className={`flex flex-col ${topic.id === 'v04' && idx === 2 ? 'items-center' : ''}`}>
+                                  <span className={`text-base sm:text-xl lg:text-2xl leading-relaxed tracking-wide drop-shadow-md mb-1 ${topic.id === 'v03' ? (idx === 0 ? 'text-emerald-400' : idx === 1 ? 'text-yellow-400' : 'text-blue-400') : 'text-white'} ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' && topic.id !== 'v04' ? 'font-normal text-sm sm:text-base lg:text-lg text-gray-200' : 'font-semibold'}`}>
+                                    {(topic.id === 'v02' || topic.id === 'v03' || topic.id === 'v04') && point.includes(':') ? (
+                                      <>
+                                        <span className={topic.id === 'v04' ? topic.colorText : ''}>{point.split(':')[0]}:</span>
+                                        <span className={`font-normal block mt-2 text-base ${topic.id === 'v03' || topic.id === 'v04' ? 'text-gray-300' : 'text-white pl-2 mt-0 inline'}`}>{point.split(':').slice(1).join(':')}</span>
+                                      </>
+                                    ) : (
+                                      point
+                                    )}
+                                  </span>
+                                  {!(topic.id.startsWith('v')) && (
+                                    <span className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} text-sm sm:text-base font-light leading-relaxed`}>{supportText}</span>
+                                  )}
                                 </div>
                               </div>
                             );
@@ -4197,14 +4210,16 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 pt-3 border-t border-white/5 flex-shrink-0">
-                        {topic.details.map((detail, idx) => (
-                          <span key={idx} className={`px-2 sm:px-3 py-1 sm:py-1.5 bg-black/40 border border-white/5 rounded-full text-[9px] sm:text-xs ${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} font-mono flex items-center gap-1.5 shadow-sm`}>
-                            <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${topic.colorDot}`}></div>
-                            {detail}
-                          </span>
-                        ))}
-                      </div>
+                      {!(topic.id.startsWith('v')) && topic.details && topic.details.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 pt-3 border-t border-white/5 flex-shrink-0">
+                          {topic.details.map((detail, idx) => (
+                            <span key={idx} className={`px-2 sm:px-3 py-1 sm:py-1.5 bg-black/40 border border-white/5 rounded-full text-[9px] sm:text-xs ${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} font-mono flex items-center gap-1.5 shadow-sm`}>
+                              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${topic.colorDot}`}></div>
+                              {detail}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -4228,24 +4243,36 @@ export default function App() {
                          <span>{topic.id}. {topic.label}</span>
                       </div>
                       <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight text-white drop-shadow-2xl">{topic.title}</h3>
-                      <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-lg sm:text-2xl font-light max-w-4xl mx-auto`}>{topic.description}</p>
+                      <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-lg sm:text-2xl font-light max-w-4xl whitespace-pre-wrap ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'text-left' : 'mx-auto'}`}>{topic.description}</p>
                     </div>
 
-                    <div className={`grid grid-cols-1 md:grid-cols-${Math.min(topic.points.length, 4)} gap-4 sm:gap-6 flex-1 w-full relative z-10 min-h-0 overflow-y-auto custom-scrollbar`}>
+                    <div className={`grid grid-cols-1 ${topic.id === 'v04' ? 'md:grid-cols-2' : 'md:grid-cols-' + Math.min(topic.points.length, 4)} gap-4 sm:gap-6 flex-1 w-full relative z-10 min-h-0 overflow-y-auto custom-scrollbar`}>
                       {topic.points.map((point, idx) => {
                         const paragraph = (topic as any).article ? ((topic as any).article.split('\n\n')[idx] || topic.description) : topic.description;
                         const cleanText = paragraph.replace(/\*\*/g, '').replace(/\*/g, '');
                         const firstSentenceMatch = cleanText.match(/^[^.!?]+[.!?]/);
                         const supportText = firstSentenceMatch ? firstSentenceMatch[0] : cleanText;
+                        const PointIcon = (topic as any).pointsIcons?.[idx] || CheckCircle2;
                         
                         return (
-                        <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col items-center text-center hover:bg-white/10 transition-colors">
-                           <CheckCircle2 className={`w-8 h-8 sm:w-12 sm:h-12 mb-4 ${topic.colorText}`} />
-                           <h4 className="text-lg sm:text-2xl font-bold text-white mb-4 leading-tight">{point}</h4>
-                           <p className={`text-sm sm:text-base ${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} mb-6 font-light leading-relaxed max-w-[250px]`}>
-                             {supportText}
-                           </p>
-                           {(topic.details[idx] || topic.details[0]) && (
+                        <div key={idx} className={`bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col ${(topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' && !(topic.id === 'v04' && idx === 2)) ? 'items-start text-left' : 'items-center text-center'} hover:bg-white/10 transition-colors ${topic.id === 'v04' && idx === 2 ? 'md:col-span-2' : ''}`}>
+                           <PointIcon className={`w-8 h-8 sm:w-12 sm:h-12 mb-4 ${topic.id === 'v03' ? (idx === 0 ? 'text-emerald-400' : idx === 1 ? 'text-yellow-400' : 'text-blue-400') : topic.colorText}`} />
+                           <h4 className={`text-lg sm:text-2xl mb-4 leading-tight ${topic.id === 'v03' ? (idx === 0 ? 'text-emerald-400' : idx === 1 ? 'text-yellow-400' : 'text-blue-400') : 'text-white'} ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' && topic.id !== 'v04' ? 'font-normal text-base sm:text-lg text-gray-200' : 'font-bold'}`}>
+                             {(topic.id === 'v02' || topic.id === 'v03' || topic.id === 'v04') && point.includes(':') ? (
+                               <>
+                                 <span className={topic.id === 'v04' ? topic.colorText : ''}>{point.split(':')[0]}:</span>
+                                 <span className={`font-normal block mt-2 text-base ${topic.id === 'v04' ? 'text-gray-300' : 'text-gray-300'}`}>{point.split(':').slice(1).join(':')}</span>
+                               </>
+                             ) : (
+                               point
+                             )}
+                           </h4>
+                           {topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' && topic.id !== 'v04' && topic.id !== 'v05' && topic.id !== 'v06' && (
+                             <p className={`text-sm sm:text-base ${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} mb-6 font-light leading-relaxed max-w-[250px]`}>
+                               {supportText}
+                             </p>
+                           )}
+                           {!(topic.id.startsWith('v')) && (topic.details[idx] || topic.details[0]) && (
                              <span className={`px-3 py-1 bg-black/40 border border-white/5 rounded-full text-xs ${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} font-mono mt-auto`}>
                                 {topic.details[idx] || topic.details[0]}
                              </span>
@@ -4292,24 +4319,36 @@ export default function App() {
                              <IconComponent className="w-5 h-5" /> <span>{topic.id}. {topic.label}</span>
                           </div>
                           <h3 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 tracking-tight text-white relative z-10">{topic.title}</h3>
-                          <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-lg sm:text-2xl font-light relative z-10`}>{topic.description}</p>
+                          <p className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white' : 'text-gray-300'} text-lg sm:text-2xl font-light relative z-10 whitespace-pre-wrap ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' ? 'text-left' : ''}`}>{topic.description}</p>
                        </div>
                        
                        {/* Box 2: Expanded Points Grid */}
                        <div className="bg-[#080b12]/90 border border-white/5 rounded-2xl p-6 sm:p-8 flex flex-col backdrop-blur-md">
                           <h4 className="text-white/50 uppercase tracking-widest font-mono text-xs sm:text-sm mb-4 sm:mb-6">Pontos Chave Explorados</h4>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className={`grid grid-cols-1 ${topic.id === 'v04' ? 'md:grid-cols-2' : 'md:grid-cols-2'} gap-4`}>
                             {topic.points.map((pt, i) => {
                                const paragraph = (topic as any).article ? ((topic as any).article.split('\n\n')[i] || topic.description) : topic.description;
                                const cleanText = paragraph.replace(/\*\*/g, '').replace(/\*\*/g, '');
                                const firstSentenceMatch = cleanText.match(/^[^.!?]+[.!?]/);
                                const supportText = firstSentenceMatch ? firstSentenceMatch[0] : cleanText;
+                               const PointIcon = (topic as any).pointsIcons?.[i] || CheckCircle2;
                                return (
-                               <div key={i} className="flex gap-4 items-start bg-white/5 p-4 sm:p-5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
-                                  <CheckCircle2 className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-1 ${topic.colorText}`} />
-                                  <div className="flex flex-col">
-                                    <span className="text-white font-medium text-base sm:text-xl mb-1">{pt}</span>
-                                    <span className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} text-sm sm:text-base font-light leading-relaxed`}>{supportText}</span>
+                               <div key={i} className={`flex gap-4 items-start ${topic.id === 'v04' && i === 2 ? 'flex-col items-center justify-center text-center md:col-span-2' : ''} bg-white/5 p-4 sm:p-5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors`}>
+                                  <PointIcon className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-1 ${topic.id === 'v03' ? (i === 0 ? 'text-emerald-400' : i === 1 ? 'text-yellow-400' : 'text-blue-400') : topic.colorText}`} />
+                                  <div className={`flex flex-col ${topic.id === 'v04' && i === 2 ? 'items-center' : ''}`}>
+                                    <span className={`mb-1 ${topic.id === 'v03' ? (i === 0 ? 'text-emerald-400' : i === 1 ? 'text-yellow-400' : 'text-blue-400') : 'text-white'} ${topic.id.startsWith('v') && topic.id !== 'v01' && topic.id !== 'v02' && topic.id !== 'v03' && topic.id !== 'v04' ? 'font-normal text-sm sm:text-base text-gray-200' : 'font-medium text-base sm:text-xl'}`}>
+                                      {(topic.id === 'v02' || topic.id === 'v03' || topic.id === 'v04') && pt.includes(':') ? (
+                                        <>
+                                          <span className={topic.id === 'v04' ? topic.colorText : ''}>{pt.split(':')[0]}:</span>
+                                          <span className={`font-normal ${topic.id === 'v03' || topic.id === 'v04' ? 'block mt-1 text-sm sm:text-base text-gray-300' : 'pl-2'}`}>{pt.split(':').slice(1).join(':')}</span>
+                                        </>
+                                      ) : (
+                                        pt
+                                      )}
+                                    </span>
+                                    {!(topic.id.startsWith('v')) && (
+                                      <span className={`${selectedTecnologia === 'Análise de Dados' ? 'text-white/90' : 'text-gray-400'} text-sm sm:text-base font-light leading-relaxed`}>{supportText}</span>
+                                    )}
                                   </div>
                                </div>
                                );
